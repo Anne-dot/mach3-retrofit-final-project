@@ -1,0 +1,185 @@
+' M6 Tool Change Macro
+
+' Declare variables
+Dim tool, xOff, yOff, muxOut, mSel
+
+' CONFIGURATION CONSTANTS
+
+' Tool Spacing Configuration
+Const toolSpaceX = 32
+Const toolSpaceY = 32
+
+' Magazine Offset Positions
+Const M1_OFFSET_X = 81
+Const M2_OFFSET_X = -60.9
+Const M1M2_OFFSET_Y = 206
+Const M3_OFFSET_X = -208
+Const M3_OFFSET_Y = 263
+
+' Output Signal Mapping
+Const bits0 = OUTPUT5
+Const bits1 = OUTPUT6
+Const bits2 = OUTPUT7
+Const bits3 = OUTPUT8
+Const m1Out = OUTPUT2
+Const m2Out = OUTPUT3
+Const m3Out = OUTPUT4
+
+' Deactivate all tool signals
+DeactivateSignal(bits0)
+DeactivateSignal(bits1)
+DeactivateSignal(bits2)
+DeactivateSignal(bits3)
+DeactivateSignal(m1Out)
+DeactivateSignal(m2Out)
+DeactivateSignal(m3Out)
+sleep(1000)
+
+' Get the selected tool
+tool = GetSelectedTool()
+
+' Declare variables
+xOff = 0
+yOff = 0
+muxOut = 0
+mSel = 0
+
+' Tool selection and positioning
+Select Case tool
+	Case 0
+    	xOff = 0
+    	yOff = 0
+    	muxOut = 0
+    	mSel = 0
+	Case 21 'M3
+    	xOff = M3_OFFSET_X
+    	yOff = M3_OFFSET_Y
+    	muxOut = 0
+    	mSel = 3
+	Case 22
+    	xOff = toolSpaceX * 3
+    	yOff = toolSpaceY * -2
+    	muxOut = 1
+	Case 23
+    	xOff = toolSpaceX * 2
+    	yOff = toolSpaceY * -3
+    	muxOut = 2
+	Case 24
+    	xOff = toolSpaceX * 2
+    	yOff = toolSpaceY * -2
+    	muxOut = 3
+	Case 25
+    	xOff = toolSpaceX * 2
+    	yOff = toolSpaceY * -1    
+    	muxOut = 4
+	Case 26
+    	xOff = toolSpaceX * 2
+    	yOff = toolSpaceY * 0    
+    	muxOut = 5
+	Case 27
+    	xOff = toolSpaceX * 2
+    	yOff = toolSpaceY * 1    
+    	muxOut = 6
+	Case 28
+    	xOff = toolSpaceX * -2
+    	yOff = toolSpaceY * -1    
+    	muxOut = 7
+	Case 29
+    	' center tool
+    	xOff = toolSpaceX * 0
+    	yOff = toolSpaceY * 0    
+    	muxOut = 8
+	Case 30
+    	xOff = toolSpaceX * -1
+    	yOff = toolSpaceY * 0    
+    	muxOut = 9
+	Case 31
+    	xOff = toolSpaceX * -2
+    	yOff = toolSpaceY * 0    
+    	muxOut = 10
+	Case 32
+    	xOff = toolSpaceX * -3
+    	yOff = toolSpaceY * 0    
+    	muxOut = 11
+	Case 33
+    	xOff = toolSpaceX * -4
+    	yOff = toolSpaceY * 0    
+    	muxOut = 12
+	Case 34
+    	xOff = toolSpaceX * -5
+    	yOff = toolSpaceY * 0    
+    	muxOut = 13
+	Case 35
+    	xOff = toolSpaceX * -6
+    	yOff = toolSpaceY * 0    
+    	muxOut = 14
+	Case 36
+    	xOff = toolSpaceX * -7
+    	yOff = toolSpaceY * 0    
+    	muxOut = 15
+	Case 37
+    	xOff = toolSpaceX * -2
+    	yOff = toolSpaceY * -1    
+    	muxOut = 16
+	Case 42
+    	xOff = toolSpaceX * 3
+    	yOff = toolSpaceY * -2
+    	muxOut = 1
+	Case 48
+    	xOff = toolSpaceX * -2
+    	yOff = toolSpaceY * -1    
+    	muxOut = 7
+	Case Else
+    	muxOut = 0
+    	If (tool >= 1 And tool <= 10) Then 'M1
+        	xOff = M1_OFFSET_X
+        	yOff = M1M2_OFFSET_Y
+        	mSel = 1
+    	Else
+        	If (tool >= 11 And tool <= 20) Then 'M2
+            	xOff = M2_OFFSET_X
+            	yOff = M1M2_OFFSET_Y
+            	mSel = 2
+        	Else
+            	Message "Unknown Tool"
+            	code("M0")
+        	End If
+    	End If
+End Select
+
+' Set tool offset
+code("G52 X" & xOff & "Y" & yOff)
+sleep(500)    	 
+
+' Wait for movement to complete
+While IsMoving()
+	sleep(100)    	 
+Wend
+
+' Activate tool signals
+If ((muxOut And 1) = 1) Then
+	ActivateSignal(bits0)
+End If
+If ((muxOut And 2) = 2) Then
+	ActivateSignal(bits1)
+End If
+If ((muxOut And 4) = 4) Then
+	ActivateSignal(bits2)
+End If
+If ((muxOut And 8) = 8) Then
+	ActivateSignal(bits3)
+End If
+If (mSel = 1) Then
+	ActivateSignal(m1Out)
+End If
+If (mSel = 2) Then
+	ActivateSignal(m2Out)
+End If
+If (mSel = 3) Then
+	ActivateSignal(m3Out)
+End If
+
+' Set current tool
+SetCurrentTool(tool)        	 
+sleep(500)
+

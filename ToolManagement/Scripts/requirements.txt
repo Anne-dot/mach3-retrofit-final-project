@@ -1,0 +1,7 @@
+pywin32==308     	# For COM integration with Windows/Mach3
+pandas==2.2.3    	# For CSV handling and data manipulation
+numpy==1.26.0    	# For numerical operations
+ezdxf==1.0.3     	# For reading/processing DXF files
+pyyaml==6.0.1    	# For configuration file handling
+watchdog==3.0.0  	# For monitoring file changes
+

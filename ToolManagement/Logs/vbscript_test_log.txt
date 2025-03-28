@@ -1,0 +1,9 @@
+19/03/2025 16:02:46 - Starting Python integration test
+19/03/2025 16:02:46 - ERROR: Python script not found at: C:\Mach3\ToolManagement\Scripts\test_basic_execution.py
+19/03/2025 16:06:45 - Starting Python integration test
+19/03/2025 16:06:45 - ERROR: Python script not found at: C:\Mach3\ToolManagement\Scripts\test_basic_execution.py
+19/03/2025 16:07:45 - Starting Python integration test
+19/03/2025 16:07:45 - ERROR: Python script not found at: C:\Mach3\ToolManagement\Scripts\test_basic_execution.py
+19/03/2025 16:19:14 - Starting Python integration test
+19/03/2025 16:19:14 - Executing: cmd.exe /c start "Python Test" /min python "C:\Mach3\ToolManagement\Scripts\test_basic_execution.py"
+19/03/2025 16:19:16 - Test completed successfully
