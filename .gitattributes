@@ -1,0 +1,37 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# These files are text and should be normalized
+*.m1s text
+*.txt text
+*.md text
+*.csv text
+*.xml text
+*.ini text
+*.set text
+*.js text
+*.html text
+*.css text
+
+# Windows-specific scripts use CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.vbs text eol=crlf
+
+# Explicitly specify line endings for specific file types
+*.py text eol=lf
+*.sh text eol=lf
+
+# Specify binary files
+*.png binary
+*.jpg binary
+*.pdf binary
+*.dxf binary
+*.stl binary
+*.dwg binary
+*.zip binary
+*.gz binary
+*.nc binary
+*.tap binary
+*.gcode binary
