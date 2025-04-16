@@ -1,4 +1,0 @@
-tool_number,tool_type,tool_direction,diameter,tool_length
-1,Mill,6,6.0,50.0
-2,HorizontalDrill,3,8.0,75.0
-3,VerticalDrill,5,10.0,100.0

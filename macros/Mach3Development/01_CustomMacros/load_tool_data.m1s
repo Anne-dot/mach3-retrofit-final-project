@@ -1,0 +1,456 @@
+' Filename: load_tool_data.m1s
+' Purpose: Load tool data from CSV file into Mach3 DROs
+' Used in: Auto-startup sequence, Tool Management interface
+' Status: Development
+'
+' DRO Mapping:
+' 1000-1799: Tool data blocks (20 DROs per tool, 40 tools)
+'            For tool N: base address = 1000 + (N-1)*20
+' 1800-1811: Current active tool properties (copied during tool change)
+' 1820-1829: Tool data management flags
+'   1820: Last data load timestamp
+'   1821: Data validation flag (1=valid, 0=needs reload)
+'   1822: Current tool number
+'
+' Field Mapping (offset from base DRO):
+'   +0: tool_number (identifier)
+'   +1: tool_type (1=Mill, 2=VertDrill, 3=HorDrill, 4=Saw, 0=Empty)
+'   +2: tool_direction (1-6 direction code)
+'   +3: rotation_direction (1=CW, 2=CCW, 0=Empty)
+'   +4: diameter (mm)
+'   +5: tool_length (mm)
+'   +6: max_working_length (mm)
+'   +7: tool_holder_z_offset (mm)
+'   +8: in_spindle (1=yes, 0=no)
+'   +9: last_change_time (timestamp)
+
+' Constants for DRO allocation
+Const TOOL_DATA_START = 1000
+Const TOOLS_PER_BLOCK = 20
+Const MAX_TOOLS = 40
+Const TIMESTAMP_DRO = 1820
+Const VALIDATION_FLAG_DRO = 1821
+Const CURRENT_TOOL_DRO = 1822
+
+' Validation constants
+Const MIN_DIAMETER = 0.1       ' Minimum valid tool diameter (mm)
+Const MAX_DIAMETER = 100       ' Maximum valid tool diameter (mm)
+Const MIN_TOOL_LENGTH = 5      ' Minimum valid tool length (mm)
+Const MAX_TOOL_LENGTH = 300    ' Maximum valid tool length (mm)
+
+' File path constants
+Const CSV_FILENAME = "tool-data.csv"
+
+' Debug mode (enable for testing, disable for production)
+Const DEBUG_MODE = True  ' Set to False for production
+
+' Main execution
+Dim mainFolder, csvFilePath
+Dim fso, file, csvLine, fileIsOpen
+Dim toolCount, loadSuccess, toolNumber
+Dim processTime, fieldCount
+
+' Initialize variables
+toolCount = 0
+loadSuccess = True
+fileIsOpen = False
+processTime = Timer()
+
+' Reset validation flag to indicate we're loading
+SetUserDRO(VALIDATION_FLAG_DRO, 0)
+
+' Display startup message
+Message("Starting tool data load...")
+Sleep(100)
+
+' Create FileSystemObject
+On Error Resume Next
+Set fso = CreateObject("Scripting.FileSystemObject")
+If Err.Number <> 0 Then
+    Message("ERROR: Failed to create FSO - " & Err.Description)
+    Sleep(200)
+    ' Set validation flag to failure
+    SetUserDRO(VALIDATION_FLAG_DRO, 0)
+    Exit Sub
+End If
+
+' Get Mach3 main folder (always use absolute paths per compatibility guide)
+mainFolder = GetMainFolder()  ' Returns with trailing backslash
+csvFilePath = mainFolder & "ToolManagement\Data\" & CSV_FILENAME
+
+' Create directories if they don't exist
+On Error Resume Next
+If Not fso.FolderExists(mainFolder & "ToolManagement") Then
+    fso.CreateFolder(mainFolder & "ToolManagement")
+    If Err.Number <> 0 Then
+        Message("ERROR: Failed to create ToolManagement folder - " & Err.Description)
+        Sleep(200)
+        Exit Sub
+    End If
+End If
+
+If Not fso.FolderExists(mainFolder & "ToolManagement\Data") Then
+    fso.CreateFolder(mainFolder & "ToolManagement\Data")
+    If Err.Number <> 0 Then
+        Message("ERROR: Failed to create Data folder - " & Err.Description)
+        Sleep(200)
+        Exit Sub
+    End If
+End If
+
+' Check if file exists
+If Not fso.FileExists(csvFilePath) Then
+    Message("ERROR: Tool data file not found at: " & csvFilePath)
+    Sleep(200)
+    SetUserDRO(VALIDATION_FLAG_DRO, 0)
+    Exit Sub
+End If
+
+' Open file for reading
+Set file = fso.OpenTextFile(csvFilePath, 1) ' 1 = ForReading
+If Err.Number <> 0 Then
+    Message("ERROR: Failed to open tool data file - " & Err.Description)
+    Sleep(200)
+    SetUserDRO(VALIDATION_FLAG_DRO, 0)
+    Exit Sub
+End If
+fileIsOpen = True
+
+' Skip header line
+If Not file.AtEndOfStream Then
+    csvLine = file.ReadLine()
+End If
+
+' Process data lines
+While Not file.AtEndOfStream
+    csvLine = file.ReadLine()
+    
+    ' Parse the line character by character
+    Dim field1, field2, field3, field4, field5, field6, field7, field8, field9, field10
+    Dim fieldPos, fieldNum, i, currentChar, fieldValue
+    fieldPos = 1
+    fieldNum = 1
+    
+    ' Reset field variables
+    field1 = ""
+    field2 = ""
+    field3 = ""
+    field4 = ""
+    field5 = ""
+    field6 = ""
+    field7 = ""
+    field8 = ""
+    field9 = ""
+    field10 = ""
+    
+    ' Parse character by character
+    For i = 1 To Len(csvLine)
+        currentChar = Mid(csvLine, i, 1)
+        
+        If currentChar = "," Then
+            ' Extract field value
+            fieldValue = Mid(csvLine, fieldPos, i - fieldPos)
+            
+            ' Store based on position
+            If fieldNum = 1 Then
+                field1 = fieldValue    ' tool_number
+            ElseIf fieldNum = 2 Then
+                field2 = fieldValue    ' tool_type
+            ElseIf fieldNum = 3 Then
+                field3 = fieldValue    ' tool_direction
+            ElseIf fieldNum = 4 Then
+                field4 = fieldValue    ' rotation_direction
+            ElseIf fieldNum = 5 Then
+                field5 = fieldValue    ' diameter
+            ElseIf fieldNum = 6 Then
+                field6 = fieldValue    ' tool_length
+            ElseIf fieldNum = 7 Then
+                field7 = fieldValue    ' max_working_length
+            ElseIf fieldNum = 8 Then
+                field8 = fieldValue    ' tool_holder_z_offset
+            ElseIf fieldNum = 9 Then
+                field9 = fieldValue    ' in_spindle
+            End If
+            
+            ' Move to next field
+            fieldPos = i + 1
+            fieldNum = fieldNum + 1
+        End If
+    Next
+    
+    ' Get the last field
+    field10 = Mid(csvLine, fieldPos)   ' last_change_time
+    
+    ' Check if tool number is valid
+    If IsNumeric(field1) Then
+        toolNumber = CInt(field1)
+        
+        ' Debug output of parsed field values for first few tools
+        If DEBUG_MODE And toolNumber <= 2 Then
+            Message("DEBUG: Tool " & toolNumber & " fields:")
+            Sleep(50)
+            Message("  1-3: " & field1 & ", " & field2 & ", " & field3)
+            Sleep(50)
+            Message("  4-6: " & field4 & ", " & field5 & ", " & field6)
+            Sleep(50)
+            Message("  7-9: " & field7 & ", " & field8 & ", " & field9)
+            Sleep(50)
+            Message("  10: " & field10)
+            Sleep(50)
+        End If
+        
+        ' Check if tool number is within valid range
+        If toolNumber > 0 And toolNumber <= MAX_TOOLS Then
+            ' Validate field data
+            Dim fieldValid, validationMessage
+            fieldValid = True
+            validationMessage = ""
+            
+            ' Validate diameter
+            If Not IsNumeric(field5) Then
+                fieldValid = False
+                validationMessage = "Invalid diameter format"
+            ElseIf CDbl(field5) < MIN_DIAMETER Or CDbl(field5) > MAX_DIAMETER Then
+                fieldValid = False
+                validationMessage = "Diameter out of range (" & MIN_DIAMETER & "-" & MAX_DIAMETER & ")"
+            End If
+            
+            ' Validate tool length
+            If fieldValid And Not IsNumeric(field6) Then
+                fieldValid = False
+                validationMessage = "Invalid tool length format"
+            ElseIf fieldValid And (CDbl(field6) < MIN_TOOL_LENGTH Or CDbl(field6) > MAX_TOOL_LENGTH) Then
+                fieldValid = False
+                validationMessage = "Tool length out of range (" & MIN_TOOL_LENGTH & "-" & MAX_TOOL_LENGTH & ")"
+            End If
+            
+            ' More validations for other fields...
+            
+            ' Only proceed with DRO setting if validation passed
+            If fieldValid Then
+                ' Calculate base DRO for this tool
+                Dim baseDRO, typeCode, rotationCode
+                baseDRO = TOOL_DATA_START + ((toolNumber - 1) * TOOLS_PER_BLOCK)
+                
+                ' Convert tool type to numeric code
+                Select Case Trim(UCase(field2))
+                    Case "MILL"
+                        typeCode = 1
+                    Case "VERTDRILL", "VERTICALDRILL"
+                        typeCode = 2
+                    Case "HORDRILL", "HORIZONTALDRILL"
+                        typeCode = 3
+                    Case "SAW"
+                        typeCode = 4
+                    Case "EMPTY"
+                        typeCode = 0
+                    Case Else
+                        typeCode = 0
+                End Select
+                
+                ' Convert rotation direction to numeric code
+                Select Case Trim(UCase(field4))
+                    Case "CW"
+                        rotationCode = 1
+                    Case "CCW"
+                        rotationCode = 2
+                    Case "EMPTY", ""
+                        rotationCode = 0
+                    Case Else
+                        rotationCode = 0
+                End Select
+                
+                ' Store tool data in DROs with detailed error reporting
+                On Error Resume Next
+                
+                ' Debug output for first few tools to see actual values
+                If toolNumber <= 3 Then
+                    Message("DEBUG: Tool " & toolNumber & " data - Type: " & field2 & ", Direction: " & field3)
+                    Sleep(100)
+                End If
+                
+                ' Try setting each DRO with proper error checking
+                SetUserDRO(baseDRO + 0, CDbl(field1))  ' tool_number
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting tool_number (" & field1 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 1, typeCode)  ' tool_type
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting tool_type (" & field2 & "=" & typeCode & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 2, CDbl(field3))  ' tool_direction
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting tool_direction (" & field3 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 3, rotationCode)  ' rotation_direction
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting rotation_direction (" & field4 & "=" & rotationCode & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 4, CDbl(field5))  ' diameter
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting diameter (" & field5 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 5, CDbl(field6))  ' tool_length
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting tool_length (" & field6 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 6, CDbl(field7))  ' max_working_length
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting max_working_length (" & field7 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 7, CDbl(field8))  ' tool_holder_z_offset
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting tool_holder_z_offset (" & field8 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                SetUserDRO(baseDRO + 8, CDbl(field9))  ' in_spindle
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting in_spindle (" & field9 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                ' For timestamp handling
+                Dim numericTimestamp
+                ' Try to convert text timestamp to numeric value (seconds since midnight)
+                On Error Resume Next
+                ' Just store current time if we can't convert the timestamp
+                numericTimestamp = Timer()
+                ' Check if timestamp is in standard format (can add more formats later)
+                If InStr(field10, "T") > 0 Then
+                    ' It's in ISO format, just store numeric current time
+                    ' In future could parse this to extract numeric components
+                    numericTimestamp = Timer()
+                Else
+                    ' Try direct conversion if possible
+                    If IsNumeric(field10) Then
+                        numericTimestamp = CDbl(field10)
+                    End If
+                End If
+                
+                ' Store the timestamp value
+                SetUserDRO(baseDRO + 9, numericTimestamp)     ' last_change_time
+                If Err.Number <> 0 Then
+                    Message("ERROR: Tool " & toolNumber & " - Failed setting last_change_time (" & field10 & ") - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+                
+                ' Check if all operations succeeded
+                If Err.Number = 0 Then
+                    toolCount = toolCount + 1
+                    
+                    ' Debug output for successful loads
+                    If toolNumber <= 3 Then
+                        Message("SUCCESS: Tool " & toolNumber & " loaded into DROs")
+                        Sleep(50)
+                    End If
+                Else
+                    Message("WARNING: Error setting DRO for tool " & toolNumber & " - " & Err.Description)
+                    Sleep(100)
+                    Err.Clear
+                    loadSuccess = False
+                End If
+            Else
+                ' Validation failed
+                Message("WARNING: Tool " & toolNumber & " validation failed: " & validationMessage)
+                Sleep(100)
+                loadSuccess = False
+            End If
+        Else
+            Message("WARNING: Tool number out of range: " & toolNumber)
+            Sleep(100)
+        End If
+    End If
+Wend
+
+' Close file if open
+If fileIsOpen Then
+    file.Close
+End If
+
+' Update timestamp (current time in seconds)
+SetUserDRO(TIMESTAMP_DRO, Timer())
+
+' Set validation flag based on success
+If loadSuccess And toolCount > 0 Then
+    SetUserDRO(VALIDATION_FLAG_DRO, 1)
+    Message("SUCCESS: Loaded " & toolCount & " tools in " & FormatNumber(Timer() - processTime, 2) & " seconds")
+    Sleep(200)
+Else
+    SetUserDRO(VALIDATION_FLAG_DRO, 0)
+    Message("ERROR: Tool data load incomplete - loaded " & toolCount & " tools")
+    Sleep(200)
+End If
+
+' Copy current tool data to active tool properties area (direct call, no Sub/function)
+Dim currentTool
+currentTool = GetCurrentTool()
+
+' Store current tool number in DRO
+SetUserDRO(CURRENT_TOOL_DRO, currentTool)
+
+If currentTool > 0 And currentTool <= MAX_TOOLS Then
+    ' Calculate base DRO for the current tool
+    Dim toolBaseDRO, activeDRO, j
+    toolBaseDRO = TOOL_DATA_START + ((currentTool - 1) * TOOLS_PER_BLOCK)
+    
+    ' Copy properties to current tool area (1800-1811)
+    For j = 0 To 11
+        On Error Resume Next
+        SetUserDRO(1800 + j, GetUserDRO(toolBaseDRO + j))
+        If Err.Number <> 0 Then
+            Message("WARNING: Error copying current tool data - " & Err.Description)
+            Sleep(100)
+            Err.Clear
+        End If
+    Next
+    
+    Message("INFO: Current tool " & currentTool & " data updated in active DROs")
+    Sleep(50)
+End If
+
+' Clean up objects
+Set file = Nothing
+Set fso = Nothing
+
+' Final status for debugging
+If loadSuccess And toolCount > 0 Then
+    Message("Tool data loading complete - " & toolCount & " tools loaded")
+Else
+    Message("WARNING: Tool data loading had issues - check logs")
+End If
+Sleep(100)

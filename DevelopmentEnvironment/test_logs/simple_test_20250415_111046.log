@@ -1,0 +1,8 @@
+2025-04-15 11:10:46,801 - INFO - Testing file creation from SOURCE to DESTINATION
+2025-04-15 11:10:46,802 - INFO - Created file in source: C:\Mach3\ToolManagement\source_to_dest_KuVxgLPi.txt
+2025-04-15 11:10:46,806 - INFO - Waiting 150 seconds for sync to complete...
+2025-04-15 11:13:16,821 - INFO - PASS: File successfully synced from source to destination
+2025-04-15 11:13:16,823 - INFO - Testing file creation from DESTINATION to SOURCE
+2025-04-15 11:13:16,838 - INFO - Created file in destination: Z:\Mach3\ToolManagement\dest_to_source_YJhtCmBc.txt
+2025-04-15 11:13:16,839 - INFO - Waiting 150 seconds for sync to complete...
+2025-04-15 11:15:46,851 - INFO - PASS: File successfully synced from destination to source
