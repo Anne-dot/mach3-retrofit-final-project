@@ -1,0 +1,41 @@
+tool_number,tool_type,tool_direction,rotation_direction,diameter,tool_length,max_working_length,tool_holder_z_offset,in_spindle,last_change_time,notes,description
+1,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+2,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+3,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+4,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+5,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+6,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+7,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+8,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+9,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+10,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+11,Mill,6,CW,6,50,100,0,1,44676.43,all purpose,Router Tool
+12,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+13,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+14,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+15,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+16,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+17,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+18,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+19,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+20,Mill,6,CW,6,50,100,0,0,44676.43,all purpose,Router Tool
+21,Saw,1,CW,200,200,250,0,1,44676.43,,Horizontal Cutting Saw
+22,HorizontalDrill,3,CW,8,150,200,-30,1,44676.43,,Front to Back Horizontal Drill
+23,HorizontalDrill,4,CCW,8,150,200,-30,1,44676.43,,Back to Front Horizontal Drill
+24,VerticalDrill,5,CW,10,100,150,0,1,44676.43,,Vertical Drill
+25,VerticalDrill,5,CW,12,100,150,0,1,44676.43,,Vertical Drill
+26,VerticalDrill,5,CW,5,100,150,0,1,44676.43,,Vertical Drill
+27,VerticalDrill,5,CW,26,100,150,0,1,44676.43,,Vertical Drill
+28,VerticalDrill,5,CW,18,100,150,0,1,44676.43,,Vertical Drill
+29,HorizontalDrill,1,CCW,10,150,200,-20,1,44676.43,,Left to Right Horizontal Drill
+30,HorizontalDrill,2,CW,10,150,200,-20,1,44676.43,,Right to Left Horizontal Drill
+31,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+32,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+33,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+34,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+35,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+36,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+37,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+38,VerticalDrill,5,CW,8,100,150,0,1,44676.43,,Vertical Drill
+39,HorizontalDrill,1,CW,12,100,150,0,1,44676.43,,Left to Right Horizontal Drill
+40,HorizontalDrill,2,CCW,12,100,150,0,1,44676.43,,Right to Left Horizontal Drill
