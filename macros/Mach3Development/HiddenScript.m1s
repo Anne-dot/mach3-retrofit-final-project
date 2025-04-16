@@ -1,1 +1,23 @@
-'Code("G56 G0 Z55")While IsMoving()	Sleep(5000)WendDoButton( 24 )DoButton( 23 )DoButton( 22 )DoButton( 25 )DoOEMButton(133)DoOEMButton(134)DoOEMButton(135)    ' Now load tool dataMessage("Homing complete, loading tool data...")Sleep(200)   ' Execute the load_tool_data script #expand "C:\Mach3\macros\Mach3Development\01_CustomMacros\load_tool_data.m1s"    Message("System initialization complete")Sleep(200)
+'Code("G56 G0 Z55")
+
+While IsMoving()
+	Sleep(5000)
+Wend
+
+DoButton( 24 )
+DoButton( 23 )
+DoButton( 22 )
+DoButton( 25 )
+
+DoOEMButton(133)
+DoOEMButton(134)
+DoOEMButton(135)
+    
+' Load tool data
+Message("Homing complete, loading tool data...")
+Sleep(200)
+   
+#expand "C:\Mach3\macros\Mach3Development\01_CustomMacros\load_tool_data.m1s"
+    
+Message("System initialization complete")
+Sleep(200)
