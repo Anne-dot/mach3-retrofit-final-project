@@ -213,8 +213,8 @@
       },
       "DevelopmentEnvironment/windows-sync/sync_state.json": {
         "is_dir": false,
-        "mtime": 1744785989.9733427,
-        "hash": "78e71a722cee078a4a7ef1c947f94fa8"
+        "mtime": 1744786153.798049,
+        "hash": "df81de679765b6d53a125a4f8f242b2a"
       },
       "DevelopmentEnvironment/test_logs/simple_test_20250415_111046.log": {
         "is_dir": false,
@@ -280,8 +280,8 @@
       },
       "DevelopmentEnvironment/logs/sync_20250416.log": {
         "is_dir": false,
-        "mtime": 1744785990.4151475,
-        "hash": "f26a82d6e5f86e8c2099564a63865b39"
+        "mtime": 1744786154.8056188,
+        "hash": "39e4cb8da5f0286709a5f35fb7178ee1"
       }
     },
     "shared": {
@@ -497,8 +497,8 @@
       },
       "DevelopmentEnvironment/windows-sync/sync_state.json": {
         "is_dir": false,
-        "mtime": 1744785920.428093,
-        "hash": "4edea12fc3fa10f6a5419a08bb38ea59"
+        "mtime": 1744786069.946448,
+        "hash": "db5867d954e8c105db116302e7648550"
       },
       "DevelopmentEnvironment/test_logs/simple_test_20250415_111046.log": {
         "is_dir": false,
@@ -564,8 +564,8 @@
       },
       "DevelopmentEnvironment/logs/sync_20250416.log": {
         "is_dir": false,
-        "mtime": 1744785921.707839,
-        "hash": "7ae73fdc4974f6e7288731f652714a2d"
+        "mtime": 1744786071.279847,
+        "hash": "b2b596e74c166fbf925c5cb54b244e94"
       }
     }
   },
