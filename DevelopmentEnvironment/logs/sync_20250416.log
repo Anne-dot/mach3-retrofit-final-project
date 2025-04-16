@@ -4684,3 +4684,1025 @@
 2025-04-16 09:42:39,309 - INFO -   Mach3 changed: True, Shared changed: True
 2025-04-16 09:42:39,397 - INFO -   Time diff: 81.30401253700256 seconds vs tolerance 3
 2025-04-16 09:42:39,476 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:42:39,560 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:42:39,600 - INFO - Syncing file: DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:42:39,611 - INFO - File analysis for DevelopmentEnvironment\windows-sync\sync_state.json:
+2025-04-16 09:42:39,682 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:42:39,766 - INFO -   Time diff: 80.89505982398987 seconds vs tolerance 3
+2025-04-16 09:42:39,853 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:42:39,946 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:42:39,995 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250415.log
+2025-04-16 09:42:40,175 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250415.log:
+2025-04-16 09:42:40,253 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:42:40,332 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:42:40,438 - INFO -   No changes needed for file
+2025-04-16 09:42:40,523 - INFO - Syncing file: DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log
+2025-04-16 09:42:40,600 - INFO - File analysis for DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log:
+2025-04-16 09:42:40,704 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:42:40,780 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:42:40,854 - INFO -   No changes needed for file
+2025-04-16 09:42:40,938 - INFO - Syncing file: DevelopmentEnvironment\sync-tests\improved-sync-test.py
+2025-04-16 09:42:41,017 - INFO - File analysis for DevelopmentEnvironment\sync-tests\improved-sync-test.py:
+2025-04-16 09:42:41,098 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:42:41,184 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:42:41,280 - INFO -   No changes needed for file
+2025-04-16 09:42:41,352 - INFO - Syncing file: DevelopmentEnvironment\windows-selective-sync-python.py
+2025-04-16 09:42:41,438 - INFO - File analysis for DevelopmentEnvironment\windows-selective-sync-python.py:
+2025-04-16 09:42:41,520 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:42:41,611 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:42:41,696 - INFO -   No changes needed for file
+2025-04-16 09:42:41,766 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094241.bak
+2025-04-16 09:42:41,865 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:42:41,973 - INFO - Syncing file: jaga.txt
+2025-04-16 09:42:42,072 - INFO - Syncing file: python location.txt
+2025-04-16 09:42:42,155 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094242.bak
+2025-04-16 09:42:42,236 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:42:42,330 - INFO - Sync completed in 23.60 seconds
+2025-04-16 09:42:42,405 - INFO - ==========================================================
+2025-04-16 09:43:43,492 - INFO - ========== Starting sync at 2025-04-16 09:43:43 ==========
+2025-04-16 09:43:43,594 - INFO - Syncing folder contents: macros\Mach3Development
+2025-04-16 09:43:43,876 - INFO - Syncing file: macros\Mach3Development\M41.m1s
+2025-04-16 09:43:43,950 - INFO - File analysis for macros\Mach3Development\M41.m1s:
+2025-04-16 09:43:44,031 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:44,110 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:44,191 - INFO -   No changes needed for file
+2025-04-16 09:43:44,272 - INFO - Syncing file: macros\Mach3Development\tools3.dat
+2025-04-16 09:43:44,368 - INFO - File analysis for macros\Mach3Development\tools3.dat:
+2025-04-16 09:43:44,447 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:44,552 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:44,642 - INFO -   No changes needed for file
+2025-04-16 09:43:44,722 - INFO - Syncing file: macros\Mach3Development\M50.m1s
+2025-04-16 09:43:44,807 - INFO - File analysis for macros\Mach3Development\M50.m1s:
+2025-04-16 09:43:44,878 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:44,958 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:45,051 - INFO -   No changes needed for file
+2025-04-16 09:43:45,150 - INFO - Syncing file: macros\Mach3Development\spindlespeed.m1s
+2025-04-16 09:43:45,242 - INFO - File analysis for macros\Mach3Development\spindlespeed.m1s:
+2025-04-16 09:43:45,339 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:45,429 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:45,515 - INFO -   No changes needed for file
+2025-04-16 09:43:45,584 - INFO - Syncing file: macros\Mach3Development\FeedRate.m1s
+2025-04-16 09:43:45,667 - INFO - File analysis for macros\Mach3Development\FeedRate.m1s:
+2025-04-16 09:43:45,756 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:45,850 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:45,921 - INFO -   No changes needed for file
+2025-04-16 09:43:46,012 - INFO - Syncing file: macros\Mach3Development\HiddenScript.m1s
+2025-04-16 09:43:46,108 - INFO - File analysis for macros\Mach3Development\HiddenScript.m1s:
+2025-04-16 09:43:46,196 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:46,278 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:46,372 - INFO -   No changes needed for file
+2025-04-16 09:43:46,455 - INFO - Syncing file: macros\Mach3Development\Curve1.dat
+2025-04-16 09:43:46,538 - INFO - File analysis for macros\Mach3Development\Curve1.dat:
+2025-04-16 09:43:46,638 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:46,710 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:43:46,792 - INFO -   No changes needed for file
+2025-04-16 09:43:46,871 - INFO - Syncing file: macros\Mach3Development\M10.m1s
+2025-04-16 09:43:46,955 - INFO - File analysis for macros\Mach3Development\M10.m1s:
+2025-04-16 09:43:47,038 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:47,111 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:47,173 - INFO -   No changes needed for file
+2025-04-16 09:43:47,174 - INFO - Syncing file: macros\Mach3Development\test_python_trigger.m1s
+2025-04-16 09:43:47,178 - INFO - File analysis for macros\Mach3Development\test_python_trigger.m1s:
+2025-04-16 09:43:47,272 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:47,361 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:43:47,456 - INFO -   No changes needed for file
+2025-04-16 09:43:47,538 - INFO - Syncing file: macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s
+2025-04-16 09:43:47,624 - INFO - File analysis for macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s:
+2025-04-16 09:43:47,716 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:47,812 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:43:47,909 - INFO -   No changes needed for file
+2025-04-16 09:43:47,993 - INFO - Syncing file: macros\Mach3Development\M6End.m1s
+2025-04-16 09:43:48,005 - INFO - File analysis for macros\Mach3Development\M6End.m1s:
+2025-04-16 09:43:48,100 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:48,184 - INFO -   Time diff: 7201.0 seconds vs tolerance 3
+2025-04-16 09:43:48,254 - INFO -   No changes needed for file
+2025-04-16 09:43:48,369 - INFO - Syncing file: macros\Mach3Development\m4.m1s
+2025-04-16 09:43:48,468 - INFO - File analysis for macros\Mach3Development\m4.m1s:
+2025-04-16 09:43:48,567 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:48,647 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:48,733 - INFO -   No changes needed for file
+2025-04-16 09:43:48,830 - INFO - Syncing file: macros\Mach3Development\M11.m1s
+2025-04-16 09:43:48,943 - INFO - File analysis for macros\Mach3Development\M11.m1s:
+2025-04-16 09:43:49,027 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:49,103 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:49,198 - INFO -   No changes needed for file
+2025-04-16 09:43:49,282 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\home..m1s
+2025-04-16 09:43:49,382 - INFO - Deleted file from Mach3 (propagated): macros\Mach3Development\01_CustomMacros\home..m1s
+2025-04-16 09:43:49,463 - INFO - Syncing file: macros\Mach3Development\M66.m1s
+2025-04-16 09:43:49,551 - INFO - File analysis for macros\Mach3Development\M66.m1s:
+2025-04-16 09:43:49,631 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:49,715 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:49,808 - INFO -   No changes needed for file
+2025-04-16 09:43:49,909 - INFO - Syncing file: macros\Mach3Development\M6Start.m1s
+2025-04-16 09:43:50,004 - INFO - File analysis for macros\Mach3Development\M6Start.m1s:
+2025-04-16 09:43:50,102 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:50,199 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:50,279 - INFO -   No changes needed for file
+2025-04-16 09:43:50,363 - INFO - Syncing file: macros\Mach3Development\m5.m1s
+2025-04-16 09:43:50,437 - INFO - File analysis for macros\Mach3Development\m5.m1s:
+2025-04-16 09:43:50,534 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:50,602 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:50,698 - INFO -   No changes needed for file
+2025-04-16 09:43:50,796 - INFO - Syncing file: macros\Mach3Development\Curve2.dat
+2025-04-16 09:43:50,897 - INFO - File analysis for macros\Mach3Development\Curve2.dat:
+2025-04-16 09:43:50,992 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:51,088 - INFO -   Time diff: 2331033.6409089565 seconds vs tolerance 3
+2025-04-16 09:43:51,179 - INFO -   No changes needed for file
+2025-04-16 09:43:51,279 - INFO - Syncing file: macros\Mach3Development\M40.m1s
+2025-04-16 09:43:51,371 - INFO - File analysis for macros\Mach3Development\M40.m1s:
+2025-04-16 09:43:51,468 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:51,562 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:51,656 - INFO -   No changes needed for file
+2025-04-16 09:43:51,753 - INFO - Syncing file: macros\Mach3Development\m3.m1s
+2025-04-16 09:43:51,852 - INFO - File analysis for macros\Mach3Development\m3.m1s:
+2025-04-16 09:43:51,946 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:52,046 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:52,137 - INFO -   No changes needed for file
+2025-04-16 09:43:52,209 - INFO - Syncing file: macros\Mach3Development\Linearity.dat
+2025-04-16 09:43:52,314 - INFO - File analysis for macros\Mach3Development\Linearity.dat:
+2025-04-16 09:43:52,399 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:52,484 - INFO -   Time diff: 2331033.637830019 seconds vs tolerance 3
+2025-04-16 09:43:52,553 - INFO -   No changes needed for file
+2025-04-16 09:43:52,625 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\displayToolType.m1s
+2025-04-16 09:43:52,713 - INFO - Deleted file from Mach3 (propagated): macros\Mach3Development\01_CustomMacros\displayToolType.m1s
+2025-04-16 09:43:52,813 - INFO - Syncing file: macros\Mach3Development\fixtures.dat
+2025-04-16 09:43:52,903 - INFO - File analysis for macros\Mach3Development\fixtures.dat:
+2025-04-16 09:43:52,999 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:53,084 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:53,170 - INFO -   No changes needed for file
+2025-04-16 09:43:53,243 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\ToolTRableReport.m1s
+2025-04-16 09:43:53,324 - INFO - File analysis for macros\Mach3Development\01_CustomMacros\ToolTRableReport.m1s:
+2025-04-16 09:43:53,397 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:53,476 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:53,554 - INFO -   No changes needed for file
+2025-04-16 09:43:53,622 - INFO - Syncing file: macros\Mach3Development\VerifyTest.m1s
+2025-04-16 09:43:53,735 - INFO - File analysis for macros\Mach3Development\VerifyTest.m1s:
+2025-04-16 09:43:53,821 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:53,906 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:53,982 - INFO -   No changes needed for file
+2025-04-16 09:43:54,065 - INFO - Syncing file: macros\Mach3Development\Curve0.dat
+2025-04-16 09:43:54,153 - INFO - File analysis for macros\Mach3Development\Curve0.dat:
+2025-04-16 09:43:54,234 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:54,314 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:43:54,400 - INFO -   No changes needed for file
+2025-04-16 09:43:54,474 - INFO - Syncing file: macros\Mach3Development\M55.m1s
+2025-04-16 09:43:54,573 - INFO - File analysis for macros\Mach3Development\M55.m1s:
+2025-04-16 09:43:54,655 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:54,740 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:54,819 - INFO -   No changes needed for file
+2025-04-16 09:43:54,903 - INFO - Syncing file: macros\Mach3Development\m6Start.m1s
+2025-04-16 09:43:55,003 - INFO - File analysis for macros\Mach3Development\m6Start.m1s:
+2025-04-16 09:43:55,079 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:55,160 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:55,229 - INFO -   No changes needed for file
+2025-04-16 09:43:55,320 - INFO - Syncing file: macros\Mach3Development\M51.m1s
+2025-04-16 09:43:55,410 - INFO - File analysis for macros\Mach3Development\M51.m1s:
+2025-04-16 09:43:55,508 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:55,588 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:43:55,613 - INFO -   No changes needed for file
+2025-04-16 09:43:55,658 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\load_tool_data.m1s
+2025-04-16 09:43:55,752 - INFO - File analysis for macros\Mach3Development\01_CustomMacros\load_tool_data.m1s:
+2025-04-16 09:43:55,843 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:55,924 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:56,010 - INFO -   No changes needed for file
+2025-04-16 09:43:56,090 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094356.bak
+2025-04-16 09:43:56,179 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:43:56,259 - INFO - Syncing folder contents: ToolManagement
+2025-04-16 09:43:56,474 - INFO - Created directory in Mach3: ToolManagement\sync_test
+2025-04-16 09:43:56,561 - INFO - Created directory in Mach3: ToolManagement\sync_test\empty_test_dir
+2025-04-16 09:43:56,646 - INFO - Created directory in Mach3: ToolManagement\sync_test\nested_test
+2025-04-16 09:43:56,765 - INFO - Created directory in Mach3: ToolManagement\sync_test\nested_test\deeper
+2025-04-16 09:43:56,857 - INFO - Deleted directory from shared (propagated): ToolManagement\sync_test
+2025-04-16 09:43:56,931 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py
+2025-04-16 09:43:57,036 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:
+2025-04-16 09:43:57,154 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:57,228 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:43:57,310 - INFO -   No changes needed for file
+2025-04-16 09:43:57,411 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA
+2025-04-16 09:43:57,504 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA:
+2025-04-16 09:43:57,574 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:57,664 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:43:57,762 - INFO -   No changes needed for file
+2025-04-16 09:43:57,843 - INFO - Syncing file: ToolManagement\Scripts\test_all.py
+2025-04-16 09:43:57,930 - INFO - File analysis for ToolManagement\Scripts\test_all.py:
+2025-04-16 09:43:58,021 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:58,123 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:43:58,204 - INFO -   No changes needed for file
+2025-04-16 09:43:58,290 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA
+2025-04-16 09:43:58,404 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA:
+2025-04-16 09:43:58,521 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:58,608 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:43:58,681 - INFO -   No changes needed for file
+2025-04-16 09:43:58,758 - INFO - Syncing file: ToolManagement\Scripts\requirements.txt
+2025-04-16 09:43:58,845 - INFO - File analysis for ToolManagement\Scripts\requirements.txt:
+2025-04-16 09:43:58,932 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:59,023 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:43:59,103 - INFO -   No changes needed for file
+2025-04-16 09:43:59,201 - INFO - Syncing file: ToolManagement\Data\tool-data.csv
+2025-04-16 09:43:59,284 - INFO - File analysis for ToolManagement\Data\tool-data.csv:
+2025-04-16 09:43:59,331 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:59,332 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:43:59,332 - INFO -   No changes needed for file
+2025-04-16 09:43:59,333 - INFO - Syncing file: ToolManagement\Logs\python_test_log.txt
+2025-04-16 09:43:59,389 - INFO - File analysis for ToolManagement\Logs\python_test_log.txt:
+2025-04-16 09:43:59,472 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:59,561 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:43:59,657 - INFO -   No changes needed for file
+2025-04-16 09:43:59,751 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py
+2025-04-16 09:43:59,836 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:
+2025-04-16 09:43:59,914 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:43:59,993 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:44:00,106 - INFO -   No changes needed for file
+2025-04-16 09:44:00,191 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA
+2025-04-16 09:44:00,275 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA:
+2025-04-16 09:44:00,351 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:00,451 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:44:00,533 - INFO -   No changes needed for file
+2025-04-16 09:44:00,612 - INFO - Syncing file: ToolManagement\Logs\execution_status.txt
+2025-04-16 09:44:00,704 - INFO - File analysis for ToolManagement\Logs\execution_status.txt:
+2025-04-16 09:44:00,719 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:00,791 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:44:00,883 - INFO -   No changes needed for file
+2025-04-16 09:44:00,954 - INFO - Syncing file: ToolManagement\Logs\vbscript_test_log.txt
+2025-04-16 09:44:01,034 - INFO - File analysis for ToolManagement\Logs\vbscript_test_log.txt:
+2025-04-16 09:44:01,040 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:01,052 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:44:01,063 - INFO -   No changes needed for file
+2025-04-16 09:44:01,066 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py
+2025-04-16 09:44:01,084 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:
+2025-04-16 09:44:01,100 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:01,101 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:44:01,102 - INFO -   No changes needed for file
+2025-04-16 09:44:01,105 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094401.bak
+2025-04-16 09:44:01,112 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:44:01,120 - INFO - Syncing folder contents: DevelopmentEnvironment
+2025-04-16 09:44:01,351 - INFO - Syncing file: DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log
+2025-04-16 09:44:01,386 - INFO - File analysis for DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log:
+2025-04-16 09:44:01,406 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:01,408 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:44:01,409 - INFO -   No changes needed for file
+2025-04-16 09:44:01,410 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250416.log
+2025-04-16 09:44:01,445 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250416.log:
+2025-04-16 09:44:01,447 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:44:01,448 - INFO -   Time diff: 81.9327232837677 seconds vs tolerance 3
+2025-04-16 09:44:01,448 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:44:01,454 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:44:01,465 - INFO - Syncing file: DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:44:01,471 - INFO - File analysis for DevelopmentEnvironment\windows-sync\sync_state.json:
+2025-04-16 09:44:01,473 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:44:01,474 - INFO -   Time diff: 82.98590517044067 seconds vs tolerance 3
+2025-04-16 09:44:01,475 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:44:01,478 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:44:01,481 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250415.log
+2025-04-16 09:44:01,552 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250415.log:
+2025-04-16 09:44:01,584 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:01,585 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:44:01,585 - INFO -   No changes needed for file
+2025-04-16 09:44:01,586 - INFO - Syncing file: DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log
+2025-04-16 09:44:01,590 - INFO - File analysis for DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log:
+2025-04-16 09:44:01,619 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:01,620 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:44:01,621 - INFO -   No changes needed for file
+2025-04-16 09:44:01,621 - INFO - Syncing file: DevelopmentEnvironment\sync-tests\improved-sync-test.py
+2025-04-16 09:44:01,626 - INFO - File analysis for DevelopmentEnvironment\sync-tests\improved-sync-test.py:
+2025-04-16 09:44:01,633 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:01,633 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:44:01,634 - INFO -   No changes needed for file
+2025-04-16 09:44:01,641 - INFO - Syncing file: DevelopmentEnvironment\windows-selective-sync-python.py
+2025-04-16 09:44:01,715 - INFO - File analysis for DevelopmentEnvironment\windows-selective-sync-python.py:
+2025-04-16 09:44:01,803 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:44:01,852 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:44:01,853 - INFO -   No changes needed for file
+2025-04-16 09:44:01,859 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094401.bak
+2025-04-16 09:44:01,869 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:44:01,900 - INFO - Syncing file: jaga.txt
+2025-04-16 09:44:01,904 - INFO - Syncing file: python location.txt
+2025-04-16 09:44:01,913 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094401.bak
+2025-04-16 09:44:01,921 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:44:01,927 - INFO - Sync completed in 18.44 seconds
+2025-04-16 09:44:01,931 - INFO - ==========================================================
+2025-04-16 09:45:02,447 - INFO - ========== Starting sync at 2025-04-16 09:45:02 ==========
+2025-04-16 09:45:02,586 - INFO - Syncing folder contents: macros\Mach3Development
+2025-04-16 09:45:02,877 - INFO - Syncing file: macros\Mach3Development\M41.m1s
+2025-04-16 09:45:02,961 - INFO - File analysis for macros\Mach3Development\M41.m1s:
+2025-04-16 09:45:03,042 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:03,128 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:03,202 - INFO -   No changes needed for file
+2025-04-16 09:45:03,278 - INFO - Syncing file: macros\Mach3Development\tools3.dat
+2025-04-16 09:45:03,365 - INFO - File analysis for macros\Mach3Development\tools3.dat:
+2025-04-16 09:45:03,457 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:03,535 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:03,644 - INFO -   No changes needed for file
+2025-04-16 09:45:03,743 - INFO - Syncing file: macros\Mach3Development\M50.m1s
+2025-04-16 09:45:03,835 - INFO - File analysis for macros\Mach3Development\M50.m1s:
+2025-04-16 09:45:03,937 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:04,031 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:04,124 - INFO -   No changes needed for file
+2025-04-16 09:45:04,226 - INFO - Syncing file: macros\Mach3Development\spindlespeed.m1s
+2025-04-16 09:45:04,318 - INFO - File analysis for macros\Mach3Development\spindlespeed.m1s:
+2025-04-16 09:45:04,397 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:04,481 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:04,583 - INFO -   No changes needed for file
+2025-04-16 09:45:04,667 - INFO - Syncing file: macros\Mach3Development\FeedRate.m1s
+2025-04-16 09:45:04,757 - INFO - File analysis for macros\Mach3Development\FeedRate.m1s:
+2025-04-16 09:45:04,853 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:04,933 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:05,017 - INFO -   No changes needed for file
+2025-04-16 09:45:05,089 - INFO - Syncing file: macros\Mach3Development\HiddenScript.m1s
+2025-04-16 09:45:05,169 - INFO - File analysis for macros\Mach3Development\HiddenScript.m1s:
+2025-04-16 09:45:05,284 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:05,357 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:05,455 - INFO -   No changes needed for file
+2025-04-16 09:45:05,536 - INFO - Syncing file: macros\Mach3Development\Curve1.dat
+2025-04-16 09:45:05,622 - INFO - File analysis for macros\Mach3Development\Curve1.dat:
+2025-04-16 09:45:05,717 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:05,795 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:45:05,885 - INFO -   No changes needed for file
+2025-04-16 09:45:05,975 - INFO - Syncing file: macros\Mach3Development\M10.m1s
+2025-04-16 09:45:06,059 - INFO - File analysis for macros\Mach3Development\M10.m1s:
+2025-04-16 09:45:06,135 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:06,215 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:06,301 - INFO -   No changes needed for file
+2025-04-16 09:45:06,378 - INFO - Syncing file: macros\Mach3Development\test_python_trigger.m1s
+2025-04-16 09:45:06,473 - INFO - File analysis for macros\Mach3Development\test_python_trigger.m1s:
+2025-04-16 09:45:06,566 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:06,649 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:45:06,745 - INFO -   No changes needed for file
+2025-04-16 09:45:06,839 - INFO - Syncing file: macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s
+2025-04-16 09:45:06,930 - INFO - File analysis for macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s:
+2025-04-16 09:45:07,037 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:07,127 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:45:07,251 - INFO -   No changes needed for file
+2025-04-16 09:45:07,334 - INFO - Syncing file: macros\Mach3Development\M6End.m1s
+2025-04-16 09:45:07,429 - INFO - File analysis for macros\Mach3Development\M6End.m1s:
+2025-04-16 09:45:07,515 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:07,616 - INFO -   Time diff: 7201.0 seconds vs tolerance 3
+2025-04-16 09:45:07,706 - INFO -   No changes needed for file
+2025-04-16 09:45:07,785 - INFO - Syncing file: macros\Mach3Development\m4.m1s
+2025-04-16 09:45:07,883 - INFO - File analysis for macros\Mach3Development\m4.m1s:
+2025-04-16 09:45:07,973 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:08,058 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:08,146 - INFO -   No changes needed for file
+2025-04-16 09:45:08,227 - INFO - Syncing file: macros\Mach3Development\M11.m1s
+2025-04-16 09:45:08,309 - INFO - File analysis for macros\Mach3Development\M11.m1s:
+2025-04-16 09:45:08,405 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:08,486 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:08,580 - INFO -   No changes needed for file
+2025-04-16 09:45:08,658 - INFO - Syncing file: macros\Mach3Development\M66.m1s
+2025-04-16 09:45:08,775 - INFO - File analysis for macros\Mach3Development\M66.m1s:
+2025-04-16 09:45:08,847 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:08,913 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:08,915 - INFO -   No changes needed for file
+2025-04-16 09:45:08,916 - INFO - Syncing file: macros\Mach3Development\M6Start.m1s
+2025-04-16 09:45:08,934 - INFO - File analysis for macros\Mach3Development\M6Start.m1s:
+2025-04-16 09:45:09,021 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:09,095 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:09,184 - INFO -   No changes needed for file
+2025-04-16 09:45:09,275 - INFO - Syncing file: macros\Mach3Development\m5.m1s
+2025-04-16 09:45:09,375 - INFO - File analysis for macros\Mach3Development\m5.m1s:
+2025-04-16 09:45:09,481 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:09,560 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:09,640 - INFO -   No changes needed for file
+2025-04-16 09:45:09,721 - INFO - Syncing file: macros\Mach3Development\Curve2.dat
+2025-04-16 09:45:09,819 - INFO - File analysis for macros\Mach3Development\Curve2.dat:
+2025-04-16 09:45:09,917 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:10,004 - INFO -   Time diff: 2331033.6409089565 seconds vs tolerance 3
+2025-04-16 09:45:10,080 - INFO -   No changes needed for file
+2025-04-16 09:45:10,155 - INFO - Syncing file: macros\Mach3Development\M40.m1s
+2025-04-16 09:45:10,245 - INFO - File analysis for macros\Mach3Development\M40.m1s:
+2025-04-16 09:45:10,325 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:10,423 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:10,500 - INFO -   No changes needed for file
+2025-04-16 09:45:10,579 - INFO - Syncing file: macros\Mach3Development\m3.m1s
+2025-04-16 09:45:10,679 - INFO - File analysis for macros\Mach3Development\m3.m1s:
+2025-04-16 09:45:10,707 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:10,716 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:10,717 - INFO -   No changes needed for file
+2025-04-16 09:45:10,717 - INFO - Syncing file: macros\Mach3Development\Linearity.dat
+2025-04-16 09:45:10,722 - INFO - File analysis for macros\Mach3Development\Linearity.dat:
+2025-04-16 09:45:10,798 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:10,875 - INFO -   Time diff: 2331033.637830019 seconds vs tolerance 3
+2025-04-16 09:45:10,975 - INFO -   No changes needed for file
+2025-04-16 09:45:11,057 - INFO - Syncing file: macros\Mach3Development\fixtures.dat
+2025-04-16 09:45:11,141 - INFO - File analysis for macros\Mach3Development\fixtures.dat:
+2025-04-16 09:45:11,217 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:11,295 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:11,382 - INFO -   No changes needed for file
+2025-04-16 09:45:11,475 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\ToolTRableReport.m1s
+2025-04-16 09:45:11,573 - INFO - Deleted file from Mach3 (propagated): macros\Mach3Development\01_CustomMacros\ToolTRableReport.m1s
+2025-04-16 09:45:11,660 - INFO - Syncing file: macros\Mach3Development\VerifyTest.m1s
+2025-04-16 09:45:11,745 - INFO - File analysis for macros\Mach3Development\VerifyTest.m1s:
+2025-04-16 09:45:11,834 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:11,922 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:12,018 - INFO -   No changes needed for file
+2025-04-16 09:45:12,117 - INFO - Syncing file: macros\Mach3Development\Curve0.dat
+2025-04-16 09:45:12,218 - INFO - File analysis for macros\Mach3Development\Curve0.dat:
+2025-04-16 09:45:12,306 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:12,402 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:45:12,490 - INFO -   No changes needed for file
+2025-04-16 09:45:12,565 - INFO - Syncing file: macros\Mach3Development\M55.m1s
+2025-04-16 09:45:12,652 - INFO - File analysis for macros\Mach3Development\M55.m1s:
+2025-04-16 09:45:12,724 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:12,807 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:12,891 - INFO -   No changes needed for file
+2025-04-16 09:45:12,974 - INFO - Syncing file: macros\Mach3Development\m6Start.m1s
+2025-04-16 09:45:13,048 - INFO - File analysis for macros\Mach3Development\m6Start.m1s:
+2025-04-16 09:45:13,133 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:13,211 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:13,290 - INFO -   No changes needed for file
+2025-04-16 09:45:13,363 - INFO - Syncing file: macros\Mach3Development\M51.m1s
+2025-04-16 09:45:13,449 - INFO - File analysis for macros\Mach3Development\M51.m1s:
+2025-04-16 09:45:13,523 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:13,613 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:45:13,688 - INFO -   No changes needed for file
+2025-04-16 09:45:13,771 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\load_tool_data.m1s
+2025-04-16 09:45:13,884 - INFO - File analysis for macros\Mach3Development\01_CustomMacros\load_tool_data.m1s:
+2025-04-16 09:45:13,964 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:14,042 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:14,129 - INFO -   No changes needed for file
+2025-04-16 09:45:14,214 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094514.bak
+2025-04-16 09:45:14,291 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:45:14,371 - INFO - Syncing folder contents: ToolManagement
+2025-04-16 09:45:14,567 - INFO - Created directory in shared: ToolManagement\sync_test
+2025-04-16 09:45:14,651 - INFO - Created directory in shared: ToolManagement\sync_test\empty_test_dir
+2025-04-16 09:45:14,730 - INFO - Created directory in shared: ToolManagement\sync_test\nested_test
+2025-04-16 09:45:14,807 - INFO - Created directory in shared: ToolManagement\sync_test\nested_test\deeper
+2025-04-16 09:45:14,906 - INFO - Created directory in Mach3: ToolManagement\Data\real-data
+2025-04-16 09:45:14,985 - INFO - Deleted directory from shared (propagated): ToolManagement\Data\real-data
+2025-04-16 09:45:15,064 - INFO - Deleted directory from mach3 (propagated): ToolManagement\sync_test
+2025-04-16 09:45:15,149 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py
+2025-04-16 09:45:15,230 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:
+2025-04-16 09:45:15,309 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:15,394 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:45:15,482 - INFO -   No changes needed for file
+2025-04-16 09:45:15,576 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA
+2025-04-16 09:45:15,679 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA:
+2025-04-16 09:45:15,764 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:15,848 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:45:15,935 - INFO -   No changes needed for file
+2025-04-16 09:45:16,038 - INFO - Syncing file: ToolManagement\Scripts\test_all.py
+2025-04-16 09:45:16,133 - INFO - File analysis for ToolManagement\Scripts\test_all.py:
+2025-04-16 09:45:16,224 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:16,315 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:45:16,416 - INFO -   No changes needed for file
+2025-04-16 09:45:16,516 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA
+2025-04-16 09:45:16,603 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA:
+2025-04-16 09:45:16,679 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:16,753 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:45:16,834 - INFO -   No changes needed for file
+2025-04-16 09:45:16,915 - INFO - Syncing file: ToolManagement\Scripts\requirements.txt
+2025-04-16 09:45:16,999 - INFO - File analysis for ToolManagement\Scripts\requirements.txt:
+2025-04-16 09:45:17,071 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:17,172 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:17,256 - INFO -   No changes needed for file
+2025-04-16 09:45:17,335 - INFO - Syncing file: ToolManagement\Data\tool-data.csv
+2025-04-16 09:45:17,422 - INFO - File analysis for ToolManagement\Data\tool-data.csv:
+2025-04-16 09:45:17,497 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:17,571 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:45:17,653 - INFO -   No changes needed for file
+2025-04-16 09:45:17,739 - INFO - Syncing file: ToolManagement\Logs\python_test_log.txt
+2025-04-16 09:45:17,841 - INFO - File analysis for ToolManagement\Logs\python_test_log.txt:
+2025-04-16 09:45:17,911 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:18,010 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:45:18,097 - INFO -   No changes needed for file
+2025-04-16 09:45:18,180 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py
+2025-04-16 09:45:18,256 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:
+2025-04-16 09:45:18,336 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:18,439 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:45:18,522 - INFO -   No changes needed for file
+2025-04-16 09:45:18,596 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA
+2025-04-16 09:45:18,680 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA:
+2025-04-16 09:45:18,781 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:18,872 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:45:18,947 - INFO -   No changes needed for file
+2025-04-16 09:45:19,036 - INFO - Syncing file: ToolManagement\Logs\execution_status.txt
+2025-04-16 09:45:19,116 - INFO - File analysis for ToolManagement\Logs\execution_status.txt:
+2025-04-16 09:45:19,207 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:19,309 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:45:19,398 - INFO -   No changes needed for file
+2025-04-16 09:45:19,486 - INFO - Syncing file: ToolManagement\Logs\vbscript_test_log.txt
+2025-04-16 09:45:19,566 - INFO - File analysis for ToolManagement\Logs\vbscript_test_log.txt:
+2025-04-16 09:45:19,648 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:19,747 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:19,829 - INFO -   No changes needed for file
+2025-04-16 09:45:19,925 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py
+2025-04-16 09:45:20,007 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:
+2025-04-16 09:45:20,085 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:20,159 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:45:20,246 - INFO -   No changes needed for file
+2025-04-16 09:45:20,329 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094520.bak
+2025-04-16 09:45:20,432 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:45:20,525 - INFO - Syncing folder contents: DevelopmentEnvironment
+2025-04-16 09:45:20,863 - INFO - Syncing file: DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log
+2025-04-16 09:45:20,959 - INFO - File analysis for DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log:
+2025-04-16 09:45:21,053 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:21,139 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:45:21,239 - INFO -   No changes needed for file
+2025-04-16 09:45:21,339 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250416.log
+2025-04-16 09:45:21,464 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250416.log:
+2025-04-16 09:45:21,547 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:45:21,627 - INFO -   Time diff: 79.89009809494019 seconds vs tolerance 3
+2025-04-16 09:45:21,707 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:45:21,794 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:45:21,834 - INFO - Syncing file: DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:45:21,838 - INFO - File analysis for DevelopmentEnvironment\windows-sync\sync_state.json:
+2025-04-16 09:45:21,939 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:45:22,028 - INFO -   Time diff: 79.33183479309082 seconds vs tolerance 3
+2025-04-16 09:45:22,117 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:45:22,219 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:45:22,269 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250415.log
+2025-04-16 09:45:22,421 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250415.log:
+2025-04-16 09:45:22,517 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:22,593 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:45:22,594 - INFO -   No changes needed for file
+2025-04-16 09:45:22,646 - INFO - Syncing file: DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log
+2025-04-16 09:45:22,734 - INFO - File analysis for DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log:
+2025-04-16 09:45:22,832 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:22,927 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:45:23,024 - INFO -   No changes needed for file
+2025-04-16 09:45:23,117 - INFO - Syncing file: DevelopmentEnvironment\sync-tests\improved-sync-test.py
+2025-04-16 09:45:23,216 - INFO - File analysis for DevelopmentEnvironment\sync-tests\improved-sync-test.py:
+2025-04-16 09:45:23,305 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:23,378 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:45:23,479 - INFO -   No changes needed for file
+2025-04-16 09:45:23,561 - INFO - Syncing file: DevelopmentEnvironment\windows-selective-sync-python.py
+2025-04-16 09:45:23,648 - INFO - File analysis for DevelopmentEnvironment\windows-selective-sync-python.py:
+2025-04-16 09:45:23,739 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:45:23,817 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:45:23,906 - INFO -   No changes needed for file
+2025-04-16 09:45:23,987 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094523.bak
+2025-04-16 09:45:24,083 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:45:24,181 - INFO - Syncing file: jaga.txt
+2025-04-16 09:45:24,267 - INFO - Syncing file: python location.txt
+2025-04-16 09:45:24,377 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094524.bak
+2025-04-16 09:45:24,470 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:45:24,569 - INFO - Sync completed in 22.12 seconds
+2025-04-16 09:45:24,650 - INFO - ==========================================================
+2025-04-16 09:46:25,470 - INFO - ========== Starting sync at 2025-04-16 09:46:25 ==========
+2025-04-16 09:46:25,580 - INFO - Syncing folder contents: macros\Mach3Development
+2025-04-16 09:46:26,010 - INFO - Syncing file: macros\Mach3Development\M41.m1s
+2025-04-16 09:46:26,114 - INFO - File analysis for macros\Mach3Development\M41.m1s:
+2025-04-16 09:46:26,218 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:26,278 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:26,279 - INFO -   No changes needed for file
+2025-04-16 09:46:26,280 - INFO - Syncing file: macros\Mach3Development\tools3.dat
+2025-04-16 09:46:26,300 - INFO - File analysis for macros\Mach3Development\tools3.dat:
+2025-04-16 09:46:26,314 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:26,315 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:26,315 - INFO -   No changes needed for file
+2025-04-16 09:46:26,316 - INFO - Syncing file: macros\Mach3Development\M50.m1s
+2025-04-16 09:46:26,320 - INFO - File analysis for macros\Mach3Development\M50.m1s:
+2025-04-16 09:46:26,387 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:26,415 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:26,416 - INFO -   No changes needed for file
+2025-04-16 09:46:26,422 - INFO - Syncing file: macros\Mach3Development\spindlespeed.m1s
+2025-04-16 09:46:26,437 - INFO - File analysis for macros\Mach3Development\spindlespeed.m1s:
+2025-04-16 09:46:26,520 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:26,534 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:26,679 - INFO -   No changes needed for file
+2025-04-16 09:46:26,771 - INFO - Syncing file: macros\Mach3Development\FeedRate.m1s
+2025-04-16 09:46:26,860 - INFO - File analysis for macros\Mach3Development\FeedRate.m1s:
+2025-04-16 09:46:26,980 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:27,038 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:27,038 - INFO -   No changes needed for file
+2025-04-16 09:46:27,039 - INFO - Syncing file: macros\Mach3Development\HiddenScript.m1s
+2025-04-16 09:46:27,092 - INFO - File analysis for macros\Mach3Development\HiddenScript.m1s:
+2025-04-16 09:46:27,180 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:27,281 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:27,358 - INFO -   No changes needed for file
+2025-04-16 09:46:27,455 - INFO - Syncing file: macros\Mach3Development\Curve1.dat
+2025-04-16 09:46:27,544 - INFO - File analysis for macros\Mach3Development\Curve1.dat:
+2025-04-16 09:46:27,623 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:27,722 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:46:27,779 - INFO -   No changes needed for file
+2025-04-16 09:46:27,780 - INFO - Syncing file: macros\Mach3Development\M10.m1s
+2025-04-16 09:46:27,808 - INFO - File analysis for macros\Mach3Development\M10.m1s:
+2025-04-16 09:46:27,810 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:27,811 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:27,812 - INFO -   No changes needed for file
+2025-04-16 09:46:27,813 - INFO - Syncing file: macros\Mach3Development\test_python_trigger.m1s
+2025-04-16 09:46:27,817 - INFO - File analysis for macros\Mach3Development\test_python_trigger.m1s:
+2025-04-16 09:46:27,830 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:27,831 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:46:27,832 - INFO -   No changes needed for file
+2025-04-16 09:46:27,832 - INFO - Syncing file: macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s
+2025-04-16 09:46:27,843 - INFO - File analysis for macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s:
+2025-04-16 09:46:27,849 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:27,849 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:46:27,850 - INFO -   No changes needed for file
+2025-04-16 09:46:27,851 - INFO - Syncing file: macros\Mach3Development\M6End.m1s
+2025-04-16 09:46:27,863 - INFO - File analysis for macros\Mach3Development\M6End.m1s:
+2025-04-16 09:46:27,864 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:27,868 - INFO -   Time diff: 7201.0 seconds vs tolerance 3
+2025-04-16 09:46:27,884 - INFO -   No changes needed for file
+2025-04-16 09:46:27,918 - INFO - Syncing file: macros\Mach3Development\m4.m1s
+2025-04-16 09:46:27,971 - INFO - File analysis for macros\Mach3Development\m4.m1s:
+2025-04-16 09:46:27,999 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,000 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,001 - INFO -   No changes needed for file
+2025-04-16 09:46:28,001 - INFO - Syncing file: macros\Mach3Development\M11.m1s
+2025-04-16 09:46:28,005 - INFO - File analysis for macros\Mach3Development\M11.m1s:
+2025-04-16 09:46:28,006 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,007 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,015 - INFO -   No changes needed for file
+2025-04-16 09:46:28,016 - INFO - Syncing file: macros\Mach3Development\M66.m1s
+2025-04-16 09:46:28,020 - INFO - File analysis for macros\Mach3Development\M66.m1s:
+2025-04-16 09:46:28,022 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,022 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,023 - INFO -   No changes needed for file
+2025-04-16 09:46:28,024 - INFO - Syncing file: macros\Mach3Development\M6Start.m1s
+2025-04-16 09:46:28,035 - INFO - File analysis for macros\Mach3Development\M6Start.m1s:
+2025-04-16 09:46:28,039 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,040 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:28,041 - INFO -   No changes needed for file
+2025-04-16 09:46:28,050 - INFO - Syncing file: macros\Mach3Development\m5.m1s
+2025-04-16 09:46:28,066 - INFO - File analysis for macros\Mach3Development\m5.m1s:
+2025-04-16 09:46:28,068 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,068 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,069 - INFO -   No changes needed for file
+2025-04-16 09:46:28,070 - INFO - Syncing file: macros\Mach3Development\Curve2.dat
+2025-04-16 09:46:28,085 - INFO - File analysis for macros\Mach3Development\Curve2.dat:
+2025-04-16 09:46:28,270 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,342 - INFO -   Time diff: 2331033.6409089565 seconds vs tolerance 3
+2025-04-16 09:46:28,361 - INFO -   No changes needed for file
+2025-04-16 09:46:28,365 - INFO - Syncing file: macros\Mach3Development\M40.m1s
+2025-04-16 09:46:28,393 - INFO - File analysis for macros\Mach3Development\M40.m1s:
+2025-04-16 09:46:28,394 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,395 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,396 - INFO -   No changes needed for file
+2025-04-16 09:46:28,397 - INFO - Syncing file: macros\Mach3Development\m3.m1s
+2025-04-16 09:46:28,410 - INFO - File analysis for macros\Mach3Development\m3.m1s:
+2025-04-16 09:46:28,468 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,469 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,477 - INFO -   No changes needed for file
+2025-04-16 09:46:28,478 - INFO - Syncing file: macros\Mach3Development\Linearity.dat
+2025-04-16 09:46:28,482 - INFO - File analysis for macros\Mach3Development\Linearity.dat:
+2025-04-16 09:46:28,483 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,486 - INFO -   Time diff: 2331033.637830019 seconds vs tolerance 3
+2025-04-16 09:46:28,487 - INFO -   No changes needed for file
+2025-04-16 09:46:28,494 - INFO - Syncing file: macros\Mach3Development\fixtures.dat
+2025-04-16 09:46:28,498 - INFO - File analysis for macros\Mach3Development\fixtures.dat:
+2025-04-16 09:46:28,500 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,501 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:28,502 - INFO -   No changes needed for file
+2025-04-16 09:46:28,502 - INFO - Syncing file: macros\Mach3Development\VerifyTest.m1s
+2025-04-16 09:46:28,513 - INFO - File analysis for macros\Mach3Development\VerifyTest.m1s:
+2025-04-16 09:46:28,515 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,517 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,517 - INFO -   No changes needed for file
+2025-04-16 09:46:28,518 - INFO - Syncing file: macros\Mach3Development\Curve0.dat
+2025-04-16 09:46:28,530 - INFO - File analysis for macros\Mach3Development\Curve0.dat:
+2025-04-16 09:46:28,575 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,583 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:46:28,586 - INFO -   No changes needed for file
+2025-04-16 09:46:28,587 - INFO - Syncing file: macros\Mach3Development\M55.m1s
+2025-04-16 09:46:28,593 - INFO - File analysis for macros\Mach3Development\M55.m1s:
+2025-04-16 09:46:28,594 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,595 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,604 - INFO -   No changes needed for file
+2025-04-16 09:46:28,605 - INFO - Syncing file: macros\Mach3Development\m6Start.m1s
+2025-04-16 09:46:28,609 - INFO - File analysis for macros\Mach3Development\m6Start.m1s:
+2025-04-16 09:46:28,611 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,614 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:28,624 - INFO -   No changes needed for file
+2025-04-16 09:46:28,627 - INFO - Syncing file: macros\Mach3Development\M51.m1s
+2025-04-16 09:46:28,644 - INFO - File analysis for macros\Mach3Development\M51.m1s:
+2025-04-16 09:46:28,646 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,647 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:46:28,647 - INFO -   No changes needed for file
+2025-04-16 09:46:28,648 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\load_tool_data.m1s
+2025-04-16 09:46:28,654 - INFO - File analysis for macros\Mach3Development\01_CustomMacros\load_tool_data.m1s:
+2025-04-16 09:46:28,655 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,664 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:28,665 - INFO -   No changes needed for file
+2025-04-16 09:46:28,669 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094628.bak
+2025-04-16 09:46:28,675 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:46:28,692 - INFO - Syncing folder contents: ToolManagement
+2025-04-16 09:46:28,829 - INFO - Created directory in shared: ToolManagement\Data\real-data
+2025-04-16 09:46:28,832 - INFO - Deleted directory from mach3 (propagated): ToolManagement\Data\real-data
+2025-04-16 09:46:28,833 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py
+2025-04-16 09:46:28,847 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:
+2025-04-16 09:46:28,849 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,850 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:46:28,852 - INFO -   No changes needed for file
+2025-04-16 09:46:28,853 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA
+2025-04-16 09:46:28,869 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA:
+2025-04-16 09:46:28,870 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,871 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:46:28,872 - INFO -   No changes needed for file
+2025-04-16 09:46:28,873 - INFO - Syncing file: ToolManagement\Scripts\test_all.py
+2025-04-16 09:46:28,885 - INFO - File analysis for ToolManagement\Scripts\test_all.py:
+2025-04-16 09:46:28,886 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:28,887 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:46:28,888 - INFO -   No changes needed for file
+2025-04-16 09:46:28,889 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA
+2025-04-16 09:46:28,913 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA:
+2025-04-16 09:46:28,991 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,063 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:46:29,153 - INFO -   No changes needed for file
+2025-04-16 09:46:29,247 - INFO - Syncing file: ToolManagement\Scripts\requirements.txt
+2025-04-16 09:46:29,350 - INFO - File analysis for ToolManagement\Scripts\requirements.txt:
+2025-04-16 09:46:29,404 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,405 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:29,407 - INFO -   No changes needed for file
+2025-04-16 09:46:29,410 - INFO - Syncing file: ToolManagement\Data\tool-data.csv
+2025-04-16 09:46:29,445 - INFO - File analysis for ToolManagement\Data\tool-data.csv:
+2025-04-16 09:46:29,447 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,449 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:46:29,450 - INFO -   No changes needed for file
+2025-04-16 09:46:29,451 - INFO - Syncing file: ToolManagement\Logs\python_test_log.txt
+2025-04-16 09:46:29,464 - INFO - File analysis for ToolManagement\Logs\python_test_log.txt:
+2025-04-16 09:46:29,466 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,467 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:46:29,468 - INFO -   No changes needed for file
+2025-04-16 09:46:29,469 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py
+2025-04-16 09:46:29,475 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:
+2025-04-16 09:46:29,484 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,486 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:46:29,489 - INFO -   No changes needed for file
+2025-04-16 09:46:29,491 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA
+2025-04-16 09:46:29,507 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA:
+2025-04-16 09:46:29,510 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,512 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:46:29,514 - INFO -   No changes needed for file
+2025-04-16 09:46:29,522 - INFO - Syncing file: ToolManagement\Logs\execution_status.txt
+2025-04-16 09:46:29,532 - INFO - File analysis for ToolManagement\Logs\execution_status.txt:
+2025-04-16 09:46:29,599 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,685 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:46:29,770 - INFO -   No changes needed for file
+2025-04-16 09:46:29,771 - INFO - Syncing file: ToolManagement\Logs\vbscript_test_log.txt
+2025-04-16 09:46:29,786 - INFO - File analysis for ToolManagement\Logs\vbscript_test_log.txt:
+2025-04-16 09:46:29,788 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,789 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:29,790 - INFO -   No changes needed for file
+2025-04-16 09:46:29,791 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py
+2025-04-16 09:46:29,826 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:
+2025-04-16 09:46:29,840 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:29,843 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:46:29,852 - INFO -   No changes needed for file
+2025-04-16 09:46:29,983 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094629.bak
+2025-04-16 09:46:30,000 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:46:30,029 - INFO - Syncing folder contents: DevelopmentEnvironment
+2025-04-16 09:46:30,356 - INFO - Syncing file: DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log
+2025-04-16 09:46:30,362 - INFO - File analysis for DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log:
+2025-04-16 09:46:30,419 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:30,429 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:46:30,430 - INFO -   No changes needed for file
+2025-04-16 09:46:30,432 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250416.log
+2025-04-16 09:46:30,479 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250416.log:
+2025-04-16 09:46:30,480 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:46:30,481 - INFO -   Time diff: 68.7073085308075 seconds vs tolerance 3
+2025-04-16 09:46:30,482 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:46:30,488 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:46:30,490 - INFO - Syncing file: DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:46:30,502 - INFO - File analysis for DevelopmentEnvironment\windows-sync\sync_state.json:
+2025-04-16 09:46:30,504 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:46:30,505 - INFO -   Time diff: 69.54524970054626 seconds vs tolerance 3
+2025-04-16 09:46:30,507 - INFO -   CONFLICT: Both versions have changed
+2025-04-16 09:46:30,510 - INFO -   RESOLVED: Used Mach3 version (newer)
+2025-04-16 09:46:30,511 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250415.log
+2025-04-16 09:46:30,582 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250415.log:
+2025-04-16 09:46:30,592 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:30,594 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:46:30,597 - INFO -   No changes needed for file
+2025-04-16 09:46:30,600 - INFO - Syncing file: DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log
+2025-04-16 09:46:30,614 - INFO - File analysis for DevelopmentEnvironment\test_logs\simple_test_20250415_111046.log:
+2025-04-16 09:46:30,617 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:30,619 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:46:30,620 - INFO -   No changes needed for file
+2025-04-16 09:46:30,638 - INFO - Syncing file: DevelopmentEnvironment\sync-tests\improved-sync-test.py
+2025-04-16 09:46:30,656 - INFO - File analysis for DevelopmentEnvironment\sync-tests\improved-sync-test.py:
+2025-04-16 09:46:30,659 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:30,659 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:46:30,660 - INFO -   No changes needed for file
+2025-04-16 09:46:30,661 - INFO - Syncing file: DevelopmentEnvironment\windows-selective-sync-python.py
+2025-04-16 09:46:30,675 - INFO - File analysis for DevelopmentEnvironment\windows-selective-sync-python.py:
+2025-04-16 09:46:30,678 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:46:30,680 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:46:30,683 - INFO -   No changes needed for file
+2025-04-16 09:46:30,716 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094630.bak
+2025-04-16 09:46:30,822 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:46:30,839 - INFO - Syncing file: jaga.txt
+2025-04-16 09:46:30,850 - INFO - Syncing file: python location.txt
+2025-04-16 09:46:30,858 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094630.bak
+2025-04-16 09:46:30,863 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:46:30,878 - INFO - Sync completed in 5.41 seconds
+2025-04-16 09:46:30,878 - INFO - ==========================================================
+2025-04-16 09:47:31,353 - INFO - ========== Starting sync at 2025-04-16 09:47:31 ==========
+2025-04-16 09:47:31,469 - INFO - Syncing folder contents: macros\Mach3Development
+2025-04-16 09:47:31,813 - INFO - Syncing file: macros\Mach3Development\M41.m1s
+2025-04-16 09:47:31,901 - INFO - File analysis for macros\Mach3Development\M41.m1s:
+2025-04-16 09:47:31,989 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:32,109 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:32,204 - INFO -   No changes needed for file
+2025-04-16 09:47:32,295 - INFO - Syncing file: macros\Mach3Development\tools3.dat
+2025-04-16 09:47:32,395 - INFO - File analysis for macros\Mach3Development\tools3.dat:
+2025-04-16 09:47:32,475 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:32,548 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:32,639 - INFO -   No changes needed for file
+2025-04-16 09:47:32,733 - INFO - Syncing file: macros\Mach3Development\M50.m1s
+2025-04-16 09:47:32,805 - INFO - File analysis for macros\Mach3Development\M50.m1s:
+2025-04-16 09:47:32,904 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:32,971 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:33,043 - INFO -   No changes needed for file
+2025-04-16 09:47:33,121 - INFO - Syncing file: macros\Mach3Development\spindlespeed.m1s
+2025-04-16 09:47:33,231 - INFO - File analysis for macros\Mach3Development\spindlespeed.m1s:
+2025-04-16 09:47:33,314 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:33,402 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:33,473 - INFO -   No changes needed for file
+2025-04-16 09:47:33,554 - INFO - Syncing file: macros\Mach3Development\FeedRate.m1s
+2025-04-16 09:47:33,661 - INFO - File analysis for macros\Mach3Development\FeedRate.m1s:
+2025-04-16 09:47:33,751 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:33,841 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:33,928 - INFO -   No changes needed for file
+2025-04-16 09:47:34,023 - INFO - Syncing file: macros\Mach3Development\HiddenScript.m1s
+2025-04-16 09:47:34,126 - INFO - File analysis for macros\Mach3Development\HiddenScript.m1s:
+2025-04-16 09:47:34,203 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:34,294 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:34,396 - INFO -   No changes needed for file
+2025-04-16 09:47:34,490 - INFO - Syncing file: macros\Mach3Development\Curve1.dat
+2025-04-16 09:47:34,589 - INFO - File analysis for macros\Mach3Development\Curve1.dat:
+2025-04-16 09:47:34,669 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:34,771 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:47:34,863 - INFO -   No changes needed for file
+2025-04-16 09:47:34,950 - INFO - Syncing file: macros\Mach3Development\M10.m1s
+2025-04-16 09:47:35,027 - INFO - File analysis for macros\Mach3Development\M10.m1s:
+2025-04-16 09:47:35,110 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:35,191 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:35,292 - INFO -   No changes needed for file
+2025-04-16 09:47:35,361 - INFO - Syncing file: macros\Mach3Development\test_python_trigger.m1s
+2025-04-16 09:47:35,471 - INFO - File analysis for macros\Mach3Development\test_python_trigger.m1s:
+2025-04-16 09:47:35,550 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:35,622 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:47:35,690 - INFO -   No changes needed for file
+2025-04-16 09:47:35,767 - INFO - Syncing file: macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s
+2025-04-16 09:47:35,869 - INFO - File analysis for macros\Mach3Development\99_MacroFunctionalityTesting\check_dro.m1s:
+2025-04-16 09:47:35,963 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:36,050 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:47:36,143 - INFO -   No changes needed for file
+2025-04-16 09:47:36,233 - INFO - Syncing file: macros\Mach3Development\M6End.m1s
+2025-04-16 09:47:36,371 - INFO - File analysis for macros\Mach3Development\M6End.m1s:
+2025-04-16 09:47:36,458 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:36,551 - INFO -   Time diff: 7201.0 seconds vs tolerance 3
+2025-04-16 09:47:36,638 - INFO -   No changes needed for file
+2025-04-16 09:47:36,734 - INFO - Syncing file: macros\Mach3Development\m4.m1s
+2025-04-16 09:47:36,847 - INFO - File analysis for macros\Mach3Development\m4.m1s:
+2025-04-16 09:47:36,935 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:37,051 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:37,143 - INFO -   No changes needed for file
+2025-04-16 09:47:37,227 - INFO - Syncing file: macros\Mach3Development\M11.m1s
+2025-04-16 09:47:37,313 - INFO - File analysis for macros\Mach3Development\M11.m1s:
+2025-04-16 09:47:37,394 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:37,469 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:37,538 - INFO -   No changes needed for file
+2025-04-16 09:47:37,624 - INFO - Syncing file: macros\Mach3Development\M66.m1s
+2025-04-16 09:47:37,711 - INFO - File analysis for macros\Mach3Development\M66.m1s:
+2025-04-16 09:47:37,789 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:37,869 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:37,951 - INFO -   No changes needed for file
+2025-04-16 09:47:38,052 - INFO - Syncing file: macros\Mach3Development\M6Start.m1s
+2025-04-16 09:47:38,132 - INFO - File analysis for macros\Mach3Development\M6Start.m1s:
+2025-04-16 09:47:38,215 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:38,288 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:38,373 - INFO -   No changes needed for file
+2025-04-16 09:47:38,451 - INFO - Syncing file: macros\Mach3Development\m5.m1s
+2025-04-16 09:47:38,551 - INFO - File analysis for macros\Mach3Development\m5.m1s:
+2025-04-16 09:47:38,656 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:38,758 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:38,850 - INFO -   No changes needed for file
+2025-04-16 09:47:38,945 - INFO - Syncing file: macros\Mach3Development\Curve2.dat
+2025-04-16 09:47:39,050 - INFO - File analysis for macros\Mach3Development\Curve2.dat:
+2025-04-16 09:47:39,142 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:39,239 - INFO -   Time diff: 2331033.6409089565 seconds vs tolerance 3
+2025-04-16 09:47:39,319 - INFO -   No changes needed for file
+2025-04-16 09:47:39,408 - INFO - Syncing file: macros\Mach3Development\M40.m1s
+2025-04-16 09:47:39,507 - INFO - File analysis for macros\Mach3Development\M40.m1s:
+2025-04-16 09:47:39,594 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:39,663 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:39,736 - INFO -   No changes needed for file
+2025-04-16 09:47:39,820 - INFO - Syncing file: macros\Mach3Development\m3.m1s
+2025-04-16 09:47:39,921 - INFO - File analysis for macros\Mach3Development\m3.m1s:
+2025-04-16 09:47:40,018 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:40,094 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:40,184 - INFO -   No changes needed for file
+2025-04-16 09:47:40,259 - INFO - Syncing file: macros\Mach3Development\Linearity.dat
+2025-04-16 09:47:40,362 - INFO - File analysis for macros\Mach3Development\Linearity.dat:
+2025-04-16 09:47:40,456 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:40,531 - INFO -   Time diff: 2331033.637830019 seconds vs tolerance 3
+2025-04-16 09:47:40,619 - INFO -   No changes needed for file
+2025-04-16 09:47:40,691 - INFO - Syncing file: macros\Mach3Development\fixtures.dat
+2025-04-16 09:47:40,795 - INFO - File analysis for macros\Mach3Development\fixtures.dat:
+2025-04-16 09:47:40,881 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:40,978 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:41,081 - INFO -   No changes needed for file
+2025-04-16 09:47:41,176 - INFO - Syncing file: macros\Mach3Development\VerifyTest.m1s
+2025-04-16 09:47:41,269 - INFO - File analysis for macros\Mach3Development\VerifyTest.m1s:
+2025-04-16 09:47:41,359 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:41,464 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:41,540 - INFO -   No changes needed for file
+2025-04-16 09:47:41,636 - INFO - Syncing file: macros\Mach3Development\Curve0.dat
+2025-04-16 09:47:41,710 - INFO - File analysis for macros\Mach3Development\Curve0.dat:
+2025-04-16 09:47:41,801 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:41,889 - INFO -   Time diff: 2331033.635997057 seconds vs tolerance 3
+2025-04-16 09:47:41,969 - INFO -   No changes needed for file
+2025-04-16 09:47:42,066 - INFO - Syncing file: macros\Mach3Development\M55.m1s
+2025-04-16 09:47:42,166 - INFO - File analysis for macros\Mach3Development\M55.m1s:
+2025-04-16 09:47:42,248 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:42,345 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:42,426 - INFO -   No changes needed for file
+2025-04-16 09:47:42,511 - INFO - Syncing file: macros\Mach3Development\m6Start.m1s
+2025-04-16 09:47:42,610 - INFO - File analysis for macros\Mach3Development\m6Start.m1s:
+2025-04-16 09:47:42,688 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:42,774 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:42,853 - INFO -   No changes needed for file
+2025-04-16 09:47:42,939 - INFO - Syncing file: macros\Mach3Development\M51.m1s
+2025-04-16 09:47:43,036 - INFO - File analysis for macros\Mach3Development\M51.m1s:
+2025-04-16 09:47:43,130 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:43,232 - INFO -   Time diff: 7200.0 seconds vs tolerance 3
+2025-04-16 09:47:43,320 - INFO -   No changes needed for file
+2025-04-16 09:47:43,419 - INFO - Syncing file: macros\Mach3Development\01_CustomMacros\load_tool_data.m1s
+2025-04-16 09:47:43,518 - INFO - File analysis for macros\Mach3Development\01_CustomMacros\load_tool_data.m1s:
+2025-04-16 09:47:43,608 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:43,704 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:43,789 - INFO -   No changes needed for file
+2025-04-16 09:47:43,877 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094743.bak
+2025-04-16 09:47:43,957 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:47:44,034 - INFO - Syncing folder contents: ToolManagement
+2025-04-16 09:47:44,255 - INFO - Created directory in Mach3: ToolManagement\sync_test
+2025-04-16 09:47:44,333 - INFO - Created directory in Mach3: ToolManagement\sync_test\empty_test_dir
+2025-04-16 09:47:44,417 - INFO - Created directory in Mach3: ToolManagement\sync_test\nested_test
+2025-04-16 09:47:44,508 - INFO - Created directory in Mach3: ToolManagement\sync_test\nested_test\deeper
+2025-04-16 09:47:44,598 - INFO - Deleted directory from shared (propagated): ToolManagement\sync_test
+2025-04-16 09:47:44,692 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py
+2025-04-16 09:47:44,796 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:
+2025-04-16 09:47:44,897 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:44,972 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:47:45,047 - INFO -   No changes needed for file
+2025-04-16 09:47:45,134 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA
+2025-04-16 09:47:45,213 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:Zone.Identifier:$DATA:
+2025-04-16 09:47:45,308 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:45,393 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:47:45,473 - INFO -   No changes needed for file
+2025-04-16 09:47:45,554 - INFO - Syncing file: ToolManagement\Scripts\test_all.py
+2025-04-16 09:47:45,632 - INFO - File analysis for ToolManagement\Scripts\test_all.py:
+2025-04-16 09:47:45,714 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:45,807 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:47:45,897 - INFO -   No changes needed for file
+2025-04-16 09:47:45,992 - INFO - Syncing file: ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA
+2025-04-16 09:47:46,077 - INFO - File analysis for ToolManagement\Scripts\test_csv_handling.py:Zone.Identifier:$DATA:
+2025-04-16 09:47:46,161 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:46,256 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:47:46,338 - INFO -   No changes needed for file
+2025-04-16 09:47:46,426 - INFO - Syncing file: ToolManagement\Scripts\requirements.txt
+2025-04-16 09:47:46,530 - INFO - File analysis for ToolManagement\Scripts\requirements.txt:
+2025-04-16 09:47:46,617 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:46,702 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:46,785 - INFO -   No changes needed for file
+2025-04-16 09:47:46,857 - INFO - Syncing file: ToolManagement\Data\tool-data.csv
+2025-04-16 09:47:46,945 - INFO - File analysis for ToolManagement\Data\tool-data.csv:
+2025-04-16 09:47:47,021 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:47,097 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:47:47,177 - INFO -   No changes needed for file
+2025-04-16 09:47:47,261 - INFO - Syncing file: ToolManagement\Logs\python_test_log.txt
+2025-04-16 09:47:47,346 - INFO - File analysis for ToolManagement\Logs\python_test_log.txt:
+2025-04-16 09:47:47,420 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:47,516 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:47:47,597 - INFO -   No changes needed for file
+2025-04-16 09:47:47,697 - INFO - Syncing file: ToolManagement\Scripts\test_basic_execution.py
+2025-04-16 09:47:47,783 - INFO - File analysis for ToolManagement\Scripts\test_basic_execution.py:
+2025-04-16 09:47:47,857 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:47,953 - INFO -   Time diff: 4.76837158203125e-07 seconds vs tolerance 3
+2025-04-16 09:47:48,040 - INFO -   No changes needed for file
+2025-04-16 09:47:48,125 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA
+2025-04-16 09:47:48,231 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:Zone.Identifier:$DATA:
+2025-04-16 09:47:48,314 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:48,412 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:47:48,506 - INFO -   No changes needed for file
+2025-04-16 09:47:48,599 - INFO - Syncing file: ToolManagement\Logs\execution_status.txt
+2025-04-16 09:47:48,709 - INFO - File analysis for ToolManagement\Logs\execution_status.txt:
+2025-04-16 09:47:48,808 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:48,885 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:47:48,967 - INFO -   No changes needed for file
+2025-04-16 09:47:49,049 - INFO - Syncing file: ToolManagement\Logs\vbscript_test_log.txt
+2025-04-16 09:47:49,135 - INFO - File analysis for ToolManagement\Logs\vbscript_test_log.txt:
+2025-04-16 09:47:49,207 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:49,286 - INFO -   Time diff: 0.0 seconds vs tolerance 3
+2025-04-16 09:47:49,369 - INFO -   No changes needed for file
+2025-04-16 09:47:49,449 - INFO - Syncing file: ToolManagement\Scripts\test_file_io.py
+2025-04-16 09:47:49,535 - INFO - File analysis for ToolManagement\Scripts\test_file_io.py:
+2025-04-16 09:47:49,607 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:49,689 - INFO -   Time diff: 2.384185791015625e-07 seconds vs tolerance 3
+2025-04-16 09:47:49,776 - INFO -   No changes needed for file
+2025-04-16 09:47:49,868 - INFO - Created backup of sync state: C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json.20250416_094749.bak
+2025-04-16 09:47:49,950 - INFO - Sync state saved to C:\Mach3\DevelopmentEnvironment\windows-sync\sync_state.json
+2025-04-16 09:47:50,049 - INFO - Syncing folder contents: DevelopmentEnvironment
+2025-04-16 09:47:50,437 - INFO - Syncing file: DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log
+2025-04-16 09:47:50,514 - INFO - File analysis for DevelopmentEnvironment\test_logs\comprehensive_test_20250415_120052.log:
+2025-04-16 09:47:50,589 - INFO -   Mach3 changed: False, Shared changed: False
+2025-04-16 09:47:50,672 - INFO -   Time diff: 7.152557373046875e-07 seconds vs tolerance 3
+2025-04-16 09:47:50,768 - INFO -   No changes needed for file
+2025-04-16 09:47:50,866 - INFO - Syncing file: DevelopmentEnvironment\logs\sync_20250416.log
+2025-04-16 09:47:50,994 - INFO - File analysis for DevelopmentEnvironment\logs\sync_20250416.log:
+2025-04-16 09:47:51,083 - INFO -   Mach3 changed: True, Shared changed: True
+2025-04-16 09:47:51,182 - INFO -   Time diff: 80.38437247276306 seconds vs tolerance 3
+2025-04-16 09:47:51,282 - INFO -   CONFLICT: Both versions have changed

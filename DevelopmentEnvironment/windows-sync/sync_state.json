@@ -213,8 +213,8 @@
       },
       "DevelopmentEnvironment/windows-sync/sync_state.json": {
         "is_dir": false,
-        "mtime": 1744785677.2152958,
-        "hash": "1a3f281067c62b3c6a41f31cd30ff676"
+        "mtime": 1744785989.9733427,
+        "hash": "78e71a722cee078a4a7ef1c947f94fa8"
       },
       "DevelopmentEnvironment/test_logs/simple_test_20250415_111046.log": {
         "is_dir": false,
@@ -280,23 +280,8 @@
       },
       "DevelopmentEnvironment/logs/sync_20250416.log": {
         "is_dir": false,
-        "mtime": 1744785677.7308812,
-        "hash": "fb967168b5cc03e42a99f6ba0a0deb2e"
-      },
-      "macros/Mach3Development/01_CustomMacros/home..m1s": {
-        "is_dir": false,
-        "mtime": 1600888910.0,
-        "hash": "7dec7c7eb47ecfc229920c4febff6c74"
-      },
-      "macros/Mach3Development/01_CustomMacros/displayToolType.m1s": {
-        "is_dir": false,
-        "mtime": 1738593216.0,
-        "hash": "fa204f220dfdb00535045ef35cb6e8ab"
-      },
-      "macros/Mach3Development/01_CustomMacros/ToolTRableReport.m1s": {
-        "is_dir": false,
-        "mtime": 1673374682.0,
-        "hash": "717c059da453870b9f3e050107d28edf"
+        "mtime": 1744785990.4151475,
+        "hash": "f26a82d6e5f86e8c2099564a63865b39"
       }
     },
     "shared": {
@@ -512,8 +497,8 @@
       },
       "DevelopmentEnvironment/windows-sync/sync_state.json": {
         "is_dir": false,
-        "mtime": 1744785603.59296,
-        "hash": "c8ff305d1358b1206e4af22ecb737de9"
+        "mtime": 1744785920.428093,
+        "hash": "4edea12fc3fa10f6a5419a08bb38ea59"
       },
       "DevelopmentEnvironment/test_logs/simple_test_20250415_111046.log": {
         "is_dir": false,
@@ -579,23 +564,8 @@
       },
       "DevelopmentEnvironment/logs/sync_20250416.log": {
         "is_dir": false,
-        "mtime": 1744785604.906739,
-        "hash": "754af619fa0b582e58e04dcc978122bc"
-      },
-      "macros/Mach3Development/01_CustomMacros/home..m1s": {
-        "is_dir": false,
-        "mtime": 1600888910.0,
-        "hash": "7dec7c7eb47ecfc229920c4febff6c74"
-      },
-      "macros/Mach3Development/01_CustomMacros/displayToolType.m1s": {
-        "is_dir": false,
-        "mtime": 1738593216.0,
-        "hash": "fa204f220dfdb00535045ef35cb6e8ab"
-      },
-      "macros/Mach3Development/01_CustomMacros/ToolTRableReport.m1s": {
-        "is_dir": false,
-        "mtime": 1673374682.0,
-        "hash": "717c059da453870b9f3e050107d28edf"
+        "mtime": 1744785921.707839,
+        "hash": "7ae73fdc4974f6e7288731f652714a2d"
       }
     }
   },
