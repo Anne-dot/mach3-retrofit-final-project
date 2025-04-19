@@ -1,0 +1,58 @@
+2025-04-20 00:51:57,713 - INFO - Lock acquired: /tmp/backup_test_kpdee_o9/test_file.csv.lock
+2025-04-20 00:51:57,714 - INFO - Created backup: test_file_20250420_005157.csv
+2025-04-20 00:51:57,714 - INFO - Lock released: /tmp/backup_test_kpdee_o9/test_file.csv.lock
+2025-04-20 00:51:57,715 - INFO - Lock acquired: /tmp/backup_test_umuxkuky/test_file.csv.lock
+2025-04-20 00:51:57,715 - INFO - Created backup: test_file_20250420_005157.csv
+2025-04-20 00:51:57,716 - INFO - Lock released: /tmp/backup_test_umuxkuky/test_file.csv.lock
+2025-04-20 00:51:57,716 - INFO - Restored from backup (target did not exist): test_file_20250420_005157.csv
+2025-04-20 00:51:57,717 - INFO - Lock acquired: /tmp/backup_test_3_how0oc/test_file.csv.lock
+2025-04-20 00:51:57,718 - INFO - Created backup: test_file_20250420_005157.csv
+2025-04-20 00:51:57,718 - INFO - Lock released: /tmp/backup_test_3_how0oc/test_file.csv.lock
+2025-04-20 00:51:57,719 - INFO - Lock acquired: /tmp/backup_test_3_how0oc/test_file.csv.lock
+2025-04-20 00:51:57,719 - INFO - Created safety backup before restore: test_file_prerestore_20250420_005157.csv
+2025-04-20 00:51:57,719 - INFO - Restored from backup: test_file_20250420_005157.csv
+2025-04-20 00:51:57,719 - INFO - Lock released: /tmp/backup_test_3_how0oc/test_file.csv.lock
+2025-04-20 00:51:58,725 - INFO - Removed old backup: test_1.csv
+2025-04-20 00:51:58,725 - INFO - Removed old backup: test_0.csv
+2025-04-20 00:51:58,731 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,731 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,732 - ERROR - Error releasing lock: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-20 00:51:58,732 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,733 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,733 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,733 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,734 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,734 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:51:58,734 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-20 00:56:30,995 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:30,996 - INFO - Created backup: test_file_20250420_005630.csv
+2025-04-20 00:56:30,996 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:30,997 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:30,997 - INFO - Created backup: test_file_20250420_005630.csv
+2025-04-20 00:56:30,997 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:31,998 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:31,998 - INFO - Created backup: test_file_20250420_005631.csv
+2025-04-20 00:56:31,998 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:32,999 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:33,000 - INFO - Created backup: test_file_20250420_005632.csv
+2025-04-20 00:56:33,000 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:34,001 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:34,001 - INFO - Created backup: test_file_20250420_005634.csv
+2025-04-20 00:56:34,002 - INFO - Removed old backup: test_file_20250420_005630.csv
+2025-04-20 00:56:34,002 - INFO - Removed 1 old backup(s)
+2025-04-20 00:56:34,002 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:35,003 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:35,003 - INFO - Created backup: test_file_20250420_005635.csv
+2025-04-20 00:56:35,004 - INFO - Removed old backup: test_file_20250420_005631.csv
+2025-04-20 00:56:35,004 - INFO - Removed 1 old backup(s)
+2025-04-20 00:56:35,004 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:36,006 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:36,006 - INFO - Created backup: test_file_20250420_005636.csv
+2025-04-20 00:56:36,007 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:36,008 - INFO - Restored from backup (target did not exist): test_file_20250420_005636.csv
+2025-04-20 00:56:36,009 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:36,009 - INFO - Created backup: test_file_20250420_005636.csv
+2025-04-20 00:56:36,010 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:36,010 - INFO - Lock acquired: /tmp/backup_test_11yogin8/test_file.csv.lock
+2025-04-20 00:56:36,011 - INFO - Created backup: test_file_20250420_005636.csv
+2025-04-20 00:56:36,011 - INFO - Lock released: /tmp/backup_test_11yogin8/test_file.csv.lock
