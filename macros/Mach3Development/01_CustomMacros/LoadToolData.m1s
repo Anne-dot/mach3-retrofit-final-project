@@ -1,7 +1,8 @@
-' Filename: load_tool_data.m1s
+' Filename: LoadToolData.m1s
 ' Purpose: Load tool data from CSV file into Mach3 DROs with validation
 ' Used in: Auto-startup sequence, Tool Management interface
 ' Status: Development
+' Reference: See "Unified CSV Structure for Tool Management" for complete field specifications
 '
 ' DRO Mapping:
 ' 1000-1799: Tool data blocks (20 DROs per tool, 40 tools)
@@ -11,18 +12,15 @@
 '   1820: Last data load timestamp
 '   1821: Data validation flag (1=valid, 0=needs reload)
 '   1822: Current tool number
+'   1899: Passing DRO for direct tool number sharing between macros
 '
-' Field Mapping (offset from base DRO):
-'   +0: tool_number (identifier)
-'   +1: tool_type (1=Mill, 2=VertDrill, 3=HorDrill, 4=Saw, 0=Empty)
-'   +2: tool_direction (1-6 direction code)
-'   +3: rotation_direction (1=CW, 2=CCW, 0=Empty)
-'   +4: diameter (mm)
-'   +5: tool_length (mm)
-'   +6: max_working_length (mm)
-'   +7: tool_holder_z_offset (mm)
-'   +8: in_spindle (1=yes, 0=no)
-'   +9: last_change_time (timestamp)
+' Basic Field Mapping (offset from base DRO):
+'   +0: tool_number    +5: tool_length
+'   +1: tool_type      +6: max_working_length
+'   +2: tool_direction +7: tool_holder_z_offset
+'   +3: rotation_dir   +8: in_spindle
+'   +4: diameter       +9: last_change_time
+
 
 ' Constants for DRO allocation
 Const TOOL_DATA_START = 1000
@@ -31,6 +29,7 @@ Const MAX_TOOLS = 40
 Const TIMESTAMP_DRO = 1820
 Const VALIDATION_FLAG_DRO = 1821
 Const CURRENT_TOOL_DRO = 1822
+Const PASSING_TOOL_DRO = 1899
 
 ' Validation constants
 Const MIN_DIAMETER = 0.1       ' Minimum valid tool diameter (mm)
@@ -43,9 +42,6 @@ Const MAX_DIRECTION = 6        ' Maximum valid direction code
 ' File path constants
 Const CSV_FILENAME = "tool-data.csv"
 
-' Debug mode (enable for testing, disable for production)
-'Const DEBUG_MODE = True  ' Set to False for production
-
 ' Main execution
 Dim mainFolder, csvFilePath
 Dim fso, file, csvLine, fileIsOpen
@@ -54,6 +50,12 @@ Dim processTime, fieldCount
 Dim criticalErrorsExist, criticalErrorCount, nonCriticalErrorCount
 Dim errorSummary, isCritical, skipTool, validationMessage
 Dim typeCode, rotationCode
+
+' Get the tool number passed directly from the M6 macro
+Dim currentTool
+currentTool = GetUserDRO(PASSING_TOOL_DRO)
+Message("LoadToolData: Using tool number " & CStr(currentTool) & " from passing DRO")
+Sleep(100)
 
 ' Initialize variables
 toolCount = 0
@@ -416,19 +418,50 @@ Else
     Sleep(200)
 End If
 
-' Copy current tool data to active tool properties area
-Dim currentTool
-currentTool = GetCurrentTool()
+' We're now using the passed tool number from DRO 1899 (set at beginning)
+' currentTool was already set at the beginning of the script
+
+' Diagnostic logging section
+Message("SYSTEM: Tool Load Diagnostics")
+Sleep(50)
+Message("INFO: Passed Tool Number: " & CStr(currentTool))
+Sleep(50)
+
+' Calculate base DRO for current tool
+Dim toolBaseDRO
+toolBaseDRO = TOOL_DATA_START + ((currentTool - 1) * TOOLS_PER_BLOCK)
+Message("DEBUG: Base DRO for Tool: " & CStr(toolBaseDRO))
+Sleep(50)
+
+Message("INFO: Validation Flag: " & CStr(GetUserDRO(VALIDATION_FLAG_DRO)))
+Sleep(50)
+Message("INFO: Total Tools Loaded: " & CStr(toolCount))
+Sleep(50)
+
+If criticalErrorCount > 0 Then
+    Message("WARNING: Critical Errors: " & CStr(criticalErrorCount))
+Else
+    Message("SUCCESS: No Critical Errors")
+End If
+Sleep(50)
+
+If nonCriticalErrorCount > 0 Then
+    Message("WARNING: Non-Critical Errors: " & CStr(nonCriticalErrorCount))
+Else
+    Message("SUCCESS: No Non-Critical Errors")
+End If
+Sleep(50)
+
 
 ' Store current tool number in DRO
 SetUserDRO(CURRENT_TOOL_DRO, currentTool)
 
 If currentTool > 0 And currentTool <= MAX_TOOLS Then
-    ' Calculate base DRO for the current tool
-    Dim toolBaseDRO, j
-    toolBaseDRO = TOOL_DATA_START + ((currentTool - 1) * TOOLS_PER_BLOCK)
+    ' Just reuse the already calculated toolBaseDRO
+    ' No need to redeclare it with Dim
     
     ' Copy properties to current tool area (1800-1811)
+    Dim j
     For j = 0 To 11
         On Error Resume Next
         SetUserDRO(1800 + j, GetUserDRO(toolBaseDRO + j))
@@ -439,7 +472,7 @@ If currentTool > 0 And currentTool <= MAX_TOOLS Then
         End If
     Next
     
-    Message("INFO: Current tool " & currentTool & " data updated in active DROs")
+    Message("INFO: Tool " & currentTool & " data updated in active DROs")
     Sleep(50)
 End If
 

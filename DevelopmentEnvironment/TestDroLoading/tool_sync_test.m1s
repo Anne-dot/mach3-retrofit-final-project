@@ -1,0 +1,113 @@
+' Filename: tool_sync_test.m1s
+' Purpose: Test tool data synchronization between DROs and physical tool
+' Status: Testing/Diagnostic
+
+' Constants for DRO allocation
+Const TOOL_DATA_START = 1000
+Const TOOLS_PER_BLOCK = 20
+Const ACTIVE_TOOL_START = 1800
+Const VALIDATION_FLAG_DRO = 1821
+Const CURRENT_TOOL_DRO = 1822
+
+' Variables
+Dim currentPhysicalTool, toolBaseDRO
+Dim fieldIndex, fieldName
+
+' Log test header
+Message("==== TOOL SYNC TEST STARTED ====")
+Sleep(200)
+
+' 1. Log current system state
+On Error Resume Next
+currentPhysicalTool = GetCurrentTool()
+If Err.Number <> 0 Then
+    Message("ERROR: Failed to get current tool - " & Err.Description)
+    Sleep(200)
+    Err.Clear
+    Exit Sub
+End If
+
+' Check validation flag
+If GetUserDRO(VALIDATION_FLAG_DRO) <> 1 Then
+    Message("WARNING: Tool data validation flag is not set!")
+    Sleep(200)
+End If
+
+' Display initial state
+Message("INITIAL STATE:")
+Sleep(100)
+Message("Physical Tool: " & currentPhysicalTool)
+Sleep(100)
+Message("DRO 1822 Tool: " & GetUserDRO(CURRENT_TOOL_DRO))
+Sleep(100)
+Message("DRO 1800 Tool: " & GetUserDRO(ACTIVE_TOOL_START))
+Sleep(150)
+
+' 2. Calculate base DRO address for current tool
+toolBaseDRO = TOOL_DATA_START + ((currentPhysicalTool - 1) * TOOLS_PER_BLOCK)
+
+' 3. Compare tool-specific block with active tool block
+Message("COMPARING TOOL DATA:")
+Sleep(100)
+
+' Field definitions - field index and name
+Dim fieldData(4, 1)
+fieldData(0, 0) = 0
+fieldData(0, 1) = "Number"
+fieldData(1, 0) = 1
+fieldData(1, 1) = "Type"
+fieldData(2, 0) = 2
+fieldData(2, 1) = "Direction"
+fieldData(3, 0) = 3
+fieldData(3, 1) = "Rotation"
+fieldData(4, 0) = 4
+fieldData(4, 1) = "Diameter"
+
+' Compare each field
+For i = 0 To 4
+    fieldIndex = fieldData(i, 0)
+    fieldName = fieldData(i, 1)
+    
+    Message(fieldName & " - Tool DRO: " & GetUserDRO(toolBaseDRO + fieldIndex) & _
+            ", Active DRO: " & GetUserDRO(ACTIVE_TOOL_START + fieldIndex))
+    Sleep(100)
+Next
+
+' 4. Check if tool is in spindle
+Message("Tool " & currentPhysicalTool & " in spindle: " & GetUserDRO(toolBaseDRO + 8))
+Sleep(100)
+
+' 5. Show DRO last update time
+Message("Last data load timestamp: " & GetUserDRO(1820))
+Sleep(150)
+
+' 6. Simulate updating 1800-block (for diagnostic purposes)
+Message("DIAGNOSTIC UPDATE OF 1800-BLOCK:")
+Sleep(150)
+
+On Error Resume Next
+For i = 0 To 9
+    SetUserDRO(ACTIVE_TOOL_START + i, GetUserDRO(toolBaseDRO + i))
+    If Err.Number <> 0 Then
+        Message("ERROR: Failed to update DRO " & (ACTIVE_TOOL_START + i) & " - " & Err.Description)
+        Sleep(100)
+        Err.Clear
+    End If
+Next
+
+' 7. Check if update was successful
+Message("AFTER DIAGNOSTIC UPDATE:")
+Sleep(150)
+
+' Compare each field again
+For i = 0 To 4
+    fieldIndex = fieldData(i, 0)
+    fieldName = fieldData(i, 1)
+    
+    Message(fieldName & " - Tool DRO: " & GetUserDRO(toolBaseDRO + fieldIndex) & _
+            ", Active DRO: " & GetUserDRO(ACTIVE_TOOL_START + fieldIndex))
+    Sleep(100)
+Next
+
+Message("==== TOOL SYNC TEST COMPLETE ====")
+Sleep(200)

@@ -1,0 +1,81 @@
+' Filename: show_tool_dros.m1s
+' Purpose: Display the 3 loaded tools from DROs
+' Used with: load_tool_data.m1s
+
+' Constants for DRO allocation
+Const TOOL_DATA_START = 1000
+Const TOOLS_PER_BLOCK = 20
+
+' Show header
+Message("=== Tool Data in DROs ===")
+Sleep(100)
+
+' Display validation status
+Message("Data valid: " & GetUserDRO(1821))
+Sleep(100)
+
+' Tool 1
+Message("TOOL #1:")
+Sleep(100)
+Message("Number: " & GetUserDRO(1000))
+Sleep(100)
+Message("Type: " & GetUserDRO(1001) & " (Mill=1, VertDrill=2, HorDrill=3)")
+Sleep(100)
+Message("Direction: " & GetUserDRO(1002))
+Sleep(100)
+Message("Diameter: " & GetUserDRO(1004))
+Sleep(100)
+If GetUserDRO(1008) = 1 Then
+    Message("In spindle: YES")
+Else
+    Message("In spindle: NO")
+End If
+Sleep(100)
+
+' Tool 2
+Message("TOOL #2:")
+Sleep(100)
+Message("Number: " & GetUserDRO(1020))
+Sleep(100)
+Message("Type: " & GetUserDRO(1021) & " (Mill=1, VertDrill=2, HorDrill=3)")
+Sleep(100)
+Message("Direction: " & GetUserDRO(1022))
+Sleep(100)
+Message("Diameter: " & GetUserDRO(1024))
+Sleep(100)
+If GetUserDRO(1028) = 1 Then
+    Message("In spindle: YES")
+Else
+    Message("In spindle: NO")
+End If
+Sleep(100)
+
+' Tool 3
+Message("TOOL #3:")
+Sleep(100)
+Message("Number: " & GetUserDRO(1040))
+Sleep(100)
+Message("Type: " & GetUserDRO(1041) & " (Mill=1, VertDrill=2, HorDrill=3)")
+Sleep(100)
+Message("Direction: " & GetUserDRO(1042))
+Sleep(100)
+Message("Diameter: " & GetUserDRO(1044))
+Sleep(100)
+If GetUserDRO(1048) = 1 Then
+    Message("In spindle: YES")
+Else
+    Message("In spindle: NO")
+End If
+Sleep(100)
+
+' Current active tool
+Message("CURRENT ACTIVE TOOL:")
+Sleep(100)
+Message("Number: " & GetUserDRO(1800))
+Sleep(100)
+Message("Type: " & GetUserDRO(1801))
+Sleep(100)
+Message("Direction: " & GetUserDRO(1802))
+Sleep(100)
+Message("Diameter: " & GetUserDRO(1804))
+Sleep(100)

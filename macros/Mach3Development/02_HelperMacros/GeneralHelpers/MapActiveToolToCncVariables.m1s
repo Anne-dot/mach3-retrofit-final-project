@@ -1,0 +1,60 @@
+' MapActiveToolToCncVariable.m1s - Tool Data Mapping Macro (M1000.m1s)
+' Maps active tool data from DROs to G-code variables
+' Updated to use robust tool number passing between macros
+
+' Note: No constants defined here since this file is #expanded by the tool change macro
+' and would cause duplicate constant definitions errors
+
+' Get the tool number passed from M6 for consistency checking
+Dim passedToolNum
+passedToolNum = GetUserDRO(1899) ' PASSING_TOOL_DRO = 1899
+
+' Check validation flag first
+If GetUserDRO(1821) <> 1 Then  ' VALIDATION_FLAG_DRO = 1821
+    Message("WARNING: Tool data not validated!")
+    Message("Validation Flag: " & CStr(GetUserDRO(1821)))
+    Message("Expected Tool: " & CStr(passedToolNum))
+    Sleep(200)
+    Exit Sub
+End If
+
+' Detailed diagnostic logging
+Message("Mapping Macro Diagnostics:")
+Message("Validation Flag (1821): " & CStr(GetUserDRO(1821)))
+Message("Active Tool DRO (1800): " & CStr(GetUserDRO(1800)))
+Message("Passed Tool Num (1899): " & CStr(passedToolNum))
+Message("Tool Type DRO (1801): " & CStr(GetUserDRO(1801)))
+Message("Tool Direction DRO (1802): " & CStr(GetUserDRO(1802)))
+Message("Rotation Direction DRO (1803): " & CStr(GetUserDRO(1803)))
+Message("Diameter DRO (1804): " & CStr(GetUserDRO(1804)))
+
+' Get the active tool number from DRO 1800
+Dim toolNum
+toolNum = GetUserDRO(1800)
+
+' Consistency check - compare with the passed tool number
+If toolNum <> passedToolNum Then
+    Message("WARNING: Tool number mismatch! Active=" & CStr(toolNum) & " Expected=" & CStr(passedToolNum))
+    Sleep(200)
+    ' Use the passed tool number as authoritative if there's a mismatch
+    Message("NOTE: Using passed tool number for variables")
+    toolNum = passedToolNum
+End If
+
+' Map the active tool data to variables
+Code "#100 = " & CStr(toolNum)                     ' Tool number
+Code "#101 = " & CStr(GetUserDRO(1801))            ' Tool type
+Code "#102 = " & CStr(GetUserDRO(1802))            ' Tool direction
+Code "#103 = " & CStr(GetUserDRO(1803))            ' Rotation direction
+Code "#104 = " & CStr(GetUserDRO(1804))            ' Diameter
+
+' Alternative approach for variable display
+Message("Tool " & CStr(toolNum) & " mapped to G-code variables")
+Sleep(150)
+Message("Tool #" & CStr(toolNum) & ": Type=" & CStr(GetUserDRO(1801)) & " Dir=" & CStr(GetUserDRO(1802)) & " Diam=" & CStr(GetUserDRO(1804)))
+Sleep(150)
+
+' Clear the passing DRO to avoid confusion in future tool changes
+SetUserDRO(1899, 0)  ' PASSING_TOOL_DRO = 1899
+Message("Passing DRO cleared")
+Sleep(50)

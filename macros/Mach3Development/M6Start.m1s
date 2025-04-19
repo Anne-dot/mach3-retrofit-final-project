@@ -1,21 +1,16 @@
 ' M6 Tool Change Macro
-
 ' Declare variables
 Dim tool, xOff, yOff, muxOut, mSel
-
 ' CONFIGURATION CONSTANTS
-
 ' Tool Spacing Configuration
 Const toolSpaceX = 32
 Const toolSpaceY = 32
-
 ' Magazine Offset Positions
 Const M1_OFFSET_X = 81
 Const M2_OFFSET_X = -60.9
 Const M1M2_OFFSET_Y = 206
 Const M3_OFFSET_X = -208
 Const M3_OFFSET_Y = 263
-
 ' Output Signal Mapping
 Const bits0 = OUTPUT5
 Const bits1 = OUTPUT6
@@ -24,7 +19,6 @@ Const bits3 = OUTPUT8
 Const m1Out = OUTPUT2
 Const m2Out = OUTPUT3
 Const m3Out = OUTPUT4
-
 ' Deactivate all tool signals
 DeactivateSignal(bits0)
 DeactivateSignal(bits1)
@@ -34,16 +28,15 @@ DeactivateSignal(m1Out)
 DeactivateSignal(m2Out)
 DeactivateSignal(m3Out)
 sleep(1000)
-
 ' Get the selected tool
 tool = GetSelectedTool()
-
+' Store the tool number in a passing DRO right away
+SetUserDRO(1899, tool)
 ' Declare variables
 xOff = 0
 yOff = 0
 muxOut = 0
 mSel = 0
-
 ' Tool selection and positioning
 Select Case tool
 	Case 0
@@ -146,16 +139,13 @@ Select Case tool
         	End If
     	End If
 End Select
-
 ' Set tool offset
 code("G52 X" & xOff & "Y" & yOff)
 sleep(500)    	 
-
 ' Wait for movement to complete
 While IsMoving()
 	sleep(100)    	 
 Wend
-
 ' Activate tool signals
 If ((muxOut And 1) = 1) Then
 	ActivateSignal(bits0)
@@ -178,8 +168,20 @@ End If
 If (mSel = 3) Then
 	ActivateSignal(m3Out)
 End If
-
-' Set current tool
-SetCurrentTool(tool)        	 
+' Set current tool in Mach3 system
+SetCurrentTool(tool)
+' Make sure the passing DRO still has the correct value
+SetUserDRO(1899, tool)
 sleep(500)
 
+' After tool change completes successfully, update the tool data
+If GetOEMDRO(824) > 0 Then  ' Check if tool change was successful
+    ' The tool number is already stored in DRO 1899
+    
+    ' Update DROs with current tool info
+    #expand "C:\Mach3\macros\Mach3Development\01_CustomMacros\LoadToolData.m1s"
+    Sleep(200)
+    
+    ' Map DRO data to G-code variables
+    #expand "C:\Mach3\macros\Mach3Development\M1000.m1s"
+End If

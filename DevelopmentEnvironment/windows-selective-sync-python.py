@@ -57,7 +57,7 @@ FOLDERS_TO_SYNC = [
 
 # Individual files to sync (relative to Mach3 folder)
 FILES_TO_SYNC = [
-    "jaga.txt",
+    "LastErrors.txt",
     "python location.txt"
 ]
 

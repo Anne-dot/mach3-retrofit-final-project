@@ -1,4 +1,4 @@
 tool_number,tool_type,tool_direction,rotation_direction,diameter,tool_length,max_working_length,tool_holder_z_offset,in_spindle,last_change_time,notes,description
-1,Mill,6,CW,10.0,80,150,0,1,44676.43,Valid in-spindle,Standard mill
-2,VertDrill,5,CW,8.0,75,140,0,0,44676.43,Valid not in spindle,Vertical drill
+1,HorDrill,2,CW,10.0,80,150,0,1,44676.43,Valid in-spindle,Standard mill
+2,Mill,2,CW,8.0,75,140,0,0,44676.43,Valid not in spindle,Vertical drill
 3,HorDrill,3,CCW,12.0,85,160,0,0,44676.43,Valid not in spindle,Horizontal drill
