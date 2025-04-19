@@ -117,6 +117,13 @@ If Not fso.FileExists(csvFilePath) Then
     Exit Sub
 End If
 
+' Create backup before reading file
+#expand "C:\Mach3\macros\Mach3Development\01_CustomMacros\BackupToolData.m1s"
+If Not backupSuccess Then
+    Message("WARNING: Unable to create backup, proceeding with caution")
+    Sleep(100)
+End If
+
 ' Open file for reading
 Set file = fso.OpenTextFile(csvFilePath, 1) ' 1 = ForReading
 If Err.Number <> 0 Then

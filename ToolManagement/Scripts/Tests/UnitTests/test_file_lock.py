@@ -13,7 +13,7 @@ import unittest
 
 # Add parent directory to path so we can import from Backup
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
-from Backup.file_lock import FileLock
+from Backups.file_lock import FileLock
 
 
 class TestFileLock(unittest.TestCase):

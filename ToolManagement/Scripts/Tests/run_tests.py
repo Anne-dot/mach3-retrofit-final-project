@@ -1,8 +1,8 @@
 """
-Simple test runner that generates Confluence-friendly output.
+Simple test runner that generates Markdown-friendly output.
 
 This script runs all tests in the UnitTests directory and generates
-a formatted report that can be directly pasted into Confluence.
+a formatted report that can be directly pasted into documentation tools.
 """
 
 import unittest
@@ -33,77 +33,99 @@ def run_tests():
     
     return result, run_time
 
-def generate_confluence_report(result, run_time):
-    """Generate a report in Confluence-friendly format."""
+def generate_markdown_report(result, run_time):
+    """Generate a report in Markdown format."""
     now = datetime.datetime.now()
     
     # Count tests by file
     test_files = {}
-    for test in result.failures + result.errors:
-        test_name = test[0].id().split('.')
+    
+    # Process failures
+    for test, _ in result.failures:
+        test_name = test.id().split('.')
         file_name = test_name[0]
         if file_name not in test_files:
             test_files[file_name] = {'total': 0, 'failed': 0}
         test_files[file_name]['total'] += 1
         test_files[file_name]['failed'] += 1
     
-    for test in result._tests:
-        for test_case in test._tests:
-            for tc in getattr(test_case, '_tests', [test_case]):
-                test_name = tc.id().split('.')
-                if len(test_name) >= 1:
-                    file_name = test_name[0]
-                    if file_name not in test_files:
-                        test_files[file_name] = {'total': 0, 'failed': 0}
-                    test_files[file_name]['total'] += 1
+    # Process errors
+    for test, _ in result.errors:
+        test_name = test.id().split('.')
+        file_name = test_name[0]
+        if file_name not in test_files:
+            test_files[file_name] = {'total': 0, 'failed': 0}
+        test_files[file_name]['total'] += 1
+        test_files[file_name]['failed'] += 1
+    
+    # We need to account for total number of tests
+    # Since we have the total testsRun count but not individual successful tests,
+    # we'll estimate total counts for each file
+    
+    total_failures_and_errors = sum(info['total'] for info in test_files.values())
+    
+    # If we have any test files from failures/errors
+    if test_files and total_failures_and_errors < result.testsRun:
+        # Add successful tests to first file or create a placeholder
+        # This is an approximation since we don't have the actual successful test details
+        if test_files:
+            first_file = next(iter(test_files))
+            test_files[first_file]['total'] += (result.testsRun - total_failures_and_errors)
+        else:
+            test_files['tests'] = {'total': result.testsRun, 'failed': 0}
     
     # Generate report
     report = f"""
-h1. Test Results - {now.strftime('%Y-%m-%d %H:%M')}
+### Test Results - {now.strftime('%Y-%m-%d %H:%M')}
 
-h2. Summary
+#### Summary
 
-|| Status || {'*FAILED*' if result.failures or result.errors else 'PASSED'} ||
-|| Tests Run || {result.testsRun} ||
-|| Failures || {len(result.failures)} ||
-|| Errors || {len(result.errors)} ||
-|| Time || {run_time:.2f} seconds ||
+| Metric | Value |
+|--------|-------|
+| Status | {'**FAILED**' if result.failures or result.errors else 'PASSED'} |
+| Tests Run | {result.testsRun} |
+| Failures | {len(result.failures)} |
+| Errors | {len(result.errors)} |
+| Time | {run_time:.2f} seconds |
 
-h2. Results by Test File
-
-|| Test File || Status || Pass/Total ||
 """
     
-    for file_name, counts in test_files.items():
-        passed = counts['total'] - counts['failed']
-        status = "✅ PASSED" if passed == counts['total'] else "❌ FAILED"
-        report += f"| {file_name} | {status} | {passed}/{counts['total']} |\n"
+    # Only show the file table if we have test file data
+    if test_files:
+        report += "## Results by Test File\n\n"
+        report += "| Test File | Status | Pass/Total |\n"
+        report += "|-----------|--------|------------|\n"
+        
+        for file_name, counts in test_files.items():
+            passed = counts['total'] - counts['failed']
+            status = "✅ PASSED" if passed == counts['total'] else "❌ FAILED"
+            report += f"| {file_name} | {status} | {passed}/{counts['total']} |\n"
     
     if result.failures or result.errors:
-        report += "\nh2. Failures and Errors\n\n"
+        report += "\n## Failures and Errors\n\n"
         
         if result.failures:
-            report += "h3. Failures\n\n"
+            report += "### Failures\n\n"
             for failure in result.failures:
-                report += f"h4. {failure[0].id()}\n"
-                report += "{{code}}\n"
+                report += f"#### {failure[0].id()}\n"
+                report += "```\n"
                 report += str(failure[1])
-                report += "\n{{code}}\n\n"
+                report += "\n```\n\n"
         
         if result.errors:
-            report += "h3. Errors\n\n"
+            report += "### Errors\n\n"
             for error in result.errors:
-                report += f"h4. {error[0].id()}\n"
-                report += "{{code}}\n"
+                report += f"#### {error[0].id()}\n"
+                report += "```\n"
                 report += str(error[1])
-                report += "\n{{code}}\n\n"
+                report += "\n```\n\n"
     
     return report
 
 def main():
     """Run tests and generate report."""
     result, run_time = run_tests()
-    report = generate_confluence_report(result, run_time)
+    report = generate_markdown_report(result, run_time)
     
     # Print report to console
     print(report)
