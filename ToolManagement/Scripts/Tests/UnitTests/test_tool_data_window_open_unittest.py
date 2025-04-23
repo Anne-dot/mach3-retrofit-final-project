@@ -3,9 +3,12 @@ import time
 import unittest
 from pathlib import Path
 import os
+import sys
+import unittest
 
 from window_detector import is_tool_data_open  # assumes your function is in this file
 
+@unittest.skipUnless(sys.platform.startswith("win"), "Windows-only test")
 class TestToolDataWindow(unittest.TestCase):
     def setUp(self):
         self.test_file = Path("tool-data.txt")

@@ -7,9 +7,13 @@ functions to simulate different scenarios.
 Place in: C:\Mach3\ToolManagement\Scripts\Tests\UnitTests\
 """
 
-import unittest
-import os
 import sys
+import unittest
+
+if not sys.platform.startswith("win"):
+    raise unittest.SkipTest("Skipping Windows-only test on non-Windows platform")
+
+import os
 import tempfile
 import win32gui
 import win32process
