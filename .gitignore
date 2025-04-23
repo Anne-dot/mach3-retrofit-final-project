@@ -3,4 +3,10 @@ DevelopmentEnvironment/sync-tests
 DevelopmentEnvironment/test_logs
 DevelopmentEnvironment/windows-sync
 
+ToolManagement/Backups/ToolData
+
+ToolManagement/Logs
+
+ToolManagement/Scripts/Logs
+
 LastErrors.txt
