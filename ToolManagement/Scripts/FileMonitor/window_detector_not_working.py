@@ -1,0 +1,130 @@
+"""
+window_detector.py - Detects if files are open in Notepad or Wordpad.
+
+This module provides a simple class to detect if a specific file is
+currently open in Notepad or Wordpad by checking window titles.
+
+Place in: C:\Mach3\ToolManagement\Scripts\FileMonitor\
+"""
+
+import os
+import win32gui
+import win32process
+import win32api
+import logging
+
+class WindowDetector:
+    """Detects if files are open in Notepad or Wordpad."""
+    
+    def __init__(self, debug_mode=False):
+        """Initialize detector with optional debug mode."""
+        self.debug_mode = debug_mode
+        self.windows = []
+        
+        # Configure logging
+        logging.basicConfig(
+            level=logging.DEBUG if debug_mode else logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        self.logger = logging.getLogger(__name__)
+    
+    def is_file_open(self, file_path):
+        """
+        Check if a file is open in Notepad or Wordpad.
+        
+        Args:
+            file_path: Path to the file to check
+            
+        Returns:
+            True if file is open, False otherwise
+        """
+        # Validate file exists
+        if not os.path.exists(file_path):
+            self.logger.warning(f"File not found: {file_path}")
+            return False
+        
+        # Get filename without path
+        filename = os.path.basename(file_path)
+        self.logger.debug(f"Checking if '{filename}' is open")
+        
+        # Get all windows
+        self._enumerate_windows()
+        
+        # Check if file is open in Notepad or Wordpad
+        for hwnd, title, process in self.windows:
+            if filename in title:
+                if "notepad.exe" in process.lower() and " - Notepad" in title:
+                    self.logger.info(f"File '{filename}' is open in Notepad")
+                    return True
+                elif "wordpad.exe" in process.lower() and " - WordPad" in title:
+                    self.logger.info(f"File '{filename}' is open in WordPad")
+                    return True
+                elif " - Notepad" in title:
+                    self.logger.info(f"File '{filename}' is open in Notepad (title match)")
+                    return True
+        
+        self.logger.debug(f"File '{filename}' is not open in Notepad or WordPad")
+        return False
+    
+    def get_application_with_file(self, file_path):
+        """
+        Get the name of the application that has the file open.
+        
+        Args:
+            file_path: Path to the file to check
+            
+        Returns:
+            "Notepad", "WordPad", or None if not open
+        """
+        # Validate file exists
+        if not os.path.exists(file_path):
+            self.logger.warning(f"File not found: {file_path}")
+            return None
+        
+        # Get filename without path
+        filename = os.path.basename(file_path)
+        
+        # Get all windows
+        self._enumerate_windows()
+        
+        # Check if file is open in Notepad or Wordpad
+        for hwnd, title, process in self.windows:
+            if filename in title:
+                if "notepad.exe" in process.lower() and " - Notepad" in title:
+                    return "Notepad"
+                elif " - Notepad" in title:
+                    return "Notepad"
+                elif "wordpad.exe" in process.lower() and " - WordPad" in title:
+                    return "WordPad"
+        
+        return None
+    
+    def _enumerate_windows(self):
+        """Enumerate all visible windows and their process names."""
+        self.windows = []
+        
+        def enum_windows_callback(hwnd, _):
+            """Callback for EnumWindows."""
+            if win32gui.IsWindowVisible(hwnd):
+                # Get window title
+                title = win32gui.GetWindowText(hwnd)
+                
+                if title:
+                    # Get process name
+                    try:
+                        thread_id, process_id = win32process.GetWindowThreadProcessId(hwnd)
+                        process_handle = win32api.OpenProcess(0x400, False, process_id)
+                        process_name = win32process.GetModuleFileNameEx(process_handle, 0)
+                        win32api.CloseHandle(process_handle)
+                    except Exception as e:
+                        self.logger.debug(f"Error getting process info: {e}")
+                        process_name = "unknown"
+                    
+                    self.windows.append((hwnd, title, process_name))
+                    
+                    if self.debug_mode:
+                        self.logger.debug(f"Window: '{title}' Process: '{process_name}'")
+            
+            return True
+        
+        win32gui.EnumWindows(enum_windows_callback, None)

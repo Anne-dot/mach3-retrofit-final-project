@@ -6,21 +6,17 @@ This module contains unit tests for the backup_manager.py script.
 It tests the BackupRotation and BackupManager classes.
 """
 
-import os
 import sys
+import os
 import unittest
 import tempfile
+from unittest.mock import patch, MagicMock
 import shutil
 import time
-from datetime import datetime
 
-# Get path to Scripts/Backups to import backup_manager
-test_dir = os.path.dirname(os.path.abspath(__file__))
-scripts_dir = os.path.abspath(os.path.join(test_dir, '..', '..'))
-backups_dir = os.path.join(scripts_dir, 'Backups')
-sys.path.append(backups_dir)
+# Add parent directory to path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', 'Backups'))
 
-# Now import the module
 from backup_manager import BackupManager, BackupRotation
 
 class TestBackupRotation(unittest.TestCase):

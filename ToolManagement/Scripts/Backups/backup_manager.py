@@ -44,7 +44,7 @@ class BackupRotation:
     old backups beyond the maximum limit.
     """
     
-    def __init__(self, backup_dir, max_backups=20):
+    def __init__(self, backup_dir, max_backups=10):
         """
         Initialize the backup rotation manager.
         
@@ -128,7 +128,7 @@ class BackupManager:
     class to handle backup file rotation.
     """
     
-    def __init__(self, backup_dir=None, max_backups=20, lock_timeout=1800):
+    def __init__(self, backup_dir=None, max_backups=10, lock_timeout=1800):
         """
         Initialize the backup manager.
         
@@ -177,6 +177,22 @@ class BackupManager:
             
             # Acquire file lock on the source file
             file_lock = FileLock(file_path, self.lock_timeout)
+
+            # Add right before trying to check file lock
+            print(f"DEBUG: Checking if file is locked: {file_path}")
+            file_locked, lock_info = file_lock.check_file_lock()
+            print(f"DEBUG: Lock check result: {file_locked}, Info: {lock_info}")
+            
+            # Explicitly check if file is locked first
+            file_locked, lock_info = file_lock.check_file_lock()
+            if file_locked:
+                logging.warning(f"Cannot create backup: {file_path} is locked: {lock_info}")
+                return {
+                    'status': 'ERROR',
+                    'message': f"Could not backup file: {file_path} is currently in use by another application"
+                }
+    
+            # Then try to acquire the lock
             if not file_lock.acquire():
                 return {
                     'status': 'ERROR',

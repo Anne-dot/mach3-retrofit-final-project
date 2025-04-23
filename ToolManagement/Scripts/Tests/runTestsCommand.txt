@@ -1,0 +1,15 @@
+RUN ALL TESTS:
+python ..\..\Mach3\ToolManagement\Scripts\Tests\run_tests.py
+
+MANUAL TESTS
+
+Backup Manager
+File Lock Detection
+
+File Open in Notepad or Wordpad
+run test
+python ..\..\Mach3\ToolManagement\Scripts\Tests\ManualTests\test_window_detector_manual.py
+or test_window_detector_manual.py
+open file
+run same test again
+

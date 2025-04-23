@@ -52,10 +52,10 @@ def test_backup_creation():
     result = backup_mgr.create_backup(TEST_FILE)
     
     if result['status'] == 'SUCCESS':
-        print(f"✅ SUCCESS: {result['message']}")
+        print(f"SUCCESS: {result['message']}")
         print(f"  Backup created at: {result['backup_path']}")
     else:
-        print(f"❌ ERROR: {result['message']}")
+        print(f"ERROR: {result['message']}")
     
     # List backups
     backups = backup_mgr.list_backups()
@@ -95,9 +95,9 @@ def test_backup_rotation():
         print(f"  {i}. {backup['filename']}")
     
     if len(backups) == 3:
-        print(f"✅ SUCCESS: Rotation worked correctly (kept 3 newest backups)")
+        print(f"SUCCESS: Rotation worked correctly (kept 3 newest backups)")
     else:
-        print(f"❌ ERROR: Rotation did not work correctly (found {len(backups)} backups)")
+        print(f"ERROR: Rotation did not work correctly (found {len(backups)} backups)")
     
     return len(backups) == 3
 
@@ -128,18 +128,18 @@ def test_restore():
     restore_result = backup_mgr.restore_from_backup(backup_path, restore_path)
     
     if restore_result['status'] == 'SUCCESS':
-        print(f"✅ SUCCESS: {restore_result['message']}")
+        print(f"SUCCESS: {restore_result['message']}")
         
         # Verify content
         with open(restore_path, 'r') as f:
             restored_content = f.read()
         
         if restored_content == initial_content:
-            print(f"✅ Restored content matches original")
+            print(f"Restored content matches original")
         else:
-            print(f"❌ Restored content does not match original")
+            print(f"Restored content does not match original")
     else:
-        print(f"❌ ERROR: {restore_result['message']}")
+        print(f"ERROR: {restore_result['message']}")
     
     return restore_result['status'] == 'SUCCESS'
 
@@ -165,10 +165,10 @@ def test_file_locking():
     print(f"Second backup: {result2['message']}")
     
     if result1['status'] == 'SUCCESS' and result2['status'] == 'SUCCESS':
-        print(f"✅ SUCCESS: File locking worked correctly")
+        print(f"SUCCESS: File locking worked correctly")
         return True
     else:
-        print(f"❌ ERROR: File locking test failed")
+        print(f"ERROR: File locking test failed")
         return False
 
 def run_all_tests():
@@ -184,17 +184,17 @@ def run_all_tests():
         
         # Summary
         print("\n=== Test Summary ===")
-        print(f"Backup Creation: {'✅ PASS' if backup_result['status'] == 'SUCCESS' else '❌ FAIL'}")
-        print(f"Backup Rotation: {'✅ PASS' if rotation_result else '❌ FAIL'}")
-        print(f"Restore: {'✅ PASS' if restore_result else '❌ FAIL'}")
-        print(f"File Locking: {'✅ PASS' if locking_result else '❌ FAIL'}")
+        print(f"Backup Creation: {'PASS' if backup_result['status'] == 'SUCCESS' else 'FAIL'}")
+        print(f"Backup Rotation: {'PASS' if rotation_result else 'FAIL'}")
+        print(f"Restore: {'PASS' if restore_result else 'FAIL'}")
+        print(f"File Locking: {'PASS' if locking_result else 'FAIL'}")
         
         all_passed = (backup_result['status'] == 'SUCCESS' and 
                       rotation_result and 
                       restore_result and 
                       locking_result)
         
-        print(f"\nOverall: {'✅ ALL TESTS PASSED' if all_passed else '❌ SOME TESTS FAILED'}")
+        print(f"\nOverall: {'ALL TESTS PASSED' if all_passed else 'SOME TESTS FAILED'}")
         
     finally:
         # Ask if test files should be cleaned up

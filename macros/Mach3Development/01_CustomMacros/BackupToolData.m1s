@@ -2,95 +2,106 @@
 ' Purpose: Creates backup of tool data CSV using Python script
 ' Used in: LoadToolData.m1s via #expand directive
 
+' IMPORTANT: The calling script must define sourceCsvPath before calling this script
+' Example: sourceCsvPath = mainFolder & "ToolManagement\Data\tool-data.csv"
+
 ' Constants
-Const PYTHON_PATH = "python"
-Const STATUS_SUCCESS = "SUCCESS"
+Const BACKUP_PYTHON_PATH = "python"
+Const BACKUP_STATUS_SUCCESS = "SUCCESS"
 
 ' Get paths based on Mach3 installation
-mainFolder = GetMainFolder()  ' Always use this for reliable paths
-backupScript = mainFolder & "ToolManagement\Scripts\Backups\backup_manager.py"
-statusFile = mainFolder & "ToolManagement\Logs\backup_status.txt"
+Dim backupMainFolder, backupScript, backupStatusFile
+backupMainFolder = GetMainFolder()  ' Always use this for reliable paths
+backupScript = backupMainFolder & "ToolManagement\Scripts\Backups\backup_manager.py"
+backupStatusFile = backupMainFolder & "ToolManagement\Logs\backup_status.txt"
 
-' csvFilePath should be passed in by the calling script
-' Example of usage in LoadToolData:
-' csvPath = mainFolder & "ToolManagement\Data\tool-data.csv"
+' Initialize result variable (returned to calling script)
+backupSuccess = False
 
 On Error Resume Next
 
 ' Create command line with proper arguments
-Set wsObj = CreateObject("WScript.Shell")
+Dim backupWsObj, backupCmdString
+Set backupWsObj = CreateObject("WScript.Shell")
 If Err.Number <> 0 Then
-    Message("ERROR: Failed to create shell - " & Err.Description)
+    Message("ERROR: Backup - Failed to create shell - " & Err.Description)
     Sleep(100)
     backupSuccess = False
     Exit Sub
 End If
 
 ' Build command string using Chr(34) for quotes
-cmdString = "cmd.exe /c start " & Chr(34) & "Backup" & Chr(34) & " /wait /min " & PYTHON_PATH & " " & Chr(34) & backupScript & Chr(34) & " --create " & Chr(34) & csvFilePath & Chr(34) & " --status-file"
+backupCmdString = "cmd.exe /c start " & Chr(34) & "Backup" & Chr(34) & " /wait /min " & BACKUP_PYTHON_PATH & " " & Chr(34) & backupScript & Chr(34) & " --create " & Chr(34) & sourceCsvPath & Chr(34) & " --status-file"
 
 ' Execute command and wait for completion
-wsObj.Run cmdString, 0, True
+backupWsObj.Run backupCmdString, 0, True
 If Err.Number <> 0 Then
-    Message("ERROR: Failed to run backup command - " & Err.Description)
+    Message("ERROR: Backup - Failed to run backup command - " & Err.Description)
     Sleep(100)
     backupSuccess = False
     Exit Sub
 End If
 
 ' Check status file
-Set FSO = CreateObject("Scripting.FileSystemObject")
+Dim backupFSO, backupStatusFileObj, backupFileIsOpen
+Set backupFSO = CreateObject("Scripting.FileSystemObject")
 If Err.Number <> 0 Then
-    Message("ERROR: Failed to create FSO - " & Err.Description)
+    Message("ERROR: Backup - Failed to create FSO - " & Err.Description)
     Sleep(100)
     backupSuccess = False
     Exit Sub
 End If
 
 ' Check if status file exists
-If Not FSO.FileExists(statusFile) Then
-    Message("ERROR: Backup status file not found")
+If Not backupFSO.FileExists(backupStatusFile) Then
+    Message("ERROR: Backup - Status file not found")
     Sleep(100)
     backupSuccess = False
     Exit Sub
 End If
 
 ' Read status file
-fileIsOpen = False
-Set statusFileObj = FSO.OpenTextFile(statusFile, 1)  ' 1 = ForReading
+backupFileIsOpen = False
+Set backupStatusFileObj = backupFSO.OpenTextFile(backupStatusFile, 1)  ' 1 = ForReading
 If Err.Number <> 0 Then
-    Message("ERROR: Failed to open status file - " & Err.Description)
+    Message("ERROR: Backup - Failed to open status file - " & Err.Description)
     Sleep(100)
     backupSuccess = False
     Exit Sub
 Else
-    fileIsOpen = True
+    backupFileIsOpen = True
 End If
 
 ' Read first line (status)
-status = statusFileObj.ReadLine()
+Dim backupStatus, backupMessage
+backupStatus = backupStatusFileObj.ReadLine()
 
 ' Try to read message if available
-If Not statusFileObj.AtEndOfStream Then
-    message = statusFileObj.ReadAll()
+If Not backupStatusFileObj.AtEndOfStream Then
+    backupMessage = backupStatusFileObj.ReadAll()
 Else
-    message = ""
+    backupMessage = ""
 End If
 
 ' Close file
-If fileIsOpen Then
-    statusFileObj.Close
+If backupFileIsOpen Then
+    backupStatusFileObj.Close
 End If
 
 ' Check if status indicates success
-If status = STATUS_SUCCESS Then
+If backupStatus = BACKUP_STATUS_SUCCESS Then
     Message("INFO: Backup created successfully")
     Sleep(50)
     backupSuccess = True
 Else
-    Message("ERROR: Backup failed - " & message)
+    Message("ERROR: Backup failed - " & backupMessage)
     Sleep(100)
     backupSuccess = False
 End If
+
+' Clean up objects
+Set backupStatusFileObj = Nothing
+Set backupFSO = Nothing
+Set backupWsObj = Nothing
 
 On Error Goto 0
