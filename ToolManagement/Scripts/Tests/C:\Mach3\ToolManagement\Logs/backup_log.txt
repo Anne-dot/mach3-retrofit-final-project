@@ -91,3 +91,468 @@
 2025-04-23 13:14:37,431 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
 2025-04-23 13:14:37,432 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
 2025-04-23 13:14:37,432 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:43:59,661 - INFO - Lock acquired: /tmp/backup_test_4lgahy5z/test_file.csv.lock
+2025-04-23 15:43:59,662 - INFO - Created backup: test_file_20250423_154359.csv
+2025-04-23 15:43:59,663 - INFO - Lock released: /tmp/backup_test_4lgahy5z/test_file.csv.lock
+2025-04-23 15:43:59,683 - INFO - Lock acquired: /tmp/backup_test_57c61qd4/test_file.csv.lock
+2025-04-23 15:43:59,683 - INFO - Created backup: test_file_20250423_154359.csv
+2025-04-23 15:43:59,683 - INFO - Lock released: /tmp/backup_test_57c61qd4/test_file.csv.lock
+2025-04-23 15:43:59,684 - INFO - Restored from backup (target did not exist): test_file_20250423_154359.csv
+2025-04-23 15:43:59,707 - INFO - Lock acquired: /tmp/backup_test_b871frxu/test_file.csv.lock
+2025-04-23 15:43:59,707 - INFO - Created backup: test_file_20250423_154359.csv
+2025-04-23 15:43:59,707 - INFO - Lock released: /tmp/backup_test_b871frxu/test_file.csv.lock
+2025-04-23 15:43:59,714 - INFO - Lock acquired: /tmp/backup_test_b871frxu/test_file.csv.lock
+2025-04-23 15:43:59,715 - INFO - Created safety backup before restore: test_file_prerestore_20250423_154359.csv
+2025-04-23 15:43:59,715 - INFO - Restored from backup: test_file_20250423_154359.csv
+2025-04-23 15:43:59,715 - INFO - Lock released: /tmp/backup_test_b871frxu/test_file.csv.lock
+2025-04-23 15:44:00,722 - INFO - Removed old backup: test_1.csv
+2025-04-23 15:44:00,722 - INFO - Removed old backup: test_0.csv
+2025-04-23 15:44:00,729 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:00,730 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:00,734 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:00,734 - INFO - Retrying file removal in 0.74 seconds
+2025-04-23 15:44:01,472 - INFO - Retrying file removal in 1.49 seconds
+2025-04-23 15:44:02,963 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-23 15:44:02,964 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,972 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,975 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,975 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,981 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,981 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,988 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,989 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-23 15:44:02,989 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:41,218 - INFO - Lock acquired: /tmp/backup_test_78lfvqo8/test_file.csv.lock
+2025-04-24 15:24:41,219 - INFO - Created backup: test_file_20250424_152441.csv
+2025-04-24 15:24:41,220 - INFO - Lock released: /tmp/backup_test_78lfvqo8/test_file.csv.lock
+2025-04-24 15:24:41,232 - INFO - Lock acquired: /tmp/backup_test_cpbid5jp/test_file.csv.lock
+2025-04-24 15:24:41,233 - INFO - Created backup: test_file_20250424_152441.csv
+2025-04-24 15:24:41,233 - INFO - Lock released: /tmp/backup_test_cpbid5jp/test_file.csv.lock
+2025-04-24 15:24:41,233 - INFO - Restored from backup (target did not exist): test_file_20250424_152441.csv
+2025-04-24 15:24:41,242 - INFO - Lock acquired: /tmp/backup_test_z5be4zmz/test_file.csv.lock
+2025-04-24 15:24:41,242 - INFO - Created backup: test_file_20250424_152441.csv
+2025-04-24 15:24:41,242 - INFO - Lock released: /tmp/backup_test_z5be4zmz/test_file.csv.lock
+2025-04-24 15:24:41,245 - INFO - Lock acquired: /tmp/backup_test_z5be4zmz/test_file.csv.lock
+2025-04-24 15:24:41,246 - INFO - Created safety backup before restore: test_file_prerestore_20250424_152441.csv
+2025-04-24 15:24:41,246 - INFO - Restored from backup: test_file_20250424_152441.csv
+2025-04-24 15:24:41,246 - INFO - Lock released: /tmp/backup_test_z5be4zmz/test_file.csv.lock
+2025-04-24 15:24:42,253 - INFO - Removed old backup: test_1.csv
+2025-04-24 15:24:42,254 - INFO - Removed old backup: test_0.csv
+2025-04-24 15:24:42,264 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:42,264 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:42,268 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:42,268 - INFO - Retrying file removal in 0.75 seconds
+2025-04-24 15:24:43,018 - INFO - Retrying file removal in 1.96 seconds
+2025-04-24 15:24:44,981 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 15:24:44,982 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:44,986 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:44,989 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:44,990 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:44,994 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:44,994 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:45,000 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:45,000 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:24:45,000 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:41,973 - INFO - Lock acquired: /tmp/backup_test_wxgtj6nr/test_file.csv.lock
+2025-04-24 15:36:41,973 - INFO - Created backup: test_file_20250424_153641.csv
+2025-04-24 15:36:41,974 - INFO - Lock released: /tmp/backup_test_wxgtj6nr/test_file.csv.lock
+2025-04-24 15:36:41,980 - INFO - Lock acquired: /tmp/backup_test_yitmbb68/test_file.csv.lock
+2025-04-24 15:36:41,980 - INFO - Created backup: test_file_20250424_153641.csv
+2025-04-24 15:36:41,980 - INFO - Lock released: /tmp/backup_test_yitmbb68/test_file.csv.lock
+2025-04-24 15:36:41,980 - INFO - Restored from backup (target did not exist): test_file_20250424_153641.csv
+2025-04-24 15:36:41,987 - INFO - Lock acquired: /tmp/backup_test_ipgyhidf/test_file.csv.lock
+2025-04-24 15:36:41,987 - INFO - Created backup: test_file_20250424_153641.csv
+2025-04-24 15:36:41,987 - INFO - Lock released: /tmp/backup_test_ipgyhidf/test_file.csv.lock
+2025-04-24 15:36:41,990 - INFO - Lock acquired: /tmp/backup_test_ipgyhidf/test_file.csv.lock
+2025-04-24 15:36:41,990 - INFO - Created safety backup before restore: test_file_prerestore_20250424_153641.csv
+2025-04-24 15:36:41,990 - INFO - Restored from backup: test_file_20250424_153641.csv
+2025-04-24 15:36:41,990 - INFO - Lock released: /tmp/backup_test_ipgyhidf/test_file.csv.lock
+2025-04-24 15:36:42,997 - INFO - Removed old backup: test_1.csv
+2025-04-24 15:36:42,997 - INFO - Removed old backup: test_0.csv
+2025-04-24 15:36:43,009 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:43,009 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:43,015 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:43,015 - INFO - Retrying file removal in 0.62 seconds
+2025-04-24 15:36:43,634 - INFO - Retrying file removal in 1.90 seconds
+2025-04-24 15:36:45,531 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 15:36:45,532 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,539 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,542 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,542 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,545 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,546 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,549 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,549 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:36:45,549 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:06,850 - INFO - Lock acquired: /tmp/backup_test_b7utk87g/test_file.csv.lock
+2025-04-24 15:45:06,850 - INFO - Created backup: test_file_20250424_154506.csv
+2025-04-24 15:45:06,850 - INFO - Lock released: /tmp/backup_test_b7utk87g/test_file.csv.lock
+2025-04-24 15:45:06,866 - INFO - Lock acquired: /tmp/backup_test_qzs3znvc/test_file.csv.lock
+2025-04-24 15:45:06,866 - INFO - Created backup: test_file_20250424_154506.csv
+2025-04-24 15:45:06,866 - INFO - Lock released: /tmp/backup_test_qzs3znvc/test_file.csv.lock
+2025-04-24 15:45:06,867 - INFO - Restored from backup (target did not exist): test_file_20250424_154506.csv
+2025-04-24 15:45:06,876 - INFO - Lock acquired: /tmp/backup_test_0f3_md2y/test_file.csv.lock
+2025-04-24 15:45:06,876 - INFO - Created backup: test_file_20250424_154506.csv
+2025-04-24 15:45:06,876 - INFO - Lock released: /tmp/backup_test_0f3_md2y/test_file.csv.lock
+2025-04-24 15:45:06,881 - INFO - Lock acquired: /tmp/backup_test_0f3_md2y/test_file.csv.lock
+2025-04-24 15:45:06,882 - INFO - Created safety backup before restore: test_file_prerestore_20250424_154506.csv
+2025-04-24 15:45:06,882 - INFO - Restored from backup: test_file_20250424_154506.csv
+2025-04-24 15:45:06,882 - INFO - Lock released: /tmp/backup_test_0f3_md2y/test_file.csv.lock
+2025-04-24 15:45:07,891 - INFO - Removed old backup: test_1.csv
+2025-04-24 15:45:07,892 - INFO - Removed old backup: test_0.csv
+2025-04-24 15:45:07,904 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:07,904 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:07,907 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:07,908 - INFO - Retrying file removal in 0.71 seconds
+2025-04-24 15:45:08,615 - INFO - Retrying file removal in 1.44 seconds
+2025-04-24 15:45:10,058 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 15:45:10,059 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,066 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,069 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,070 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,075 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,075 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,083 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,083 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:45:10,083 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:18,722 - INFO - Lock acquired: /tmp/backup_test_apllb7tb/test_file.csv.lock
+2025-04-24 15:54:18,723 - INFO - Created backup: test_file_20250424_155418.csv
+2025-04-24 15:54:18,724 - INFO - Lock released: /tmp/backup_test_apllb7tb/test_file.csv.lock
+2025-04-24 15:54:18,733 - INFO - Lock acquired: /tmp/backup_test_oqqwsps9/test_file.csv.lock
+2025-04-24 15:54:18,733 - INFO - Created backup: test_file_20250424_155418.csv
+2025-04-24 15:54:18,734 - INFO - Lock released: /tmp/backup_test_oqqwsps9/test_file.csv.lock
+2025-04-24 15:54:18,734 - INFO - Restored from backup (target did not exist): test_file_20250424_155418.csv
+2025-04-24 15:54:18,744 - INFO - Lock acquired: /tmp/backup_test_w33du404/test_file.csv.lock
+2025-04-24 15:54:18,745 - INFO - Created backup: test_file_20250424_155418.csv
+2025-04-24 15:54:18,746 - INFO - Lock released: /tmp/backup_test_w33du404/test_file.csv.lock
+2025-04-24 15:54:18,749 - INFO - Lock acquired: /tmp/backup_test_w33du404/test_file.csv.lock
+2025-04-24 15:54:18,749 - INFO - Created safety backup before restore: test_file_prerestore_20250424_155418.csv
+2025-04-24 15:54:18,749 - INFO - Restored from backup: test_file_20250424_155418.csv
+2025-04-24 15:54:18,749 - INFO - Lock released: /tmp/backup_test_w33du404/test_file.csv.lock
+2025-04-24 15:54:19,756 - INFO - Removed old backup: test_1.csv
+2025-04-24 15:54:19,756 - INFO - Removed old backup: test_0.csv
+2025-04-24 15:54:19,768 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:19,769 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:19,776 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:19,776 - INFO - Retrying file removal in 0.72 seconds
+2025-04-24 15:54:20,495 - INFO - Retrying file removal in 1.88 seconds
+2025-04-24 15:54:22,378 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 15:54:22,379 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,387 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,389 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,389 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,393 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,393 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,398 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,398 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 15:54:22,398 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:23,032 - INFO - Lock acquired: /tmp/backup_test_qtdc2mb5/test_file.csv.lock
+2025-04-24 18:35:23,032 - INFO - Created backup: test_file_20250424_183523.csv
+2025-04-24 18:35:23,033 - INFO - Lock released: /tmp/backup_test_qtdc2mb5/test_file.csv.lock
+2025-04-24 18:35:23,041 - INFO - Lock acquired: /tmp/backup_test_i4tqs0nu/test_file.csv.lock
+2025-04-24 18:35:23,041 - INFO - Created backup: test_file_20250424_183523.csv
+2025-04-24 18:35:23,041 - INFO - Lock released: /tmp/backup_test_i4tqs0nu/test_file.csv.lock
+2025-04-24 18:35:23,042 - INFO - Restored from backup (target did not exist): test_file_20250424_183523.csv
+2025-04-24 18:35:23,050 - INFO - Lock acquired: /tmp/backup_test_kjwac5bz/test_file.csv.lock
+2025-04-24 18:35:23,050 - INFO - Created backup: test_file_20250424_183523.csv
+2025-04-24 18:35:23,050 - INFO - Lock released: /tmp/backup_test_kjwac5bz/test_file.csv.lock
+2025-04-24 18:35:23,053 - INFO - Lock acquired: /tmp/backup_test_kjwac5bz/test_file.csv.lock
+2025-04-24 18:35:23,053 - INFO - Created safety backup before restore: test_file_prerestore_20250424_183523.csv
+2025-04-24 18:35:23,053 - INFO - Restored from backup: test_file_20250424_183523.csv
+2025-04-24 18:35:23,054 - INFO - Lock released: /tmp/backup_test_kjwac5bz/test_file.csv.lock
+2025-04-24 18:35:24,061 - INFO - Removed old backup: test_1.csv
+2025-04-24 18:35:24,062 - INFO - Removed old backup: test_0.csv
+2025-04-24 18:35:24,462 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:24,463 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:24,466 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:24,466 - INFO - Retrying file removal in 0.89 seconds
+2025-04-24 18:35:25,359 - INFO - Retrying file removal in 1.21 seconds
+2025-04-24 18:35:26,567 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 18:35:26,567 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,574 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,577 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,577 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,580 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,580 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,583 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,584 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:35:26,584 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:12,365 - INFO - Lock acquired: /tmp/backup_test_l2bn4ezm/test_file.csv.lock
+2025-04-24 18:52:12,366 - INFO - Created backup: test_file_20250424_185212.csv
+2025-04-24 18:52:12,366 - INFO - Lock released: /tmp/backup_test_l2bn4ezm/test_file.csv.lock
+2025-04-24 18:52:12,375 - INFO - Lock acquired: /tmp/backup_test_14qk0r0t/test_file.csv.lock
+2025-04-24 18:52:12,375 - INFO - Created backup: test_file_20250424_185212.csv
+2025-04-24 18:52:12,376 - INFO - Lock released: /tmp/backup_test_14qk0r0t/test_file.csv.lock
+2025-04-24 18:52:12,376 - INFO - Restored from backup (target did not exist): test_file_20250424_185212.csv
+2025-04-24 18:52:12,387 - INFO - Lock acquired: /tmp/backup_test_hbw3172p/test_file.csv.lock
+2025-04-24 18:52:12,387 - INFO - Created backup: test_file_20250424_185212.csv
+2025-04-24 18:52:12,388 - INFO - Lock released: /tmp/backup_test_hbw3172p/test_file.csv.lock
+2025-04-24 18:52:12,390 - INFO - Lock acquired: /tmp/backup_test_hbw3172p/test_file.csv.lock
+2025-04-24 18:52:12,391 - INFO - Created safety backup before restore: test_file_prerestore_20250424_185212.csv
+2025-04-24 18:52:12,391 - INFO - Restored from backup: test_file_20250424_185212.csv
+2025-04-24 18:52:12,391 - INFO - Lock released: /tmp/backup_test_hbw3172p/test_file.csv.lock
+2025-04-24 18:52:13,402 - INFO - Removed old backup: test_1.csv
+2025-04-24 18:52:13,402 - INFO - Removed old backup: test_0.csv
+2025-04-24 18:52:13,792 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:13,793 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:13,796 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:13,796 - INFO - Retrying file removal in 0.64 seconds
+2025-04-24 18:52:14,438 - INFO - Retrying file removal in 1.50 seconds
+2025-04-24 18:52:15,939 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 18:52:15,940 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,945 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,948 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,948 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,955 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,956 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,968 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,971 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:52:15,971 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:34,840 - INFO - Lock acquired: /tmp/backup_test_hsce51uw/test_file.csv.lock
+2025-04-24 18:55:34,840 - INFO - Created backup: test_file_20250424_185534.csv
+2025-04-24 18:55:34,841 - INFO - Lock released: /tmp/backup_test_hsce51uw/test_file.csv.lock
+2025-04-24 18:55:34,848 - INFO - Lock acquired: /tmp/backup_test_r_v_cbtg/test_file.csv.lock
+2025-04-24 18:55:34,849 - INFO - Created backup: test_file_20250424_185534.csv
+2025-04-24 18:55:34,850 - INFO - Lock released: /tmp/backup_test_r_v_cbtg/test_file.csv.lock
+2025-04-24 18:55:34,850 - INFO - Restored from backup (target did not exist): test_file_20250424_185534.csv
+2025-04-24 18:55:34,859 - INFO - Lock acquired: /tmp/backup_test_2q2kxfb6/test_file.csv.lock
+2025-04-24 18:55:34,860 - INFO - Created backup: test_file_20250424_185534.csv
+2025-04-24 18:55:34,860 - INFO - Lock released: /tmp/backup_test_2q2kxfb6/test_file.csv.lock
+2025-04-24 18:55:34,864 - INFO - Lock acquired: /tmp/backup_test_2q2kxfb6/test_file.csv.lock
+2025-04-24 18:55:34,864 - INFO - Created safety backup before restore: test_file_prerestore_20250424_185534.csv
+2025-04-24 18:55:34,864 - INFO - Restored from backup: test_file_20250424_185534.csv
+2025-04-24 18:55:34,865 - INFO - Lock released: /tmp/backup_test_2q2kxfb6/test_file.csv.lock
+2025-04-24 18:55:35,872 - INFO - Removed old backup: test_1.csv
+2025-04-24 18:55:35,872 - INFO - Removed old backup: test_0.csv
+2025-04-24 18:55:36,232 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:36,233 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:36,239 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:36,239 - INFO - Retrying file removal in 0.98 seconds
+2025-04-24 18:55:37,216 - INFO - Retrying file removal in 1.65 seconds
+2025-04-24 18:55:38,871 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 18:55:38,872 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,878 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,880 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,881 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,886 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,887 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,893 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,893 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:55:38,894 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:18,909 - INFO - Lock acquired: /tmp/backup_test_6dc2qxhq/test_file.csv.lock
+2025-04-24 18:57:18,909 - INFO - Created backup: test_file_20250424_185718.csv
+2025-04-24 18:57:18,909 - INFO - Lock released: /tmp/backup_test_6dc2qxhq/test_file.csv.lock
+2025-04-24 18:57:18,918 - INFO - Lock acquired: /tmp/backup_test_kvo9ym4v/test_file.csv.lock
+2025-04-24 18:57:18,919 - INFO - Created backup: test_file_20250424_185718.csv
+2025-04-24 18:57:18,920 - INFO - Lock released: /tmp/backup_test_kvo9ym4v/test_file.csv.lock
+2025-04-24 18:57:18,920 - INFO - Restored from backup (target did not exist): test_file_20250424_185718.csv
+2025-04-24 18:57:18,932 - INFO - Lock acquired: /tmp/backup_test_rsk5q6su/test_file.csv.lock
+2025-04-24 18:57:18,932 - INFO - Created backup: test_file_20250424_185718.csv
+2025-04-24 18:57:18,932 - INFO - Lock released: /tmp/backup_test_rsk5q6su/test_file.csv.lock
+2025-04-24 18:57:18,935 - INFO - Lock acquired: /tmp/backup_test_rsk5q6su/test_file.csv.lock
+2025-04-24 18:57:18,936 - INFO - Created safety backup before restore: test_file_prerestore_20250424_185718.csv
+2025-04-24 18:57:18,936 - INFO - Restored from backup: test_file_20250424_185718.csv
+2025-04-24 18:57:18,936 - INFO - Lock released: /tmp/backup_test_rsk5q6su/test_file.csv.lock
+2025-04-24 18:57:19,945 - INFO - Removed old backup: test_1.csv
+2025-04-24 18:57:19,946 - INFO - Removed old backup: test_0.csv
+2025-04-24 18:57:20,294 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:20,294 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:20,297 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:20,297 - INFO - Retrying file removal in 0.84 seconds
+2025-04-24 18:57:21,136 - INFO - Retrying file removal in 1.19 seconds
+2025-04-24 18:57:22,326 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 18:57:22,327 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,332 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,334 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,335 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,338 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,338 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,341 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,342 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 18:57:22,342 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:36,482 - INFO - Lock acquired: /tmp/backup_test_mm67wx2h/test_file.csv.lock
+2025-04-24 19:02:36,482 - INFO - Created backup: test_file_20250424_190236.csv
+2025-04-24 19:02:36,483 - INFO - Lock released: /tmp/backup_test_mm67wx2h/test_file.csv.lock
+2025-04-24 19:02:36,506 - INFO - Lock acquired: /tmp/backup_test_l8ip3d1b/test_file.csv.lock
+2025-04-24 19:02:36,507 - INFO - Created backup: test_file_20250424_190236.csv
+2025-04-24 19:02:36,507 - INFO - Lock released: /tmp/backup_test_l8ip3d1b/test_file.csv.lock
+2025-04-24 19:02:36,508 - INFO - Restored from backup (target did not exist): test_file_20250424_190236.csv
+2025-04-24 19:02:36,523 - INFO - Lock acquired: /tmp/backup_test_rk9papu0/test_file.csv.lock
+2025-04-24 19:02:36,523 - INFO - Created backup: test_file_20250424_190236.csv
+2025-04-24 19:02:36,523 - INFO - Lock released: /tmp/backup_test_rk9papu0/test_file.csv.lock
+2025-04-24 19:02:36,531 - INFO - Lock acquired: /tmp/backup_test_rk9papu0/test_file.csv.lock
+2025-04-24 19:02:36,534 - INFO - Created safety backup before restore: test_file_prerestore_20250424_190236.csv
+2025-04-24 19:02:36,535 - INFO - Restored from backup: test_file_20250424_190236.csv
+2025-04-24 19:02:36,535 - INFO - Lock released: /tmp/backup_test_rk9papu0/test_file.csv.lock
+2025-04-24 19:02:37,542 - INFO - Removed old backup: test_1.csv
+2025-04-24 19:02:37,543 - INFO - Removed old backup: test_0.csv
+2025-04-24 19:02:37,880 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:37,880 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:37,883 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:37,883 - INFO - Retrying file removal in 0.89 seconds
+2025-04-24 19:02:38,776 - INFO - Retrying file removal in 1.35 seconds
+2025-04-24 19:02:40,132 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 19:02:40,132 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,136 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,139 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,139 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,142 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,143 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,150 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,151 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:02:40,151 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:27,131 - INFO - Lock acquired: /tmp/backup_test_hrl6e7f5/test_file.csv.lock
+2025-04-24 19:04:27,131 - INFO - Created backup: test_file_20250424_190427.csv
+2025-04-24 19:04:27,132 - INFO - Lock released: /tmp/backup_test_hrl6e7f5/test_file.csv.lock
+2025-04-24 19:04:27,150 - INFO - Lock acquired: /tmp/backup_test_tj2uixti/test_file.csv.lock
+2025-04-24 19:04:27,151 - INFO - Created backup: test_file_20250424_190427.csv
+2025-04-24 19:04:27,151 - INFO - Lock released: /tmp/backup_test_tj2uixti/test_file.csv.lock
+2025-04-24 19:04:27,152 - INFO - Restored from backup (target did not exist): test_file_20250424_190427.csv
+2025-04-24 19:04:27,174 - INFO - Lock acquired: /tmp/backup_test_try90onl/test_file.csv.lock
+2025-04-24 19:04:27,175 - INFO - Created backup: test_file_20250424_190427.csv
+2025-04-24 19:04:27,175 - INFO - Lock released: /tmp/backup_test_try90onl/test_file.csv.lock
+2025-04-24 19:04:27,181 - INFO - Lock acquired: /tmp/backup_test_try90onl/test_file.csv.lock
+2025-04-24 19:04:27,181 - INFO - Created safety backup before restore: test_file_prerestore_20250424_190427.csv
+2025-04-24 19:04:27,181 - INFO - Restored from backup: test_file_20250424_190427.csv
+2025-04-24 19:04:27,182 - INFO - Lock released: /tmp/backup_test_try90onl/test_file.csv.lock
+2025-04-24 19:04:28,191 - INFO - Removed old backup: test_1.csv
+2025-04-24 19:04:28,191 - INFO - Removed old backup: test_0.csv
+2025-04-24 19:04:28,554 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:28,554 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:28,557 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:28,558 - INFO - Retrying file removal in 0.54 seconds
+2025-04-24 19:04:29,093 - INFO - Retrying file removal in 1.76 seconds
+2025-04-24 19:04:30,850 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 19:04:30,850 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,854 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,856 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,857 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,860 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,862 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,868 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,868 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:04:30,868 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:05:58,547 - INFO - Lock acquired: /tmp/backup_test_e84sy13h/test_file.csv.lock
+2025-04-24 19:05:58,547 - INFO - Created backup: test_file_20250424_190558.csv
+2025-04-24 19:05:58,548 - INFO - Lock released: /tmp/backup_test_e84sy13h/test_file.csv.lock
+2025-04-24 19:05:58,564 - INFO - Lock acquired: /tmp/backup_test_r7oljzb8/test_file.csv.lock
+2025-04-24 19:05:58,564 - INFO - Created backup: test_file_20250424_190558.csv
+2025-04-24 19:05:58,565 - INFO - Lock released: /tmp/backup_test_r7oljzb8/test_file.csv.lock
+2025-04-24 19:05:58,565 - INFO - Restored from backup (target did not exist): test_file_20250424_190558.csv
+2025-04-24 19:05:58,585 - INFO - Lock acquired: /tmp/backup_test_k6iqr2gz/test_file.csv.lock
+2025-04-24 19:05:58,586 - INFO - Created backup: test_file_20250424_190558.csv
+2025-04-24 19:05:58,586 - INFO - Lock released: /tmp/backup_test_k6iqr2gz/test_file.csv.lock
+2025-04-24 19:05:58,591 - INFO - Lock acquired: /tmp/backup_test_k6iqr2gz/test_file.csv.lock
+2025-04-24 19:05:58,592 - INFO - Created safety backup before restore: test_file_prerestore_20250424_190558.csv
+2025-04-24 19:05:58,593 - INFO - Restored from backup: test_file_20250424_190558.csv
+2025-04-24 19:05:58,593 - INFO - Lock released: /tmp/backup_test_k6iqr2gz/test_file.csv.lock
+2025-04-24 19:05:59,600 - INFO - Removed old backup: test_1.csv
+2025-04-24 19:05:59,600 - INFO - Removed old backup: test_0.csv
+2025-04-24 19:05:59,939 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:05:59,940 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:05:59,943 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:05:59,943 - INFO - Retrying file removal in 0.61 seconds
+2025-04-24 19:06:00,549 - INFO - Retrying file removal in 1.33 seconds
+2025-04-24 19:06:01,884 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 19:06:01,885 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,890 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,892 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,893 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,896 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,898 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,907 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,908 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:06:01,908 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:36,216 - INFO - Lock acquired: /tmp/backup_test_jeftitfs/test_file.csv.lock
+2025-04-24 19:15:36,216 - INFO - Created backup: test_file_20250424_191536.csv
+2025-04-24 19:15:36,216 - INFO - Lock released: /tmp/backup_test_jeftitfs/test_file.csv.lock
+2025-04-24 19:15:36,236 - INFO - Lock acquired: /tmp/backup_test_5mj9c5i8/test_file.csv.lock
+2025-04-24 19:15:36,237 - INFO - Created backup: test_file_20250424_191536.csv
+2025-04-24 19:15:36,237 - INFO - Lock released: /tmp/backup_test_5mj9c5i8/test_file.csv.lock
+2025-04-24 19:15:36,237 - INFO - Restored from backup (target did not exist): test_file_20250424_191536.csv
+2025-04-24 19:15:36,252 - INFO - Lock acquired: /tmp/backup_test_u045m98g/test_file.csv.lock
+2025-04-24 19:15:36,253 - INFO - Created backup: test_file_20250424_191536.csv
+2025-04-24 19:15:36,253 - INFO - Lock released: /tmp/backup_test_u045m98g/test_file.csv.lock
+2025-04-24 19:15:36,259 - INFO - Lock acquired: /tmp/backup_test_u045m98g/test_file.csv.lock
+2025-04-24 19:15:36,260 - INFO - Created safety backup before restore: test_file_prerestore_20250424_191536.csv
+2025-04-24 19:15:36,260 - INFO - Restored from backup: test_file_20250424_191536.csv
+2025-04-24 19:15:36,260 - INFO - Lock released: /tmp/backup_test_u045m98g/test_file.csv.lock
+2025-04-24 19:15:37,267 - INFO - Removed old backup: test_1.csv
+2025-04-24 19:15:37,267 - INFO - Removed old backup: test_0.csv
+2025-04-24 19:15:37,605 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:37,606 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:37,612 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:37,612 - INFO - Retrying file removal in 0.74 seconds
+2025-04-24 19:15:38,348 - INFO - Retrying file removal in 1.05 seconds
+2025-04-24 19:15:39,399 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 19:15:39,399 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,405 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,407 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,407 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,412 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,412 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,416 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,417 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:15:39,417 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:55,597 - INFO - Lock acquired: /tmp/backup_test_5jh2u_b4/test_file.csv.lock
+2025-04-24 19:17:55,597 - INFO - Created backup: test_file_20250424_191755.csv
+2025-04-24 19:17:55,597 - INFO - Lock released: /tmp/backup_test_5jh2u_b4/test_file.csv.lock
+2025-04-24 19:17:55,613 - INFO - Lock acquired: /tmp/backup_test_tltvx9y7/test_file.csv.lock
+2025-04-24 19:17:55,613 - INFO - Created backup: test_file_20250424_191755.csv
+2025-04-24 19:17:55,614 - INFO - Lock released: /tmp/backup_test_tltvx9y7/test_file.csv.lock
+2025-04-24 19:17:55,614 - INFO - Restored from backup (target did not exist): test_file_20250424_191755.csv
+2025-04-24 19:17:55,636 - INFO - Lock acquired: /tmp/backup_test_9xnl2rdp/test_file.csv.lock
+2025-04-24 19:17:55,636 - INFO - Created backup: test_file_20250424_191755.csv
+2025-04-24 19:17:55,636 - INFO - Lock released: /tmp/backup_test_9xnl2rdp/test_file.csv.lock
+2025-04-24 19:17:55,644 - INFO - Lock acquired: /tmp/backup_test_9xnl2rdp/test_file.csv.lock
+2025-04-24 19:17:55,644 - INFO - Created safety backup before restore: test_file_prerestore_20250424_191755.csv
+2025-04-24 19:17:55,645 - INFO - Restored from backup: test_file_20250424_191755.csv
+2025-04-24 19:17:55,645 - INFO - Lock released: /tmp/backup_test_9xnl2rdp/test_file.csv.lock
+2025-04-24 19:17:56,655 - INFO - Removed old backup: test_1.csv
+2025-04-24 19:17:56,656 - INFO - Removed old backup: test_0.csv
+2025-04-24 19:17:57,004 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:57,004 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:57,007 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:57,007 - INFO - Retrying file removal in 0.83 seconds
+2025-04-24 19:17:57,837 - INFO - Retrying file removal in 1.12 seconds
+2025-04-24 19:17:58,962 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-24 19:17:58,962 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,966 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,968 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,968 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,974 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,974 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,983 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,984 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-24 19:17:58,984 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:01,391 - INFO - Lock acquired: /tmp/backup_test_kvs8myl0/test_file.csv.lock
+2025-04-25 09:59:01,392 - INFO - Created backup: test_file_20250425_095901.csv
+2025-04-25 09:59:01,392 - INFO - Lock released: /tmp/backup_test_kvs8myl0/test_file.csv.lock
+2025-04-25 09:59:01,405 - INFO - Lock acquired: /tmp/backup_test_50vhvkwn/test_file.csv.lock
+2025-04-25 09:59:01,406 - INFO - Created backup: test_file_20250425_095901.csv
+2025-04-25 09:59:01,407 - INFO - Lock released: /tmp/backup_test_50vhvkwn/test_file.csv.lock
+2025-04-25 09:59:01,408 - INFO - Restored from backup (target did not exist): test_file_20250425_095901.csv
+2025-04-25 09:59:01,432 - INFO - Lock acquired: /tmp/backup_test_7eguotv9/test_file.csv.lock
+2025-04-25 09:59:01,435 - INFO - Created backup: test_file_20250425_095901.csv
+2025-04-25 09:59:01,435 - INFO - Lock released: /tmp/backup_test_7eguotv9/test_file.csv.lock
+2025-04-25 09:59:01,443 - INFO - Lock acquired: /tmp/backup_test_7eguotv9/test_file.csv.lock
+2025-04-25 09:59:01,446 - INFO - Created safety backup before restore: test_file_prerestore_20250425_095901.csv
+2025-04-25 09:59:01,447 - INFO - Restored from backup: test_file_20250425_095901.csv
+2025-04-25 09:59:01,452 - INFO - Lock released: /tmp/backup_test_7eguotv9/test_file.csv.lock
+2025-04-25 09:59:02,459 - INFO - Removed old backup: test_1.csv
+2025-04-25 09:59:02,460 - INFO - Removed old backup: test_0.csv
+2025-04-25 09:59:02,974 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:02,974 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:02,977 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:02,977 - INFO - Retrying file removal in 0.85 seconds
+2025-04-25 09:59:03,831 - INFO - Retrying file removal in 1.02 seconds
+2025-04-25 09:59:04,847 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-25 09:59:04,848 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,851 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,854 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,854 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,862 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,862 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,869 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,870 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 09:59:04,870 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock

@@ -14,11 +14,15 @@ Modules:
 - geometry.py: Geometric calculations
 - coordinate_utils.py: Coordinate transformations
 
+Conventions:
+- Z-coordinate values in DXF entities determine the drilling edge:
+  - Z values near 0: FRONT edge (drilling direction Y+)
+  - Z values near -555: BACK edge (drilling direction Y-)
+
 References:
 - MRFP-80: DXF to G-code Generation Epic
 - Python Code Structure and Organization (knowledge base)
 """
-
 # Imports and exports will be added as the modules are implemented
 # Import key items to make them available at package level
 # These will be uncommented as the modules are implemented
@@ -29,6 +33,5 @@ References:
 # from .entity_processor import process_entity
 # from .geometry import calculate_distance, calculate_angle
 # from .coordinate_utils import dxf_to_machine_coords
-
 # Define publicly available items - will expand as modules are implemented
 __all__ = []

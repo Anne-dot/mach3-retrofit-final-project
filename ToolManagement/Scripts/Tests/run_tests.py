@@ -12,16 +12,25 @@ import datetime
 import time
 
 def run_tests():
-    """Run all test files and return the test result object."""
+    """Run all test files from UnitTests directory and return the test result object."""
     # Determine the test directory relative to this script
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
-    if os.path.exists(os.path.join(script_dir, 'UnitTests')):
-        test_dir = os.path.join(script_dir, 'UnitTests')
-    else:
-        test_dir = script_dir
+    # Specifically target the UnitTests directory
+    test_dir = os.path.join(script_dir, 'UnitTests')
     
-    # Find and load all test modules
+    if not os.path.exists(test_dir):
+        print(f"ERROR: UnitTests directory not found at {test_dir}")
+        return unittest.TestResult(), 0
+    
+    # Import ezdxf before running tests to avoid import errors
+    try:
+        import ezdxf
+        print(f"Successfully imported ezdxf version {ezdxf.__version__}")
+    except ImportError:
+        print("WARNING: ezdxf module not found. DXF tests may fail.")
+    
+    # Find and load all test modules in the UnitTests directory only
     test_suite = unittest.defaultTestLoader.discover(
         test_dir, pattern='test_*.py'
     )
@@ -98,7 +107,7 @@ def generate_markdown_report(result, run_time):
         
         for file_name, counts in test_files.items():
             passed = counts['total'] - counts['failed']
-            status = "✅ PASSED" if passed == counts['total'] else "❌ FAILED"
+            status = "PASSED" if passed == counts['total'] else "FAILED"
             report += f"| {file_name} | {status} | {passed}/{counts['total']} |\n"
     
     if result.failures or result.errors:

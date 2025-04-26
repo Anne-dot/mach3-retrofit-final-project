@@ -1,0 +1,144 @@
+2025-04-25 15:37:28,849 - INFO - Lock acquired: /tmp/backup_test_pgfg00v0/test_file.csv.lock
+2025-04-25 15:37:28,850 - INFO - Created backup: test_file_20250425_153728.csv
+2025-04-25 15:37:28,850 - INFO - Lock released: /tmp/backup_test_pgfg00v0/test_file.csv.lock
+2025-04-25 15:37:28,860 - INFO - Lock acquired: /tmp/backup_test_vl4sehcy/test_file.csv.lock
+2025-04-25 15:37:28,861 - INFO - Created backup: test_file_20250425_153728.csv
+2025-04-25 15:37:28,861 - INFO - Lock released: /tmp/backup_test_vl4sehcy/test_file.csv.lock
+2025-04-25 15:37:28,862 - INFO - Restored from backup (target did not exist): test_file_20250425_153728.csv
+2025-04-25 15:37:28,871 - INFO - Lock acquired: /tmp/backup_test_kci4ngra/test_file.csv.lock
+2025-04-25 15:37:28,871 - INFO - Created backup: test_file_20250425_153728.csv
+2025-04-25 15:37:28,872 - INFO - Lock released: /tmp/backup_test_kci4ngra/test_file.csv.lock
+2025-04-25 15:37:28,875 - INFO - Lock acquired: /tmp/backup_test_kci4ngra/test_file.csv.lock
+2025-04-25 15:37:28,875 - INFO - Created safety backup before restore: test_file_prerestore_20250425_153728.csv
+2025-04-25 15:37:28,876 - INFO - Restored from backup: test_file_20250425_153728.csv
+2025-04-25 15:37:28,876 - INFO - Lock released: /tmp/backup_test_kci4ngra/test_file.csv.lock
+2025-04-25 15:37:29,883 - INFO - Removed old backup: test_1.csv
+2025-04-25 15:37:29,883 - INFO - Removed old backup: test_0.csv
+2025-04-25 15:37:29,886 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-25 15:37:29,886 - INFO - DrillingExtractor initialized
+2025-04-25 15:37:29,888 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-25 15:37:29,888 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,889 - INFO - Attempting to load DXF file: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/DXF/complex_case.dxf
+2025-04-25 15:37:29,914 - INFO - creating ACAD_COLOR dictionary
+2025-04-25 15:37:29,915 - INFO - creating ACAD_LAYOUT dictionary
+2025-04-25 15:37:29,916 - INFO - creating ACAD_MATERIAL dictionary
+2025-04-25 15:37:29,916 - INFO - creating ACAD_MLEADERSTYLE dictionary
+2025-04-25 15:37:29,917 - INFO - creating ACAD_PLOTSETTINGS dictionary
+2025-04-25 15:37:29,918 - INFO - creating ACAD_PLOTSTYLENAME dictionary
+2025-04-25 15:37:29,919 - INFO - creating ACAD_SCALELIST dictionary
+2025-04-25 15:37:29,919 - INFO - creating ACAD_TABLESTYLE dictionary
+2025-04-25 15:37:29,920 - INFO - creating ACAD_VISUALSTYLE dictionary
+2025-04-25 15:37:29,924 - INFO - Successfully loaded DXF file: complex_case.dxf
+2025-04-25 15:37:29,925 - INFO - Extracting complete drilling information
+2025-04-25 15:37:29,925 - INFO - Finding drilling points
+2025-04-25 15:37:29,927 - INFO - Found vertical drilling point at (485.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,928 - INFO - Found vertical drilling point at (35.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,929 - INFO - Found vertical drilling point at (485.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,929 - INFO - Found vertical drilling point at (35.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,929 - INFO - Found horizontal drilling point at (-517.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,930 - INFO - Found horizontal drilling point at (-67.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,930 - INFO - Found horizontal drilling point at (517.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,930 - INFO - Found horizontal drilling point at (67.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,930 - INFO - Found horizontal drilling point at (-485.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,930 - INFO - Found horizontal drilling point at (-35.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,931 - INFO - Found horizontal drilling point at (485.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,931 - INFO - Found horizontal drilling point at (35.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,931 - INFO - Found 4 vertical and 8 horizontal drilling points
+2025-04-25 15:37:29,931 - INFO - Determining drilling directions
+2025-04-25 15:37:29,931 - INFO - Drilling directions determined successfully
+2025-04-25 15:37:29,931 - INFO - Extracting drilling parameters
+2025-04-25 15:37:29,932 - INFO - Drilling parameters extracted successfully
+2025-04-25 15:37:29,932 - INFO - Grouping drilling operations
+2025-04-25 15:37:29,932 - INFO - Grouped drilling operations into 1 vertical and 2 horizontal groups
+2025-04-25 15:37:29,932 - INFO - Drilling information extracted successfully
+2025-04-25 15:37:29,933 - INFO - Finding drilling points
+2025-04-25 15:37:29,933 - INFO - Found vertical drilling point at (485.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,933 - INFO - Found vertical drilling point at (35.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,933 - INFO - Found vertical drilling point at (485.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,933 - INFO - Found vertical drilling point at (35.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,934 - INFO - Found horizontal drilling point at (-517.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,934 - INFO - Found horizontal drilling point at (-67.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,934 - INFO - Found horizontal drilling point at (517.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,934 - INFO - Found horizontal drilling point at (67.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,934 - INFO - Found horizontal drilling point at (-485.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,935 - INFO - Found horizontal drilling point at (-35.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,935 - INFO - Found horizontal drilling point at (485.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,935 - INFO - Found horizontal drilling point at (35.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,935 - INFO - Found 4 vertical and 8 horizontal drilling points
+2025-04-25 15:37:29,935 - INFO - Extracting drilling parameters
+2025-04-25 15:37:29,935 - INFO - Drilling parameters extracted successfully
+2025-04-25 15:37:29,936 - INFO - Extracting DXF file information
+2025-04-25 15:37:29,936 - INFO - Extracted information from DXF file with 14 total entities
+2025-04-25 15:37:29,937 - INFO - Finding drilling points
+2025-04-25 15:37:29,937 - INFO - Found vertical drilling point at (485.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,937 - INFO - Found vertical drilling point at (35.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,938 - INFO - Found vertical drilling point at (485.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,938 - INFO - Found vertical drilling point at (35.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,939 - INFO - Found horizontal drilling point at (-517.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,939 - INFO - Found horizontal drilling point at (-67.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,939 - INFO - Found horizontal drilling point at (517.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,940 - INFO - Found horizontal drilling point at (67.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,940 - INFO - Found horizontal drilling point at (-485.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,940 - INFO - Found horizontal drilling point at (-35.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,941 - INFO - Found horizontal drilling point at (485.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,941 - INFO - Found horizontal drilling point at (35.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,941 - INFO - Found 4 vertical and 8 horizontal drilling points
+2025-04-25 15:37:29,941 - INFO - Finding drilling points
+2025-04-25 15:37:29,942 - INFO - Found vertical drilling point at (485.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,942 - INFO - Found vertical drilling point at (35.499, 33.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,942 - INFO - Found vertical drilling point at (485.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,942 - INFO - Found vertical drilling point at (35.499, 520.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-25 15:37:29,942 - INFO - Found horizontal drilling point at (-517.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,943 - INFO - Found horizontal drilling point at (-67.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,943 - INFO - Found horizontal drilling point at (517.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,943 - INFO - Found horizontal drilling point at (67.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-25 15:37:29,943 - INFO - Found horizontal drilling point at (-485.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,943 - INFO - Found horizontal drilling point at (-35.499, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,944 - INFO - Found horizontal drilling point at (485.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,944 - INFO - Found horizontal drilling point at (35.499, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-25 15:37:29,944 - INFO - Found 4 vertical and 8 horizontal drilling points
+2025-04-25 15:37:29,944 - INFO - Extracting drilling parameters
+2025-04-25 15:37:29,944 - INFO - Drilling parameters extracted successfully
+2025-04-25 15:37:29,945 - INFO - Grouping drilling operations
+2025-04-25 15:37:29,945 - INFO - Grouped drilling operations into 1 vertical and 2 horizontal groups
+2025-04-25 15:37:29,948 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,952 - INFO - Attempting to load DXF file: /tmp/tmpph473d47/valid_test.dxf
+2025-04-25 15:37:29,953 - INFO - Successfully loaded DXF file: valid_test.dxf
+2025-04-25 15:37:29,953 - INFO - Extracting DXF file information
+2025-04-25 15:37:29,954 - INFO - Extracted information from DXF file with 3 total entities
+2025-04-25 15:37:29,955 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,957 - INFO - Validating DXF file: /tmp/tmpmogqzx61/valid_test.dxf
+2025-04-25 15:37:29,957 - ERROR - DXF file contains no entities in modelspace
+2025-04-25 15:37:29,958 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,958 - INFO - Validating DXF file: /tmp/tmpmqsvkz95/test.txt
+2025-04-25 15:37:29,959 - ERROR - File does not have .dxf extension: /tmp/tmpmqsvkz95/test.txt
+2025-04-25 15:37:29,959 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,960 - INFO - Validating DXF file: nonexistent_file.dxf
+2025-04-25 15:37:29,960 - ERROR - File not found: nonexistent_file.dxf
+2025-04-25 15:37:29,960 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,961 - INFO - Attempting to load DXF file: /tmp/tmp59_jmsxu/invalid_test.dxf
+2025-04-25 15:37:29,969 - ERROR - Error loading DXF file: Invalid DXF format: DXFError - Invalid DXF format
+2025-04-25 15:37:29,972 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,976 - INFO - Attempting to load DXF file: /tmp/tmpx9hl1bzz/valid_test.dxf
+2025-04-25 15:37:29,977 - INFO - Successfully loaded DXF file: valid_test.dxf
+2025-04-25 15:37:29,978 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,982 - INFO - Using terminal interface for DXF selection
+2025-04-25 15:37:29,983 - INFO - Selected file: /path/to/test/data/dir/test1.dxf
+2025-04-25 15:37:29,985 - INFO - DxfLoader initialized
+2025-04-25 15:37:29,986 - INFO - Using Windows file dialog for DXF selection
+2025-04-25 15:37:30,340 - INFO - Selected file: C:/Path/to/selected.dxf
+2025-04-25 15:37:30,344 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:30,344 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:30,347 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:30,348 - INFO - Retrying file removal in 0.58 seconds
+2025-04-25 15:37:30,932 - INFO - Retrying file removal in 1.87 seconds
+2025-04-25 15:37:32,805 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-25 15:37:32,806 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,811 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,814 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,815 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,819 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,819 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,823 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,824 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-25 15:37:32,824 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock

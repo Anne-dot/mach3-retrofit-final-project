@@ -18,4 +18,3 @@ with open(r"C:\Mach3\ToolManagement\Logs\test_log.txt", "w") as f:
 	f.write("Test completed successfully\n")
 
 print("All tests passed!")
-
