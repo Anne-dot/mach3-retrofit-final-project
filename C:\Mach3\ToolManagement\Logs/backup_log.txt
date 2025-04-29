@@ -1,0 +1,213 @@
+2025-04-29 13:25:15,739 - INFO - Lock acquired: /tmp/backup_test_j00mo_vu/test_file.csv.lock
+2025-04-29 13:25:15,740 - INFO - Created backup: test_file_20250429_132515.csv
+2025-04-29 13:25:15,740 - INFO - Lock released: /tmp/backup_test_j00mo_vu/test_file.csv.lock
+2025-04-29 13:25:15,749 - INFO - Lock acquired: /tmp/backup_test_oo8kz2rr/test_file.csv.lock
+2025-04-29 13:25:15,749 - INFO - Created backup: test_file_20250429_132515.csv
+2025-04-29 13:25:15,750 - INFO - Lock released: /tmp/backup_test_oo8kz2rr/test_file.csv.lock
+2025-04-29 13:25:15,750 - INFO - Restored from backup (target did not exist): test_file_20250429_132515.csv
+2025-04-29 13:25:15,758 - INFO - Lock acquired: /tmp/backup_test_wpxa57rt/test_file.csv.lock
+2025-04-29 13:25:15,758 - INFO - Created backup: test_file_20250429_132515.csv
+2025-04-29 13:25:15,759 - INFO - Lock released: /tmp/backup_test_wpxa57rt/test_file.csv.lock
+2025-04-29 13:25:15,761 - INFO - Lock acquired: /tmp/backup_test_wpxa57rt/test_file.csv.lock
+2025-04-29 13:25:15,761 - INFO - Created safety backup before restore: test_file_prerestore_20250429_132515.csv
+2025-04-29 13:25:15,762 - INFO - Restored from backup: test_file_20250429_132515.csv
+2025-04-29 13:25:15,762 - INFO - Lock released: /tmp/backup_test_wpxa57rt/test_file.csv.lock
+2025-04-29 13:25:16,768 - INFO - Removed old backup: test_1.csv
+2025-04-29 13:25:16,769 - INFO - Removed old backup: test_0.csv
+2025-04-29 13:25:16,771 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,772 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,772 - INFO - Creating HorizontalDrillTransformer
+2025-04-29 13:25:16,773 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,773 - INFO - HorizontalDrillTransformer initialized
+2025-04-29 13:25:16,773 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,773 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,774 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,774 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,774 - INFO - Workpiece parameters set: 545.5mm x 555.0mm x 22.5mm
+2025-04-29 13:25:16,774 - INFO - Testing edge detection logic
+2025-04-29 13:25:16,775 - INFO - Point 1: (-517.5, -9.5, 0.0) → Expected edge: front, Detected: front
+2025-04-29 13:25:16,775 - INFO - Point 2: (-67.5, -9.5, 0.0) → Expected edge: front, Detected: front
+2025-04-29 13:25:16,775 - INFO - Point 3: (517.5, -9.5, -555.0) → Expected edge: back, Detected: back
+2025-04-29 13:25:16,775 - INFO - Point 4: (67.5, -9.5, -555.0) → Expected edge: back, Detected: back
+2025-04-29 13:25:16,775 - INFO - Point 5: (-485.5, -9.5, 0.0) → Expected edge: front, Detected: front
+2025-04-29 13:25:16,775 - INFO - Point 6: (-35.5, -9.5, 0.0) → Expected edge: front, Detected: front
+2025-04-29 13:25:16,775 - INFO - Point 7: (485.5, -9.5, -555.0) → Expected edge: back, Detected: back
+2025-04-29 13:25:16,775 - INFO - Point 8: (35.5, -9.5, -555.0) → Expected edge: back, Detected: back
+2025-04-29 13:25:16,776 - INFO - Creating HorizontalDrillTransformer
+2025-04-29 13:25:16,776 - INFO - HorizontalDrillTransformer initialized
+2025-04-29 13:25:16,776 - INFO - Workpiece parameters set: 545.5mm x 555.0mm x 22.5mm
+2025-04-29 13:25:16,776 - INFO - Testing manual calculation vs transformer
+2025-04-29 13:25:16,776 - INFO - Transformed horizontal drilling point (front edge): DXF (-517.5, -9.5, 0.0) → Machine (28.0, -555.0, 13.0)
+2025-04-29 13:25:16,777 - INFO - Point 1: Manual: (28.0, -555.0, 13.0), Transformer: (28.0, -555.0, 13.0)
+2025-04-29 13:25:16,777 - INFO - Transformed horizontal drilling point (front edge): DXF (-67.5, -9.5, 0.0) → Machine (478.0, -555.0, 13.0)
+2025-04-29 13:25:16,777 - INFO - Point 2: Manual: (478.0, -555.0, 13.0), Transformer: (478.0, -555.0, 13.0)
+2025-04-29 13:25:16,777 - INFO - Transformed horizontal drilling point (back edge): DXF (517.5, -9.5, -555.0) → Machine (28.0, 0.0, 13.0)
+2025-04-29 13:25:16,777 - INFO - Point 3: Manual: (28.0, 0.0, 13.0), Transformer: (28.0, 0.0, 13.0)
+2025-04-29 13:25:16,777 - INFO - Transformed horizontal drilling point (back edge): DXF (67.5, -9.5, -555.0) → Machine (478.0, 0.0, 13.0)
+2025-04-29 13:25:16,777 - INFO - Point 4: Manual: (478.0, 0.0, 13.0), Transformer: (478.0, 0.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Transformed horizontal drilling point (front edge): DXF (-485.5, -9.5, 0.0) → Machine (60.0, -555.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Point 5: Manual: (60.0, -555.0, 13.0), Transformer: (60.0, -555.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Transformed horizontal drilling point (front edge): DXF (-35.5, -9.5, 0.0) → Machine (510.0, -555.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Point 6: Manual: (510.0, -555.0, 13.0), Transformer: (510.0, -555.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Transformed horizontal drilling point (back edge): DXF (485.5, -9.5, -555.0) → Machine (60.0, 0.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Point 7: Manual: (60.0, 0.0, 13.0), Transformer: (60.0, 0.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Transformed horizontal drilling point (back edge): DXF (35.5, -9.5, -555.0) → Machine (510.0, 0.0, 13.0)
+2025-04-29 13:25:16,778 - INFO - Point 8: Manual: (510.0, 0.0, 13.0), Transformer: (510.0, 0.0, 13.0)
+2025-04-29 13:25:16,779 - INFO - Creating HorizontalDrillTransformer
+2025-04-29 13:25:16,779 - INFO - HorizontalDrillTransformer initialized
+2025-04-29 13:25:16,779 - INFO - Workpiece parameters set: 545.5mm x 555.0mm x 22.5mm
+2025-04-29 13:25:16,779 - INFO - Testing point transformation
+2025-04-29 13:25:16,779 - INFO - Transformed horizontal drilling point (front edge): DXF (-517.5, -9.5, 0.0) → Machine (28.0, -555.0, 13.0)
+2025-04-29 13:25:16,779 - INFO - Point 1: Original: (-517.5, -9.5, 0.0) → Expected: (28.0, -555.0, 13.0), Got: (28.0, -555.0, 13.0)
+2025-04-29 13:25:16,779 - INFO - Transformed horizontal drilling point (front edge): DXF (-67.5, -9.5, 0.0) → Machine (478.0, -555.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Point 2: Original: (-67.5, -9.5, 0.0) → Expected: (478.0, -555.0, 13.0), Got: (478.0, -555.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Transformed horizontal drilling point (back edge): DXF (517.5, -9.5, -555.0) → Machine (28.0, 0.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Point 3: Original: (517.5, -9.5, -555.0) → Expected: (28.0, 0.0, 13.0), Got: (28.0, 0.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Transformed horizontal drilling point (back edge): DXF (67.5, -9.5, -555.0) → Machine (478.0, 0.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Point 4: Original: (67.5, -9.5, -555.0) → Expected: (478.0, 0.0, 13.0), Got: (478.0, 0.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Transformed horizontal drilling point (front edge): DXF (-485.5, -9.5, 0.0) → Machine (60.0, -555.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Point 5: Original: (-485.5, -9.5, 0.0) → Expected: (60.0, -555.0, 13.0), Got: (60.0, -555.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Transformed horizontal drilling point (front edge): DXF (-35.5, -9.5, 0.0) → Machine (510.0, -555.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Point 6: Original: (-35.5, -9.5, 0.0) → Expected: (510.0, -555.0, 13.0), Got: (510.0, -555.0, 13.0)
+2025-04-29 13:25:16,780 - INFO - Transformed horizontal drilling point (back edge): DXF (485.5, -9.5, -555.0) → Machine (60.0, 0.0, 13.0)
+2025-04-29 13:25:16,781 - INFO - Point 7: Original: (485.5, -9.5, -555.0) → Expected: (60.0, 0.0, 13.0), Got: (60.0, 0.0, 13.0)
+2025-04-29 13:25:16,781 - INFO - Transformed horizontal drilling point (back edge): DXF (35.5, -9.5, -555.0) → Machine (510.0, 0.0, 13.0)
+2025-04-29 13:25:16,781 - INFO - Point 8: Original: (35.5, -9.5, -555.0) → Expected: (510.0, 0.0, 13.0), Got: (510.0, 0.0, 13.0)
+2025-04-29 13:25:16,781 - INFO - Creating HorizontalDrillTransformer
+2025-04-29 13:25:16,781 - INFO - HorizontalDrillTransformer initialized
+2025-04-29 13:25:16,781 - INFO - Workpiece parameters set: 545.5mm x 555.0mm x 22.5mm
+2025-04-29 13:25:16,781 - INFO - Testing points transformation
+2025-04-29 13:25:16,781 - INFO - Transformed horizontal drilling point (front edge): DXF (-517.5, -9.5, 0.0) → Machine (28.0, -555.0, 13.0)
+2025-04-29 13:25:16,781 - INFO - Transformed horizontal drilling point (front edge): DXF (-67.5, -9.5, 0.0) → Machine (478.0, -555.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Transformed horizontal drilling point (back edge): DXF (517.5, -9.5, -555.0) → Machine (28.0, 0.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Transformed horizontal drilling point (back edge): DXF (67.5, -9.5, -555.0) → Machine (478.0, 0.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Transformed horizontal drilling point (front edge): DXF (-485.5, -9.5, 0.0) → Machine (60.0, -555.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Transformed horizontal drilling point (front edge): DXF (-35.5, -9.5, 0.0) → Machine (510.0, -555.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Transformed horizontal drilling point (back edge): DXF (485.5, -9.5, -555.0) → Machine (60.0, 0.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Transformed horizontal drilling point (back edge): DXF (35.5, -9.5, -555.0) → Machine (510.0, 0.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Point 1: Got: (28.0, -555.0, 13.0), Expected: (28.0, -555.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Point 2: Got: (478.0, -555.0, 13.0), Expected: (478.0, -555.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Point 3: Got: (28.0, 0.0, 13.0), Expected: (28.0, 0.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Point 4: Got: (478.0, 0.0, 13.0), Expected: (478.0, 0.0, 13.0)
+2025-04-29 13:25:16,782 - INFO - Point 5: Got: (60.0, -555.0, 13.0), Expected: (60.0, -555.0, 13.0)
+2025-04-29 13:25:16,783 - INFO - Point 6: Got: (510.0, -555.0, 13.0), Expected: (510.0, -555.0, 13.0)
+2025-04-29 13:25:16,783 - INFO - Point 7: Got: (60.0, 0.0, 13.0), Expected: (60.0, 0.0, 13.0)
+2025-04-29 13:25:16,783 - INFO - Point 8: Got: (510.0, 0.0, 13.0), Expected: (510.0, 0.0, 13.0)
+2025-04-29 13:25:16,783 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,783 - INFO - DrillingExtractor initialized
+2025-04-29 13:25:16,783 - INFO - Logger initialized - Linux 6.11.0-24-generic
+2025-04-29 13:25:16,783 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,784 - INFO - Attempting to load DXF file: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/DXF/Bottom_2_f0.dxf
+2025-04-29 13:25:16,791 - INFO - creating ACAD_COLOR dictionary
+2025-04-29 13:25:16,792 - INFO - creating ACAD_LAYOUT dictionary
+2025-04-29 13:25:16,792 - INFO - creating ACAD_MATERIAL dictionary
+2025-04-29 13:25:16,792 - INFO - creating ACAD_MLEADERSTYLE dictionary
+2025-04-29 13:25:16,792 - INFO - creating ACAD_PLOTSETTINGS dictionary
+2025-04-29 13:25:16,792 - INFO - creating ACAD_PLOTSTYLENAME dictionary
+2025-04-29 13:25:16,793 - INFO - creating ACAD_SCALELIST dictionary
+2025-04-29 13:25:16,793 - INFO - creating ACAD_TABLESTYLE dictionary
+2025-04-29 13:25:16,793 - INFO - creating ACAD_VISUALSTYLE dictionary
+2025-04-29 13:25:16,794 - INFO - Successfully loaded DXF file: Bottom_2_f0.dxf
+2025-04-29 13:25:16,794 - INFO - Extracting complete drilling information
+2025-04-29 13:25:16,795 - INFO - Finding drilling points
+2025-04-29 13:25:16,795 - INFO - Found drilling point at (33.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,795 - INFO - Found drilling point at (33.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,795 - INFO - Found drilling point at (520.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,795 - INFO - Found drilling point at (520.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,795 - INFO - Found drilling point at (541.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,796 - INFO - Found drilling point at (91.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,796 - INFO - Found drilling point at (-541.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,796 - INFO - Found drilling point at (-91.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,796 - INFO - Found drilling point at (509.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,796 - INFO - Found drilling point at (59.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,796 - INFO - Found drilling point at (-509.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,797 - INFO - Found drilling point at (-59.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,797 - INFO - Found 12 drilling points
+2025-04-29 13:25:16,797 - INFO - Extracting drilling parameters
+2025-04-29 13:25:16,797 - INFO - Drilling parameters extracted successfully
+2025-04-29 13:25:16,797 - INFO - Drilling information extracted successfully: found 12 drilling points
+2025-04-29 13:25:16,798 - INFO - Finding drilling points
+2025-04-29 13:25:16,798 - INFO - Found drilling point at (33.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,798 - INFO - Found drilling point at (33.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,799 - INFO - Found drilling point at (520.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,799 - INFO - Found drilling point at (520.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,799 - INFO - Found drilling point at (541.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,799 - INFO - Found drilling point at (91.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,799 - INFO - Found drilling point at (-541.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,799 - INFO - Found drilling point at (-91.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,800 - INFO - Found drilling point at (509.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,800 - INFO - Found drilling point at (59.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,800 - INFO - Found drilling point at (-509.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,800 - INFO - Found drilling point at (-59.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,800 - INFO - Found 12 drilling points
+2025-04-29 13:25:16,801 - INFO - Extracting DXF file information
+2025-04-29 13:25:16,801 - INFO - Extracted information from DXF file with 14 total entities
+2025-04-29 13:25:16,801 - INFO - Finding drilling points
+2025-04-29 13:25:16,802 - INFO - Found drilling point at (33.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,802 - INFO - Found drilling point at (33.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,802 - INFO - Found drilling point at (520.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,802 - INFO - Found drilling point at (520.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,802 - INFO - Found drilling point at (541.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,802 - INFO - Found drilling point at (91.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,803 - INFO - Found drilling point at (-541.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,803 - INFO - Found drilling point at (-91.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,803 - INFO - Found drilling point at (509.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,803 - INFO - Found drilling point at (59.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,803 - INFO - Found drilling point at (-509.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,803 - INFO - Found drilling point at (-59.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,803 - INFO - Found 12 drilling points
+2025-04-29 13:25:16,804 - INFO - Finding drilling points
+2025-04-29 13:25:16,804 - INFO - Found drilling point at (33.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,804 - INFO - Found drilling point at (33.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,804 - INFO - Found drilling point at (520.999, 509.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,805 - INFO - Found drilling point at (520.999, 59.999, 0.0) on layer: V.DRILL_D15.0_P14.0_F1
+2025-04-29 13:25:16,805 - INFO - Found drilling point at (541.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,805 - INFO - Found drilling point at (91.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,805 - INFO - Found drilling point at (-541.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,805 - INFO - Found drilling point at (-91.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P21.5
+2025-04-29 13:25:16,805 - INFO - Found drilling point at (509.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,806 - INFO - Found drilling point at (59.999, -9.5, 0.0) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,806 - INFO - Found drilling point at (-509.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,806 - INFO - Found drilling point at (-59.999, -9.5, -554.998) on layer: EDGE.DRILL_D8.0_P28.0
+2025-04-29 13:25:16,806 - INFO - Found 12 drilling points
+2025-04-29 13:25:16,810 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,817 - INFO - Attempting to load DXF file: /tmp/tmpprcpi_vm/valid_test.dxf
+2025-04-29 13:25:16,817 - INFO - Successfully loaded DXF file: valid_test.dxf
+2025-04-29 13:25:16,817 - INFO - Extracting DXF file information
+2025-04-29 13:25:16,818 - INFO - Extracted information from DXF file with 3 total entities
+2025-04-29 13:25:16,818 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,819 - INFO - Validating DXF file: /tmp/tmpj4f4bhu3/valid_test.dxf
+2025-04-29 13:25:16,820 - ERROR - DXF file contains no entities in modelspace
+2025-04-29 13:25:16,820 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,820 - INFO - Validating DXF file: /tmp/tmpgcx_2q57/test.txt
+2025-04-29 13:25:16,821 - ERROR - File does not have .dxf extension: /tmp/tmpgcx_2q57/test.txt
+2025-04-29 13:25:16,821 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,821 - INFO - Validating DXF file: nonexistent_file.dxf
+2025-04-29 13:25:16,821 - ERROR - File not found: nonexistent_file.dxf
+2025-04-29 13:25:16,822 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,823 - INFO - Attempting to load DXF file: /tmp/tmpbdwv3rh8/invalid_test.dxf
+2025-04-29 13:25:16,830 - ERROR - Error loading DXF file: Invalid DXF format: DXFError - Invalid DXF format
+2025-04-29 13:25:16,831 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,833 - INFO - Attempting to load DXF file: /tmp/tmpvj8qbmdn/valid_test.dxf
+2025-04-29 13:25:16,833 - INFO - Successfully loaded DXF file: valid_test.dxf
+2025-04-29 13:25:16,834 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,835 - INFO - Using terminal interface for DXF selection
+2025-04-29 13:25:16,836 - INFO - Selected file: /path/to/test/data/dir/test1.dxf
+2025-04-29 13:25:16,837 - INFO - DxfLoader initialized
+2025-04-29 13:25:16,837 - INFO - Using Windows file dialog for DXF selection
+2025-04-29 13:25:17,149 - INFO - Selected file: C:/Path/to/selected.dxf
+2025-04-29 13:25:17,154 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:17,154 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:17,157 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:17,158 - INFO - Retrying file removal in 0.75 seconds
+2025-04-29 13:25:17,907 - INFO - Retrying file removal in 1.14 seconds
+2025-04-29 13:25:19,052 - ERROR - Failed to remove file /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock after 3 attempts: [Errno 21] Is a directory: '/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock'
+2025-04-29 13:25:19,052 - ERROR - Failed to release lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,055 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,057 - INFO - Lock file exists and is still valid: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,058 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,061 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,061 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,064 - INFO - Removed stale lock: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,065 - INFO - Lock acquired: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock
+2025-04-29 13:25:19,065 - INFO - Lock released: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/UnitTests/test_files/test_lock_file.txt.lock

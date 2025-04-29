@@ -34,6 +34,82 @@ class UIUtils:
     """
     
     @staticmethod
+    def print_separator(title: Optional[str] = None) -> None:
+        """
+        Print a separator line with optional title.
+        
+        Args:
+            title: Optional title to display in the separator
+        """
+        width = 80
+        if title:
+            padding_left = (width - len(title) - 2) // 2
+            padding_right = width - len(title) - 2 - padding_left
+            print(f"\n{'=' * padding_left} {title} {'=' * padding_right}")
+        else:
+            print("\n" + "=" * width)
+    
+    @staticmethod
+    def keep_terminal_open(message: str = "All operations have been completed.") -> None:
+        """
+        Keep the terminal window open until user presses a key.
+        Works on both Windows and Linux/macOS.
+        
+        Args:
+            message: Message to display before waiting (default: generic completion message)
+        """
+        UIUtils.print_separator("Operation Complete")
+        print(message)
+        
+        if platform.system() == "Windows":
+            print("\nPress any key to exit...")
+            os.system('pause >nul')
+        else:  # Linux/macOS
+            print("\nPress Enter to exit...")
+            input()
+    
+    @staticmethod
+    def select_dxf_file(dxf_dir: str) -> Optional[str]:
+        """
+        Display a simple selection menu for DXF files.
+        
+        Args:
+            dxf_dir: Directory containing DXF files
+        
+        Returns:
+            Optional[str]: Path to the selected DXF file, or None if no file selected
+        """
+        # List DXF files
+        dxf_files = [f for f in os.listdir(dxf_dir) if f.lower().endswith('.dxf')]
+        
+        if not dxf_files:
+            print("No DXF files found in the specified directory.")
+            return None
+        
+        print("\nAvailable DXF files:")
+        for i, file in enumerate(dxf_files):
+            print(f"{i+1}. {file}")
+        
+        while True:
+            try:
+                choice = input("\nSelect a file number (or press Enter for default): ")
+                if choice.strip() == "":
+                    # Default to first file
+                    selected_index = 0
+                    break
+                else:
+                    selected_index = int(choice) - 1
+                    if 0 <= selected_index < len(dxf_files):
+                        break
+                    else:
+                        print(f"Please enter a number between 1 and {len(dxf_files)}")
+            except ValueError:
+                print("Please enter a valid number")
+        
+        selected_file = dxf_files[selected_index]
+        return os.path.join(dxf_dir, selected_file)
+    
+    @staticmethod
     def select_file(
         title: str = "Select File",
         initial_dir: Optional[Union[str, Path]] = None,
@@ -160,9 +236,7 @@ class UIUtils:
                 ]
                 
             # Print header
-            print("\n" + "=" * 60)
-            print(f"{title}")
-            print("=" * 60)
+            UIUtils.print_separator(title)
             
             # Show file type information
             print("Supported file types:")
@@ -242,9 +316,7 @@ class UIUtils:
             
         except ImportError:
             # Fall back to console output
-            print("\n" + "=" * 60)
-            print(f"{title}")
-            print("=" * 60)
+            UIUtils.print_separator(title)
             
             # Format message based on type
             if message_type == "warning":
