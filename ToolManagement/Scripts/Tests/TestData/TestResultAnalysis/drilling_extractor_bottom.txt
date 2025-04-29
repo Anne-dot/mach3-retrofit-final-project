@@ -1,0 +1,124 @@
+d0021@d0021-Latitude-E6420:~/kool/mach3-retrofit-final-project$ /bin/python3 /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/ManualTests/test_drilling_extractor_anne_linux.py
+=== Drilling Point Extraction Test ===
+
+Available DXF files:
+1. Bottom_2_f0.dxf
+2. Right Side_4_f0.dxf
+3. complex_case.dxf
+4. Back_5_f0.dxf
+5. Left Side_3_f1.dxf
+
+Select a file number (or press Enter for default): 1
+Using test DXF file: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/DXF/Bottom_2_f0.dxf
+
+Step 1: Loading DXF file...
+SUCCESS: DXF loaded successfully: Successfully loaded DXF file: Bottom_2_f0.dxf
+
+Step 2: Performing direct entity check...
+
+DIRECT ENTITY CHECK:
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (541.999, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (91.999, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (-541.999, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (-91.999, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (509.999, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (59.999, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (-509.999, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (-59.999, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+
+Step 3: Extracting drilling information...
+SUCCESS: Drilling information extracted: Drilling information extracted successfully
+  Found 4 vertical drilling points
+  Found 8 horizontal drilling points
+
+Step 4: Detailed drilling information:
+
+Vertical Drilling Points:
+1. Position: (33.999, 509.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+2. Position: (33.999, 59.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+3. Position: (520.999, 509.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+4. Position: (520.999, 59.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+
+Horizontal Drilling Points:
+1. Position: (541.999, -9.5, 0.0), Diameter: 8.0mm, Depth: 21.5mm, Edge: FRONT
+2. Position: (91.999, -9.5, 0.0), Diameter: 8.0mm, Depth: 21.5mm, Edge: FRONT
+3. Position: (-541.999, -9.5, -554.998), Diameter: 8.0mm, Depth: 21.5mm, Edge: BACK
+4. Position: (-91.999, -9.5, -554.998), Diameter: 8.0mm, Depth: 21.5mm, Edge: BACK
+5. Position: (509.999, -9.5, 0.0), Diameter: 8.0mm, Depth: 28.0mm, Edge: FRONT
+6. Position: (59.999, -9.5, 0.0), Diameter: 8.0mm, Depth: 28.0mm, Edge: FRONT
+7. Position: (-509.999, -9.5, -554.998), Diameter: 8.0mm, Depth: 28.0mm, Edge: BACK
+8. Position: (-59.999, -9.5, -554.998), Diameter: 8.0mm, Depth: 28.0mm, Edge: BACK
+
+Test completed successfully.
+d0021@d0021-Latitude-E6420:~/kool/mach3-retrofit-final-project$ 
+
+d0021@d0021-Latitude-E6420:~/kool/mach3-retrofit-final-project$ /bin/python3 /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/ManualTests/test_coordinate_transformer_anne_linux.py
+Successfully loaded DXF file: Bottom_2_f0.dxf
+Successfully extracted workpiece information
+  Width: 554.998mm
+  Height: 569.998mm
+  Thickness: 22.5mm
+  Min X: 0.0, Min Y: 0.0
+  Max X: 554.998, Max Y: 569.998
+  Origin aligned: True
+  Axis aligned: True
+Successfully extracted drilling information
+
+Original workpiece boundary values:
+  Min X: 0.0, Min Y: 0.0
+  Max X: 554.998, Max Y: 569.998
+
+Transformed workpiece boundary values:
+  Min X: 0.0, Min Y: -570.0
+  Max X: 555.0, Max Y: -0.0
+
+Horizontal drill points (transformed in test according to doc)
+  H1: Original: (541.999, -9.5, 0.0) front → Expected: (13.0, -570.0, 13.0)
+     → Actual: (13.0, -570.0, 13.0) [front]
+     ✓ MATCH
+
+  H2: Original: (91.999, -9.5, 0.0) front → Expected: (463.0, -570.0, 13.0)
+     → Actual: (463.0, -570.0, 13.0) [front]
+     ✓ MATCH
+
+  H3: Original: (-541.999, -9.5, -554.998) back → Expected: (13.0, 0.0, 13.0)
+     → Actual: (13.0, -570.0, 13.0) [front]
+     ✗ MISMATCH
+
+  H4: Original: (-91.999, -9.5, -554.998) back → Expected: (463.0, 0.0, 13.0)
+     → Actual: (463.0, -570.0, 13.0) [front]
+     ✗ MISMATCH
+
+  H5: Original: (509.999, -9.5, 0.0) front → Expected: (45.0, -570.0, 13.0)
+     → Actual: (45.0, -570.0, 13.0) [front]
+     ✓ MATCH
+
+  H6: Original: (59.999, -9.5, 0.0) front → Expected: (495.0, -570.0, 13.0)
+     → Actual: (495.0, -570.0, 13.0) [front]
+     ✓ MATCH
+
+  H7: Original: (-509.999, -9.5, -554.998) back → Expected: (45.0, 0.0, 13.0)
+     → Actual: (45.0, -570.0, 13.0) [front]
+     ✗ MISMATCH
+
+  H8: Original: (-59.999, -9.5, -554.998) back → Expected: (495.0, 0.0, 13.0)
+     → Actual: (495.0, -570.0, 13.0) [front]
+     ✗ MISMATCH
+
+d0021@d0021-Latitude-E6420:~/kool/mach3-retrofit-final-project$ 

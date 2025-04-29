@@ -1,47 +1,72 @@
 """
-Module for coordinate system transformations.
+Modular coordinate transformation system for MVP.
 
-This module handles conversions between different coordinate systems,
-including DXF coordinates to machine coordinates. It focuses solely on
-coordinate transformations, not on generating tool paths or operation sequences.
+This module provides specialized transformer classes for coordinate transformations
+in the CNC machining context. For the MVP, focuses on workpiece transformation
+with proper Y-axis inversion to convert from DXF coordinates (bottom-left origin)
+to machine coordinates (top-left origin).
 
-Functions:
-    dxf_to_machine_coords: Converts DXF to machine coordinates
-    transform_workpiece: Applies transformations to entire workpiece
-
-References:
-    - MRFP-80: DXF to G-code Generation Epic
-    - MRFP-150: Clarify Workpiece Thickness with Client
+Each transformer has a single responsibility, making the code more maintainable
+and easier to extend with additional transformation types in the future.
 """
 
-import math
-from typing import Tuple, Dict, Any, Optional, Union
+from typing import Tuple, Dict, Any, Optional, List
 
-# Import from Utils package
+# Import from Utils package - centralized utility functions
 from Utils.logging_utils import setup_logger, log_exception
+from Utils.error_utils import ErrorHandler, BaseError, ErrorCategory, ErrorSeverity
+#from Utils.validation_utils import ValidationUtils     #not implemented yet
+from Utils.path_utils import PathUtils
 
 
-class CoordinateTransformer:
-    """
-    Handles coordinate system transformations for CNC operations.
+class TransformationError(BaseError):
+    """Error related to coordinate transformation operations."""
     
-    This class provides methods for converting between DXF and machine
-    coordinate systems, focusing on the mathematical transformations
-    without handling tool paths or operation sequences.
+    def __init__(
+        self,
+        message: str,
+        category: ErrorCategory = ErrorCategory.TRANSFORMATION,
+        severity: ErrorSeverity = ErrorSeverity.ERROR,
+        value: Any = None,
+        details: Dict[str, Any] = None
+    ):
+        """
+        Initialize TransformationError.
+        
+        Args:
+            message: Error message
+            category: Error category
+            severity: Error severity
+            value: Problematic value (optional)
+            details: Additional error details (optional)
+        """
+        super().__init__(
+            message=message,
+            category=category,
+            severity=severity,
+            details=details or {}
+        )
+        if value is not None:
+            self.details["value"] = value
+
+
+class BaseTransformer:
+    """
+    Base class for all coordinate transformers.
+    
+    Provides common functionality and interface for all transformers,
+    ensuring consistent behavior across the system.
     """
     
     def __init__(self):
-        """Initialize the coordinate transformer."""
+        """Initialize the base transformer."""
         # Set up logger for this class
-        self.logger = setup_logger(__name__)
+        self.logger = setup_logger(f"{__name__}.{self.__class__.__name__}")
         
-        # Default workpiece thickness if not specified
-        self.default_thickness = 22.5  # mm - will be clarified in MRFP-150
-        
-        # Initialize workpiece parameters
+        # Default workpiece parameters
         self.workpiece_width = 0.0
         self.workpiece_height = 0.0
-        self.workpiece_thickness = self.default_thickness
+        self.workpiece_thickness = 22.5  # Default thickness in mm
         
         # Workpiece boundary info
         self.min_x = 0.0
@@ -49,7 +74,7 @@ class CoordinateTransformer:
         self.max_x = 0.0
         self.max_y = 0.0
         
-        self.logger.info("CoordinateTransformer initialized")
+        self.logger.info(f"{self.__class__.__name__} initialized")
     
     def set_workpiece_parameters(
         self, 
@@ -60,7 +85,7 @@ class CoordinateTransformer:
         min_y: Optional[float] = None,
         max_x: Optional[float] = None,
         max_y: Optional[float] = None
-    ):
+    ) -> Tuple[bool, str, Dict[str, Any]]:
         """
         Set workpiece parameters for coordinate transformations.
         
@@ -72,281 +97,624 @@ class CoordinateTransformer:
             min_y: Minimum Y coordinate from DXF
             max_x: Maximum X coordinate from DXF
             max_y: Maximum Y coordinate from DXF
+            
+        Returns:
+            Tuple containing:
+                - Success flag (bool)
+                - Message (str)
+                - Details dictionary (Dict[str, Any])
         """
-        self.workpiece_width = float(width)
-        self.workpiece_height = float(height)
-        self.workpiece_thickness = float(thickness or self.default_thickness)
-        
-        # Set boundary coordinates if provided
-        if min_x is not None:
-            self.min_x = float(min_x)
-        if min_y is not None:
-            self.min_y = float(min_y)
-        if max_x is not None:
-            self.max_x = float(max_x)
-        if max_y is not None:
-            self.max_y = float(max_y)
-        
-        self.logger.info(
-            f"Workpiece parameters set: {self.workpiece_width}mm x "
-            f"{self.workpiece_height}mm x {self.workpiece_thickness}mm"
-        )
-        if min_x is not None and max_y is not None:
+        try:
+            # Set parameters
+            self.workpiece_width = float(width)
+            self.workpiece_height = float(height)
+            
+            if thickness is not None:
+                self.workpiece_thickness = float(thickness)
+            
+            # Set boundary coordinates if provided
+            if min_x is not None:
+                self.min_x = float(min_x)
+            if min_y is not None:
+                self.min_y = float(min_y)
+            if max_x is not None:
+                self.max_x = float(max_x)
+            if max_y is not None:
+                self.max_y = float(max_y)
+            
             self.logger.info(
-                f"Boundary coordinates: ({self.min_x}, {self.min_y}) to "
-                f"({self.max_x}, {self.max_y})"
+                f"Workpiece parameters set: {self.workpiece_width}mm x "
+                f"{self.workpiece_height}mm x {self.workpiece_thickness}mm"
             )
+            
+            # Return success response
+            return ErrorHandler.create_success_response(
+                message="Workpiece parameters set successfully",
+                data={
+                    "width": self.workpiece_width,
+                    "height": self.workpiece_height,
+                    "thickness": self.workpiece_thickness,
+                    "boundary": {
+                        "min_x": self.min_x,
+                        "min_y": self.min_y,
+                        "max_x": self.max_x,
+                        "max_y": self.max_y
+                    }
+                }
+            )
+            
+        except Exception as e:
+            log_exception(self.logger, "Error setting workpiece parameters", e)
+            return ErrorHandler.from_exception(e)
     
-    def set_from_workpiece_info(self, workpiece_info: Dict[str, Any]):
+    def set_from_workpiece_info(self, workpiece_info: Dict[str, Any]) -> Tuple[bool, str, Dict[str, Any]]:
         """
         Set parameters from workpiece_info dictionary from workpiece_extractor.
         
         Args:
             workpiece_info: Dictionary with workpiece information
-        """
-        try:
-            if 'dimensions' in workpiece_info:
-                dims = workpiece_info['dimensions']
-                self.set_workpiece_parameters(
-                    width=dims.get('width', 0),
-                    height=dims.get('height', 0),
-                    thickness=dims.get('depth', self.default_thickness),
-                    min_x=dims.get('min_x', 0),
-                    min_y=dims.get('min_y', 0),
-                    max_x=dims.get('max_x', 0),
-                    max_y=dims.get('max_y', 0)
-                )
-            self.logger.info("Parameters set from workpiece_info")
-        except Exception as e:
-            self.logger.error(f"Error setting parameters from workpiece_info: {str(e)}")
-    
-    def dxf_to_machine_coords(
-        self, 
-        dxf_point: Tuple[float, float, float],
-        point_type: str = "general"
-    ) -> Tuple[float, float, float]:
-        """
-        Convert DXF coordinates to machine coordinates.
-        
-        The transformation depends on the point type:
-        - For vertical drilling and general points:
-          X_machine = X_dxf - min_x
-          Y_machine = min_y - Y_dxf
-          Z_machine depends on operation
-        
-        - For horizontal drilling:
-          X_machine = workpiece_width - abs(X_dxf)
-          Y_machine = 0 (front edge) or workpiece_height (back edge)
-          Z_machine = workpiece_thickness - abs(Y_dxf)
-        
-        Args:
-            dxf_point: Tuple of (X, Y, Z) coordinates from DXF
-            point_type: Type of point ('general', 'vertical_drill', 'horizontal_drill')
             
         Returns:
-            Tuple: (X, Y, Z) coordinates in machine coordinate system
+            Tuple containing:
+                - Success flag (bool)
+                - Message (str)
+                - Details dictionary (Dict[str, Any])
         """
         try:
-            # Extract DXF coordinates
-            x_dxf, y_dxf, z_dxf = dxf_point
-            
-            # Apply transformations based on point type
-            if point_type == "horizontal_drill":
-                # Horizontal drilling transformation
-                x_machine = self.workpiece_width - abs(x_dxf)
+            if not isinstance(workpiece_info, dict):
+                return ErrorHandler.create_error_response(
+                    TransformationError(
+                        message="Invalid workpiece_info parameter - must be a dictionary",
+                        category=ErrorCategory.VALIDATION,
+                        severity=ErrorSeverity.ERROR
+                    )
+                )
                 
-                # Y transformation based on Z value
-                # Z≈0 indicates front edge, Z≈-height indicates back edge
-                if abs(z_dxf) < 1.0:  # Front edge
-                    y_machine = 0.0
-                else:  # Back edge
-                    y_machine = self.workpiece_height
+            if 'dimensions' not in workpiece_info:
+                return ErrorHandler.create_error_response(
+                    TransformationError(
+                        message="Missing dimensions in workpiece_info",
+                        category=ErrorCategory.VALIDATION,
+                        severity=ErrorSeverity.ERROR
+                    )
+                )
                 
-                # Z transformation (height from bottom, accounting for drilling depth)
-                z_machine = self.workpiece_thickness - abs(y_dxf)
-                
-            else:  # vertical_drill or general
-                # Apply offset transformation for vertical drilling
-                x_machine = x_dxf - self.min_x
-                y_machine = self.min_y - y_dxf
-                
-                if point_type == "vertical_drill":
-                    # Start position at top of workpiece
-                    z_machine = self.workpiece_thickness
-                else:
-                    # Default Z transformation
-                    z_machine = z_dxf + self.workpiece_thickness
-            
-            # Round all coordinates to 0.1mm accuracy
-            x_machine = round(x_machine, 1)
-            y_machine = round(y_machine, 1)
-            z_machine = round(z_machine, 1)
-            
-            # Log the transformation
-            self.logger.debug(
-                f"Transformed {point_type} point: "
-                f"DXF ({x_dxf}, {y_dxf}, {z_dxf}) → "
-                f"Machine ({x_machine}, {y_machine}, {z_machine})"
+            dims = workpiece_info['dimensions']
+            result = self.set_workpiece_parameters(
+                width=dims.get('width', 0),
+                height=dims.get('height', 0),
+                thickness=dims.get('depth', self.workpiece_thickness),
+                min_x=dims.get('min_x', 0),
+                min_y=dims.get('min_y', 0),
+                max_x=dims.get('max_x', 0),
+                max_y=dims.get('max_y', 0)
             )
             
-            return (x_machine, y_machine, z_machine)
-            
+            self.logger.info("Parameters set from workpiece_info")
+            return result
+                
         except Exception as e:
-            self.logger.error(f"Error converting coordinates: {str(e)}")
-            # Return original coordinates if transformation fails
-            return (round(dxf_point[0], 1), round(dxf_point[1], 1), round(dxf_point[2], 1))
+            log_exception(self.logger, "Error setting parameters from workpiece_info", e)
+            return ErrorHandler.from_exception(e)
+    
+    def round_coordinates(self, coords: Tuple[float, float, float]) -> Tuple[float, float, float]:
+        """
+        Round coordinates to 0.1mm precision.
+        
+        Args:
+            coords: Tuple of (X, Y, Z) coordinates
+            
+        Returns:
+            Tuple of rounded coordinates
+        """
+        return (round(coords[0], 1), round(coords[1], 1), round(coords[2], 1))
+
+
+class WorkpieceTransformer(BaseTransformer):
+    """
+    Transforms entire workpiece information.
+    
+    Handles overall workpiece transformations, specifically Y-axis inversion
+    to convert from DXF coordinates (bottom-left origin) to machine coordinates
+    (top-left origin).
+    """
     
     def transform_workpiece(
         self,
-        workpiece_info: Dict[str, Any],
-        rotation: float = 0.0,
-        mirror_x: bool = False,
-        mirror_y: bool = False
-    ) -> Dict[str, Any]:
+        workpiece_info: Dict[str, Any]
+    ) -> Tuple[bool, Dict[str, Any], Dict[str, Any]]:
         """
-        Apply transformations to entire workpiece information.
+        Transform workpiece information to machine coordinates with 0.1mm rounding.
         
-        This is useful for rotating or mirroring the entire workpiece
-        for different machine setups or orientations.
+        The primary transformation is Y-axis inversion:
+        - DXF uses bottom-left origin
+        - Machine uses top-left origin
+        
+        This inverts Y coordinates for boundaries and reference points,
+        with all values rounded to 0.1mm precision.
         
         Args:
             workpiece_info: Dictionary with workpiece information
-            rotation: Rotation angle in degrees (clockwise)
-            mirror_x: Whether to mirror along X axis
-            mirror_y: Whether to mirror along Y axis
             
         Returns:
-            Dict: Transformed workpiece information
+            Tuple containing:
+                - Success flag (bool)
+                - Transformed workpiece information (Dict[str, Any])
+                - Details dictionary (Dict[str, Any])
         """
         try:
-            # Create a copy of workpiece_info to avoid modifying the original
-            transformed = workpiece_info.copy()
-            
-            # Calculate rotation in radians
-            rotation_rad = math.radians(rotation)
-            
-            # Check if we need to swap dimensions for 90/270 degree rotations
-            swap_dimensions = abs(abs(rotation) - 90) < 0.01 or abs(abs(rotation) - 270) < 0.01
-            
-            # Update dimensions if needed
-            if swap_dimensions and 'dimensions' in workpiece_info:
-                # Swap width and height
-                width = workpiece_info['dimensions']['height']
-                height = workpiece_info['dimensions']['width']
-                transformed['dimensions']['width'] = width
-                transformed['dimensions']['height'] = height
-                
-                # Update workpiece parameters
-                self.set_workpiece_parameters(
-                    width=width,
-                    height=height,
-                    thickness=workpiece_info['dimensions'].get('depth', self.workpiece_thickness)
+            # Validate input
+            if not isinstance(workpiece_info, dict):
+                return ErrorHandler.create_error_response(
+                    TransformationError(
+                        message="Invalid workpiece_info parameter - must be a dictionary",
+                        category=ErrorCategory.PROCESSING,
+                        severity=ErrorSeverity.ERROR
+                    )
                 )
             
-            # Transform reference points
-            if 'reference_points' in workpiece_info:
-                transformed_points = {}
-                
-                for point_name, coords in workpiece_info['reference_points'].items():
-                    # Apply transformations
-                    x, y = coords
-                    
-                    # Apply mirroring
-                    if mirror_x:
-                        x = self.workpiece_width - x
-                    if mirror_y:
-                        y = self.workpiece_height - y
-                    
-                    # Apply rotation around the center
-                    if rotation != 0:
-                        # Translate to origin
-                        center_x = self.workpiece_width / 2
-                        center_y = self.workpiece_height / 2
-                        x_rel = x - center_x
-                        y_rel = y - center_y
-                        
-                        # Rotate
-                        x_rot = x_rel * math.cos(rotation_rad) - y_rel * math.sin(rotation_rad)
-                        y_rot = x_rel * math.sin(rotation_rad) + y_rel * math.cos(rotation_rad)
-                        
-                        # Translate back
-                        x = x_rot + center_x
-                        y = y_rot + center_y
-                    
-                    transformed_points[point_name] = (round(x, 1), round(y, 1))
-                
-                transformed['reference_points'] = transformed_points
-            
-            self.logger.info(f"Transformed workpiece: rotation={rotation}°, mirror_x={mirror_x}, mirror_y={mirror_y}")
-            return transformed
-            
-        except Exception as e:
-            self.logger.error(f"Error transforming workpiece: {str(e)}")
-            # Return original workpiece_info if transformation fails
-            return workpiece_info
-    
-    def offset_workpiece(
-        self,
-        workpiece_info: Dict[str, Any],
-        offset_x: float = 0.0,
-        offset_y: float = 0.0,
-        offset_z: float = 0.0
-    ) -> Dict[str, Any]:
-        """
-        Apply an offset to the entire workpiece.
-        
-        This function shifts all reference points by the specified offset
-        while maintaining the workpiece dimensions.
-        
-        Args:
-            workpiece_info: Dictionary with workpiece information
-            offset_x: X-axis offset to apply (mm)
-            offset_y: Y-axis offset to apply (mm)
-            offset_z: Z-axis offset to apply (mm)
-            
-        Returns:
-            Dict: Offset workpiece information
-        """
-        try:
             # Create a copy of workpiece_info to avoid modifying the original
             transformed = workpiece_info.copy()
             
-            # Apply offset to reference points
+            # Transform dimensions if they exist
+            if 'dimensions' in workpiece_info:
+                transformed['dimensions'] = workpiece_info['dimensions'].copy()
+                
+                # Transform min_y and max_y (invert Y axis)
+                if 'min_y' in transformed['dimensions'] and 'max_y' in transformed['dimensions']:
+                    # Store original values
+                    min_y = transformed['dimensions']['min_y']
+                    max_y = transformed['dimensions']['max_y']
+                    
+                    # Invert Y (machine uses top-left origin) and round to 0.1mm
+                    transformed['dimensions']['min_y'] = round(-max_y, 1)
+                    transformed['dimensions']['max_y'] = round(-min_y, 1)
+                    
+                    # Also round other dimension values
+                    for key in ['min_x', 'max_x', 'width', 'height', 'depth']:
+                        if key in transformed['dimensions']:
+                            transformed['dimensions'][key] = round(transformed['dimensions'][key], 1)
+            
+            # Transform reference points if they exist
             if 'reference_points' in workpiece_info:
-                transformed_points = {}
+                transformed['reference_points'] = {}
                 
                 for point_name, coords in workpiece_info['reference_points'].items():
-                    # Apply offset
+                    # Invert Y coordinate and round both X and Y to 0.1mm
                     x, y = coords
-                    new_x = x + offset_x
-                    new_y = y + offset_y
-                    
-                    # Round to 0.1mm accuracy
-                    transformed_points[point_name] = (round(new_x, 1), round(new_y, 1))
+                    transformed['reference_points'][point_name] = (round(x, 1), round(-y, 1))
+            
+            self.logger.info("Transformed workpiece to machine coordinates (Y inverted with 0.1mm rounding)")
+            
+            # Create details dictionary with original and transformed boundaries
+            details = {
+                "transformation_type": "Y-axis inversion with 0.1mm rounding",
+                "orientation": "Machine uses top-left origin"
+            }
+            
+            if 'dimensions' in transformed:
+                dims = workpiece_info['dimensions']
+                tdims = transformed['dimensions']
                 
-                transformed['reference_points'] = transformed_points
-            
-            # Update boundary information if present
-            if 'dimensions' in workpiece_info and 'min_x' in workpiece_info['dimensions']:
-                transformed['dimensions']['min_x'] = workpiece_info['dimensions']['min_x'] + offset_x
-                transformed['dimensions']['min_y'] = workpiece_info['dimensions']['min_y'] + offset_y
-                transformed['dimensions']['max_x'] = workpiece_info['dimensions']['max_x'] + offset_x
-                transformed['dimensions']['max_y'] = workpiece_info['dimensions']['max_y'] + offset_y
-            
-            self.logger.info(f"Offset workpiece by X:{offset_x}mm Y:{offset_y}mm Z:{offset_z}mm")
-            return transformed
+                # Log boundaries for debugging
+                self.logger.info(
+                    f"DXF Boundary: ({dims.get('min_x', 0)}, {dims.get('min_y', 0)}) "
+                    f"to ({dims.get('max_x', 0)}, {dims.get('max_y', 0)})"
+                )
+                self.logger.info(
+                    f"Machine Boundary: ({tdims.get('min_x', 0)}, {tdims.get('min_y', 0)}) "
+                    f"to ({tdims.get('max_x', 0)}, {tdims.get('max_y', 0)})"
+                )
+                
+                # Add boundaries to details
+                details["original_boundary"] = {
+                    "min_x": dims.get('min_x', 0),
+                    "min_y": dims.get('min_y', 0),
+                    "max_x": dims.get('max_x', 0),
+                    "max_y": dims.get('max_y', 0)
+                }
+                details["transformed_boundary"] = {
+                    "min_x": tdims.get('min_x', 0),
+                    "min_y": tdims.get('min_y', 0),
+                    "max_x": tdims.get('max_x', 0),
+                    "max_y": tdims.get('max_y', 0)
+                }
+                
+            return True, transformed, details
             
         except Exception as e:
-            self.logger.error(f"Error offsetting workpiece: {str(e)}")
-            # Return original workpiece_info if offset fails
-            return workpiece_info
+            log_exception(self.logger, "Error transforming workpiece", e)
+            error_response = ErrorHandler.from_exception(e)
+            # Return original workpiece_info with the error
+            return error_response[0], workpiece_info, error_response[2]
 
 
-# Only initialize if run directly
+class EdgeTransformer:
+    """Base class for edge-specific transformations."""
+    
+    def __init__(self):
+        """Initialize the edge transformer."""
+        self.logger = setup_logger(f"{__name__}.{self.__class__.__name__}")
+    
+    def transform(self, point, workpiece_dims):
+        """Transform a point based on edge type."""
+        raise NotImplementedError("Subclasses must implement transform")
+    
+    def _round_point(self, x, y, z):
+        """Round coordinates to 0.1mm precision."""
+        return (round(x, 1), round(y, 1), round(z, 1))
+
+
+class FrontEdgeTransformer(EdgeTransformer):
+    """Handles front edge drilling transformations."""
+    
+    def transform(self, point, workpiece_dims):
+        """Transform front edge drilling point."""
+        x, y, z = point
+        
+        # Front edge transformation - based on test results
+        transformed_x = workpiece_dims['width'] - abs(x)  # Mirror and subtract from width
+        transformed_y = -workpiece_dims['height']  # Bottom of workpiece (Y inverted)
+        transformed_z = workpiece_dims['depth'] - abs(y)  # Z is material thickness minus drill depth
+        
+        return self._round_point(transformed_x, transformed_y, transformed_z)
+
+
+class BackEdgeTransformer(EdgeTransformer):
+    """Handles back edge drilling transformations."""
+    
+    def transform(self, point, workpiece_dims):
+        """Transform back edge drilling point."""
+        x, y, z = point
+        
+        # Back edge transformation - based on test results
+        transformed_x = workpiece_dims['width'] - abs(x)  # Mirror and subtract from width
+        transformed_y = 0.0  # Top of workpiece (Y inverted)
+        transformed_z = workpiece_dims['depth'] - abs(y)  # Z is material thickness minus drill depth
+        
+        return self._round_point(transformed_x, transformed_y, transformed_z)
+
+
+class LeftEdgeTransformer(EdgeTransformer):
+    """Handles left edge drilling transformations."""
+    
+    def transform(self, point, workpiece_dims):
+        """Transform left edge drilling point."""
+        x, y, z = point
+        
+        # Left edge transformation
+        transformed_x = 0.0  # Left edge of workpiece
+        transformed_y = -abs(x)  # Y position is the X position from DXF (must be negative)
+        transformed_z = workpiece_dims['depth'] - abs(y)  # Z is material thickness minus drill depth
+        
+        return self._round_point(transformed_x, transformed_y, transformed_z)
+
+
+class RightEdgeTransformer(EdgeTransformer):
+    """Handles right edge drilling transformations."""
+    
+    def transform(self, point, workpiece_dims):
+        """Transform right edge drilling point."""
+        x, y, z = point
+        
+        # Right edge transformation
+        transformed_x = workpiece_dims['width']  # Right edge of workpiece
+        transformed_y = -abs(x)  # Y position is the X position from DXF (must be negative)
+        transformed_z = workpiece_dims['depth'] - abs(y)  # Z is material thickness minus drill depth
+        
+        return self._round_point(transformed_x, transformed_y, transformed_z)
+
+
+class HorizontalDrillTransformer(BaseTransformer):
+    """
+    Specialized transformer for horizontal drilling operations.
+    
+    Transforms horizontal drilling points from DXF to machine coordinates,
+    handling specific requirements for edge drilling.
+    """
+    
+    def __init__(self):
+        """Initialize with edge-specific transformers."""
+        super().__init__()
+        # Initialize edge-specific transformers
+        self.edge_transformers = {
+            "front": FrontEdgeTransformer(),
+            "back": BackEdgeTransformer(),
+            "left": LeftEdgeTransformer(),
+            "right": RightEdgeTransformer()
+        }
+    
+    def transform_point(
+        self, 
+        dxf_point: Tuple[float, float, float],
+        edge: str = "auto"
+    ) -> Tuple[bool, Tuple[float, float, float], Dict[str, Any]]:
+        """
+        Transform a horizontal drilling point from DXF to machine coordinates.
+        
+        Args:
+            dxf_point: Tuple of (X, Y, Z) coordinates from DXF
+            edge: Which edge to drill from ('front', 'back', 'left', 'right', or 'auto')
+            
+        Returns:
+            Tuple containing:
+                - Success flag (bool)
+                - Machine coordinates (Tuple[float, float, float])
+                - Details dictionary (Dict[str, Any])
+        """
+        try:
+            # Validate input
+            if not isinstance(dxf_point, tuple) or len(dxf_point) != 3:
+                return ErrorHandler.create_error_response(
+                    TransformationError(
+                        message="Invalid dxf_point - must be a tuple of 3 coordinates",
+                        category=ErrorCategory.VALIDATION,
+                        severity=ErrorSeverity.ERROR
+                    )
+                )
+            
+            # Auto-detect edge if not specified
+            detected_edge = edge
+            if edge == "auto":
+                detected_edge = self.detect_edge(dxf_point)
+            
+            # Get workpiece dimensions
+            workpiece_dims = {
+                "width": self.workpiece_width,
+                "height": self.workpiece_height,
+                "depth": self.workpiece_thickness
+            }
+            
+            # Transform point using edge-specific transformer
+            if detected_edge in self.edge_transformers:
+                transformer = self.edge_transformers[detected_edge]
+                transformed_point = transformer.transform(dxf_point, workpiece_dims)
+                
+                self.logger.info(
+                    f"Transformed horizontal drilling point ({detected_edge} edge): "
+                    f"DXF {dxf_point} → Machine {transformed_point}"
+                )
+                
+                return True, transformed_point, {
+                    "edge": detected_edge,
+                    "original_point": dxf_point
+                }
+            else:
+                # Fallback to front edge if unknown
+                self.logger.warning(f"Unknown edge type: {detected_edge}, using front edge")
+                transformer = self.edge_transformers["front"]
+                transformed_point = transformer.transform(dxf_point, workpiece_dims)
+                
+                return True, transformed_point, {
+                    "edge": "front",
+                    "original_point": dxf_point,
+                    "warning": f"Unknown edge '{detected_edge}', defaulted to front edge"
+                }
+            
+        except Exception as e:
+            log_exception(self.logger, "Error transforming horizontal drilling point", e)
+            error_response = ErrorHandler.from_exception(e)
+            return False, self.round_coordinates(dxf_point), error_response[2]
+    
+    def detect_edge(self, point: Tuple[float, float, float]) -> str:
+        """
+        Detect which edge a point belongs to based on its Z coordinate.
+        
+        Args:
+            point: Tuple of (X, Y, Z) coordinates from DXF
+            
+        Returns:
+            str: Edge type ("front", "back", "left", "right")
+        """
+        x, y, z = point
+        
+        # Determine edge based on Z value (standard approach)
+        if abs(z) < 1.0:
+            return "front"
+        elif abs(z + self.workpiece_height) < 1.0:
+            return "back"
+        
+        # Default to front edge if unknown
+        return "front"
+    
+    def transform_points(
+        self,
+        points: List[Dict[str, Any]]
+    ) -> Tuple[bool, List[Dict[str, Any]], Dict[str, Any]]:
+        """
+        Transform a list of horizontal drilling points.
+        
+        Args:
+            points: List of drilling point dictionaries
+            
+        Returns:
+            Tuple containing:
+                - Success flag (bool)
+                - List of transformed points (List[Dict[str, Any]])
+                - Details dictionary (Dict[str, Any])
+        """
+        try:
+            transformed_points = []
+            success_count = 0
+            failure_count = 0
+            
+            for point in points:
+                try:
+                    # Extract position from point dictionary
+                    position = point.get('position', (0, 0, 0))
+                    
+                    # Transform the point
+                    success, machine_coords, details = self.transform_point(position)
+                    
+                    if success:
+                        # Copy original point and update with machine coordinates
+                        transformed_point = point.copy()
+                        transformed_point['machine_coordinates'] = machine_coords
+                        transformed_point['edge'] = details.get('edge', 'unknown')
+                        
+                        transformed_points.append(transformed_point)
+                        success_count += 1
+                    else:
+                        # Include original point with error info
+                        point['transformation_error'] = details.get('message', 'Unknown error')
+                        transformed_points.append(point)
+                        failure_count += 1
+                        
+                except Exception as e:
+                    # Handle individual point errors
+                    log_exception(self.logger, f"Error transforming point {point}", e)
+                    point['transformation_error'] = str(e)
+                    transformed_points.append(point)
+                    failure_count += 1
+            
+            return True, transformed_points, {
+                "points_count": len(points),
+                "success_count": success_count,
+                "failure_count": failure_count
+            }
+            
+        except Exception as e:
+            log_exception(self.logger, "Error transforming drilling points", e)
+            error_response = ErrorHandler.from_exception(e)
+            return False, points, error_response[2]
+
+
+class VerticalDrillTransformer(BaseTransformer):
+    """
+    Specialized transformer for vertical drilling operations.
+    
+    This is a placeholder for future implementation.
+    In MVP, focuses on horizontal drilling only.
+    """
+    
+    def transform_point(
+        self, 
+        dxf_point: Tuple[float, float, float]
+    ) -> Tuple[bool, Tuple[float, float, float], Dict[str, Any]]:
+        """
+        Transform a vertical drilling point from DXF to machine coordinates.
+        
+        Placeholder for future implementation - not used in MVP.
+        
+        Args:
+            dxf_point: Tuple of (X, Y, Z) coordinates from DXF
+            
+        Returns:
+            Tuple containing:
+                - Success flag (bool)
+                - Machine coordinates (Tuple[float, float, float])
+                - Details dictionary (Dict[str, Any])
+        """
+        self.logger.info("VerticalDrillTransformer.transform_point placeholder called")
+        
+        # Return placeholder success with original point and a note about future implementation
+        return True, dxf_point, {
+            "status": "placeholder",
+            "message": "Vertical drilling transformation will be implemented in future versions"
+        }
+    
+    def transform_points(
+        self,
+        points: List[Dict[str, Any]]
+    ) -> Tuple[bool, List[Dict[str, Any]], Dict[str, Any]]:
+        """
+        Transform a list of vertical drilling points.
+        
+        Placeholder for future implementation - not used in MVP.
+        
+        Args:
+            points: List of drilling point dictionaries
+            
+        Returns:
+            Tuple containing:
+                - Success flag (bool)
+                - List of transformed points (List[Dict[str, Any]])
+                - Details dictionary (Dict[str, Any])
+        """
+        self.logger.info("VerticalDrillTransformer.transform_points placeholder called")
+        
+        # Return placeholder success with original points and a note about future implementation
+        return True, points, {
+            "status": "placeholder",
+            "message": "Vertical drilling transformation will be implemented in future versions",
+            "points_count": len(points)
+        }
+
+
+class TransformerFactory:
+    """
+    Factory for creating appropriate transformer instances.
+    
+    This ensures a single source of truth for creating transformers
+    and makes it easy to add new transformer types in the future.
+    """
+    
+    @staticmethod
+    def create_transformer(transformer_type: str) -> Tuple[bool, BaseTransformer, Dict[str, Any]]:
+        """
+        Create a transformer of the specified type.
+        
+        Args:
+            transformer_type: Type of transformer to create
+                ('workpiece', 'horizontal_drill', 'vertical_drill')
+                
+        Returns:
+            Tuple containing:
+                - Success flag (bool)
+                - Transformer instance (BaseTransformer)
+                - Details dictionary (Dict[str, Any])
+        """
+        logger = setup_logger("TransformerFactory")
+        
+        try:
+            if transformer_type == "workpiece":
+                logger.info("Creating WorkpieceTransformer")
+                return True, WorkpieceTransformer(), {
+                    "transformer_type": transformer_type,
+                    "class": "WorkpieceTransformer"
+                }
+            elif transformer_type == "horizontal_drill":
+                logger.info("Creating HorizontalDrillTransformer")
+                return True, HorizontalDrillTransformer(), {
+                    "transformer_type": transformer_type,
+                    "class": "HorizontalDrillTransformer"
+                }
+            elif transformer_type == "vertical_drill":
+                logger.info("Creating VerticalDrillTransformer")
+                return True, VerticalDrillTransformer(), {
+                    "transformer_type": transformer_type,
+                    "class": "VerticalDrillTransformer"
+                }
+            else:
+                logger.warning(f"Unknown transformer type: {transformer_type}, using WorkpieceTransformer")
+                return True, WorkpieceTransformer(), {
+                    "transformer_type": "workpiece",
+                    "class": "WorkpieceTransformer",
+                    "warning": f"Unknown type '{transformer_type}', defaulted to workpiece"
+                }
+        except Exception as e:
+            log_exception(logger, f"Error creating transformer of type '{transformer_type}'", e)
+            error_response = ErrorHandler.from_exception(e)
+            # Return default transformer with error info
+            return False, WorkpieceTransformer(), {
+                "error": error_response[1],
+                "details": error_response[2]
+            }
+
+
+# Example usage
 if __name__ == "__main__":
-    # Simple test
-    transformer = CoordinateTransformer()
-    transformer.set_workpiece_parameters(
+    # Test the HorizontalDrillTransformer
+    success, transformer, details = TransformerFactory.create_transformer("horizontal_drill")
+    
+    if not success:
+        print(f"Error creating transformer: {details.get('error', 'Unknown error')}")
+        exit(1)
+        
+    print(f"Created transformer: {details['class']}")
+    
+    # Set up example workpiece
+    success, message, param_details = transformer.set_workpiece_parameters(
         width=545.5, 
         height=555.0, 
         thickness=22.5,
@@ -356,54 +724,28 @@ if __name__ == "__main__":
         max_y=555.0
     )
     
-    # Test vertical drilling point
-    dxf_point = (35.5, 34.0, 0)
-    machine_point = transformer.dxf_to_machine_coords(dxf_point, "vertical_drill")
-    print(f"Vertical drilling: DXF {dxf_point} → Machine {machine_point}")
-    
-    # Test horizontal drilling point (front edge)
-    dxf_point = (35.5, 9.5, 0)  # Front edge
-    machine_point = transformer.dxf_to_machine_coords(dxf_point, "horizontal_drill")
-    print(f"Horizontal drilling front: DXF {dxf_point} → Machine {machine_point}")
-    
-    # Test horizontal drilling point (back edge)
-    dxf_point = (35.5, 9.5, -555.0)  # Back edge
-    machine_point = transformer.dxf_to_machine_coords(dxf_point, "horizontal_drill")
-    print(f"Horizontal drilling back: DXF {dxf_point} → Machine {machine_point}")
-    
-    # Test workpiece transformation
-    workpiece_info = {
-        'dimensions': {
-            'width': 545.5,
-            'height': 555.0,
-            'depth': 22.5,
-            'min_x': 0.0,
-            'min_y': 0.0,
-            'max_x': 545.5,
-            'max_y': 555.0
-        },
-        'reference_points': {
-            'origin': (0.0, 0.0),
-            'center': (272.75, 277.5),
-            'corner_tr': (545.5, 0.0),
-            'corner_br': (545.5, 555.0)
-        }
-    }
-    
-    # Test rotation
-    rotated = transformer.transform_workpiece(workpiece_info, rotation=90.0)
-    print("\nRotated workpiece:")
-    print(f"Original dimensions: {workpiece_info['dimensions']['width']} x {workpiece_info['dimensions']['height']}")
-    print(f"Rotated dimensions: {rotated['dimensions']['width']} x {rotated['dimensions']['height']}")
-    
-    # Test mirroring
-    mirrored = transformer.transform_workpiece(workpiece_info, mirror_x=True)
-    print("\nMirrored workpiece:")
-    print(f"Original corner_tr: {workpiece_info['reference_points']['corner_tr']}")
-    print(f"Mirrored corner_tr: {mirrored['reference_points']['corner_tr']}")
-    
-    # Test offsetting
-    offset = transformer.offset_workpiece(workpiece_info, offset_x=10.0, offset_y=-5.0)
-    print("\nOffset workpiece:")
-    print(f"Original origin: {workpiece_info['reference_points']['origin']}")
-    print(f"Offset origin: {offset['reference_points']['origin']}")
+    if success:
+        print(f"Workpiece parameters set: {message}")
+        
+        # Test front edge point
+        front_point = (-517.5, -9.5, 0.0)  # Front edge
+        success, transformed_front, details_front = transformer.transform_point(front_point)
+        
+        if success:
+            print(f"\nFront edge point:")
+            print(f"  Original: {front_point}")
+            print(f"  Transformed: {transformed_front}")
+            print(f"  Edge: {details_front.get('edge', 'unknown')}")
+        
+        # Test back edge point
+        back_point = (517.5, -9.5, -555.0)  # Back edge
+        success, transformed_back, details_back = transformer.transform_point(back_point)
+        
+        if success:
+            print(f"\nBack edge point:")
+            print(f"  Original: {back_point}")
+            print(f"  Transformed: {transformed_back}")
+            print(f"  Edge: {details_back.get('edge', 'unknown')}")
+        
+    else:
+        print(f"Error setting workpiece parameters: {message}")

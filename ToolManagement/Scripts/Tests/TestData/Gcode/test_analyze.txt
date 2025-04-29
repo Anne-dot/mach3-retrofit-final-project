@@ -1,0 +1,299 @@
+d0021@d0021-Latitude-E6420:~/kool/mach3-retrofit-final-project/ToolManagement/Scripts$ /bin/python3 /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/ManualTests/test_gcode_normalizer_analyze_all_lines.py
+Found test data directory: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode
+Available G-code files:
+1. 001_normalized.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/001_normalized.txt)
+2. 001_safe_normalized.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/001_safe_normalized.txt)
+3. 001_safe.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/001_safe.txt)
+4. 001.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/001.txt)
+5. Kaar2.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/Kaar2.txt)
+6. vDrill.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/vDrill.txt)
+7. TP emane param VE aste 10 servast 2.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP emane param VE aste 10 servast 2.txt)
+8. TP emane param VE aste 10 servast 1.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP emane param VE aste 10 servast 1.txt)
+9. TP iSANE param VE aste 10 servast 2.txt (/home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP iSANE param VE aste 10 servast 2.txt)
+Enter file number to test (or press Enter for first file): 9
+Using file: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP iSANE param VE aste 10 servast 2.txt
+
+================================================================================
+===== TESTING GCODE NORMALIZER ON TP iSANE param VE aste 10 servast 2.txt ======
+================================================================================
+
+Loading G-code file...
+File: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP iSANE param VE aste 10 servast 2.txt
+Total lines: 37
+
+
+================================================================================
+================= DETAILED LINE-BY-LINE ANALYSIS OF ALL LINES ==================
+================================================================================
+
+Line 1:
+  Original: ( Tööpind, isane, parameetriline, esimene vasak positsioon )
+Normalized: ( Tööpind, isane, parameetriline, esimene vasak positsioon )
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 2:
+  Original: 
+Normalized: 
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 3:
+  Original: ( File created: 24.10.2020 by Anne Ruusmann )
+Normalized: ( File created: 24.10.2020 by Anne Ruusmann )
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 4:
+  Original: 
+Normalized: 
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 5:
+  Original: ( Material Size)
+Normalized: ( Material Size)
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 6:
+  Original: ( X max = 4000, Y max = 1000, Z max = 40 ) ( kontrolli )
+Normalized: ( X max = 4000, Y max = 1000, Z max = 40 ) ( kontrolli )
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 7:
+  Original: 
+Normalized: 
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 8:
+  Original: ( Tools used in this file: )
+Normalized: ( Tools used in this file: )
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 9:
+  Original: ( 1 = frees d <= 12)
+Normalized: ( 1 = frees d <= 12)
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 10:
+  Original: 
+Normalized: 
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 11:
+  Original: ( parameetrid )
+Normalized: ( parameetrid )
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 12:
+  Original: N100 #10 = 600 ( B laius )
+Normalized: N100 #10 = 600 ( B laius )
+   Changes: No changes
+   Reason: 
+
+Line 13:
+  Original: N102 #12 = 2 ( freesib servast )
+Normalized: N102 #12 = 2 ( freesib servast )
+   Changes: No changes
+   Reason: 
+
+Line 14:
+  Original: N103 #13 = 10 ( yhenduse sygavus )
+Normalized: N103 #13 = 10 ( yhenduse sygavus )
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 15:
+  Original: 
+Normalized: 
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 16:
+  Original: N104 #14 = 40 ( materjali paksus )
+Normalized: N104 #14 = 40 ( materjali paksus )
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 17:
+  Original: N105 #16 = [#13-0.1]
+Normalized: N105 #16 = [#13-0.1]
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 18:
+  Original: N106 #15 = [0-#16-2.485]( kaare algus )
+Normalized: N106 #15 = [0-#16-2.485]( kaare algus )
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 19:
+  Original: N107 #11 = 11 ( t66riista number )
+Normalized: N107 #11 = 11 ( t66riista number )
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 20:
+  Original: 
+Normalized: 
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 21:
+  Original: ( programm )
+Normalized: ( programm )
+   Changes: No changes
+   Reason: Comment or empty line - no normalization needed
+
+Line 22:
+  Original: N109 G00 G21 G17 G90 G40 G49 G80 G56 ( Vasak esimene asend - work offset 3)
+Normalized: N109 G00 G21 G17 G90 G40 G49 G80 G56 ( Vasak esimene asend - work offset 3)
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 23:
+  Original: N110 G71 G91.1
+Normalized: N110 G71 G91.1
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 24:
+  Original: N140 G00 G43 Z[#14+3] H#11
+Normalized: N140 G00 G43 Z[#14+3] H#11
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 25:
+  Original: N120 T#11 M06
+Normalized: N120 T#11 M06
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 26:
+  Original: N150 S16000 M03
+Normalized: N150 S16000 M03
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 27:
+  Original: N180 G94
+Normalized: N180 G94
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 28:
+  Original: N190 X-10 Y[0-#10-20] F1000
+Normalized: N190G00X-10 Y[0-#10-20] F1000
+   Changes: Added G00
+   Reason: Added explicit G00 command
+
+Line 29:
+  Original: N200 G00 Z-2
+Normalized: N200 G00 Z-2
+   Changes: No changes
+   Reason: Already in normalized format, No redundant coordinates detected
+
+Line 30:
+  Original: N220 G41 G1 X#12 Y[0-#10-10] F600
+Normalized: N220 G41 G01 X#12 Y[0-#10-10] F600
+   Changes: G-code normalized
+   Reason: G-code format normalized: G1 → G01
+
+Line 31:
+  Original: N230 Y#15
+Normalized: N230 Y#15
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 32:
+  Original: N240 G2 X[#12+1.757] Y[0-#16+1.757] I6 J0 F400
+Normalized: N240 G02 X[#12+1.757] Y[0-#16+1.757] I6 J0 F400
+   Changes: G-code normalized
+   Reason: G-code format normalized: G2 → G02
+
+Line 33:
+  Original: N250 G1 X[#16+#12+2] Y2
+Normalized: N250 G01 X[#16+#12+2] Y2
+   Changes: G-code normalized
+   Reason: G-code format normalized: G1 → G01
+
+Line 34:
+  Original: N260 G40 X[#16+#12+2-6] Y7 Z[#14+3]
+Normalized: N260 G40 X[#16+#12+2-6] Y7 Z[#14+3]
+   Changes: No changes
+   Reason: No normalization needed
+
+Line 35:
+  Original: N300 M09
+Normalized: N300 M09
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 36:
+  Original: N310 M30
+Normalized: N310 M30
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+Line 37:
+  Original: %
+Normalized: %
+   Changes: No changes
+   Reason: No coordinates to normalize
+
+
+================================================================================
+=========================== NORMALIZING ENTIRE FILE ============================
+================================================================================
+
+Success: G-code normalization completed successfully
+Processed 37 lines
+Normalized 3 G-codes
+Removed 0 redundant coordinates
+Added 0 explicit G01 commands
+Output written to: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP iSANE param VE aste 10 servast 2_normalized.txt
+
+================================================================================
+========== COMPARING ONLY CHANGED LINES: ORIGINAL VS NORMALIZED FILE ===========
+================================================================================
+
+Original file  : /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP iSANE param VE aste 10 servast 2.txt
+Normalized file: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/Gcode/TP iSANE param VE aste 10 servast 2_normalized.txt
+
+Showing only lines that have been modified:
+
+Line 28 (original) → Line 32 (normalized):
+  Original: N190 X-10 Y[0-#10-20] F1000
+Normalized: N190G00X-10 Y[0-#10-20] F1000
+   Changes: Added G00
+   Reason: Added explicit G00 command
+
+Line 30 (original) → Line 34 (normalized):
+  Original: N220 G41 G1 X#12 Y[0-#10-10] F600
+Normalized: N220 G41 G01 X#12 Y[0-#10-10] F600
+   Changes: G-code normalized
+   Reason: G-code format normalized: G1 → G01
+
+Line 32 (original) → Line 36 (normalized):
+  Original: N240 G2 X[#12+1.757] Y[0-#16+1.757] I6 J0 F400
+Normalized: N240 G02 X[#12+1.757] Y[0-#16+1.757] I6 J0 F400
+   Changes: G-code normalized
+   Reason: G-code format normalized: G2 → G02
+
+Line 33 (original) → Line 37 (normalized):
+  Original: N250 G1 X[#16+#12+2] Y2
+Normalized: N250 G01 X[#16+#12+2] Y2
+   Changes: G-code normalized
+   Reason: G-code format normalized: G1 → G01
+
+Total changed lines: 4
+
+TEST COMPLETED
+d0021@d0021-Lat

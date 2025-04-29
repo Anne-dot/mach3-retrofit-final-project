@@ -133,7 +133,7 @@ class HorizontalDrillPoint(DrillPointBase):
         # Now call super() which will eventually call extract_common_data()
         super().__init__(entity, layer_name)
         # Add debug print to check final values
-        print(f"DEBUG: Final init values - edge={self.edge}, direction={self.direction}")
+        #print(f"DEBUG: Final init values - edge={self.edge}, direction={self.direction}")
         
     def extract_common_data(self):
         """Extract data from entity and layer name."""

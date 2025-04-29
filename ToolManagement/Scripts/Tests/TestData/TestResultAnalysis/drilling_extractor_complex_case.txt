@@ -1,0 +1,69 @@
+d0021@d0021-Latitude-E6420:~/kool/mach3-retrofit-final-project$ /bin/python3 /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/ManualTests/test_drilling_extractor_anne_linux.py
+=== Drilling Point Extraction Test ===
+
+Available DXF files:
+1. Bottom_2_f0.dxf
+2. Right Side_4_f0.dxf
+3. complex_case.dxf
+4. Back_5_f0.dxf
+5. Left Side_3_f1.dxf
+
+Select a file number (or press Enter for default): 3
+Using test DXF file: /home/d0021/kool/mach3-retrofit-final-project/ToolManagement/Scripts/Tests/TestData/DXF/complex_case.dxf
+
+Step 1: Loading DXF file...
+SUCCESS: DXF loaded successfully: Successfully loaded DXF file: complex_case.dxf
+
+Step 2: Performing direct entity check...
+
+DIRECT ENTITY CHECK:
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (-517.499, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (-67.499, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (517.499, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P21.5
+  Position: (67.499, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (-485.499, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (-35.499, -9.5, 0.0)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (485.499, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+Circle on layer: EDGE.DRILL_D8.0_P28.0
+  Position: (35.499, -9.5, -554.998)
+  Cannot extract extrusion: Invalid DXF attribute "210" for entity CIRCLE
+
+Step 3: Extracting drilling information...
+SUCCESS: Drilling information extracted: Drilling information extracted successfully
+  Found 4 vertical drilling points
+  Found 8 horizontal drilling points
+
+Step 4: Detailed drilling information:
+
+Vertical Drilling Points:
+1. Position: (485.499, 33.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+2. Position: (35.499, 33.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+3. Position: (485.499, 520.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+4. Position: (35.499, 520.999, 0.0), Diameter: 15.0mm, Depth: 14.0mm
+
+Horizontal Drilling Points:
+1. Position: (-517.499, -9.5, 0.0), Diameter: 8.0mm, Depth: 21.5mm, Edge: FRONT
+2. Position: (-67.499, -9.5, 0.0), Diameter: 8.0mm, Depth: 21.5mm, Edge: FRONT
+3. Position: (517.499, -9.5, -554.998), Diameter: 8.0mm, Depth: 21.5mm, Edge: BACK
+4. Position: (67.499, -9.5, -554.998), Diameter: 8.0mm, Depth: 21.5mm, Edge: BACK
+5. Position: (-485.499, -9.5, 0.0), Diameter: 8.0mm, Depth: 28.0mm, Edge: FRONT
+6. Position: (-35.499, -9.5, 0.0), Diameter: 8.0mm, Depth: 28.0mm, Edge: FRONT
+7. Position: (485.499, -9.5, -554.998), Diameter: 8.0mm, Depth: 28.0mm, Edge: BACK
+8. Position: (35.499, -9.5, -554.998), Diameter: 8.0mm, Depth: 28.0mm, Edge: BACK
+
+Test completed successfully.
+d0021@d0021-Latitude-E6420:~/kool/mach3-retrofit-final-project$ 
