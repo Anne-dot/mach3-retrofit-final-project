@@ -199,21 +199,23 @@ class HorizontalDrillTransformer:
         
         # PLACEHOLDER: X and Y transformations pending further specification
         if edge == "LEFT":
-            # PLACEHOLDER: X and Y transformations for LEFT edge
-            x_machine = 0.0  # Left edge is at minimum X (0)
-            y_machine = 0.0  # PLACEHOLDER
+            # X transformation for LEFT edge: X_machine = z_dxf + self.width
+            x_machine = z_dxf + self.width
+            # Y transformation for LEFT edge: Y_machine = workpiece_height - abs(X_dxf)
+            y_machine = self.height - abs(x_dxf)  # NOTE: This formula needs more testing to be verified
         elif edge == "RIGHT":
-            # PLACEHOLDER: X and Y transformations for RIGHT edge
-            x_machine = self.width  # Right edge is at maximum X (width)
-            y_machine = 0.0  # PLACEHOLDER
+            # X transformation for RIGHT edge: X_machine = z_dxf + self.width
+            x_machine = z_dxf + self.width
+            # Y transformation for RIGHT edge: Y_machine = workpiece_height - abs(X_dxf)
+            y_machine = self.height - abs(x_dxf)  # NOTE: This formula needs more testing to be verified
         elif edge == "FRONT":
-            # PLACEHOLDER: X and Y transformations for FRONT edge
-            x_machine = 0.0  # PLACEHOLDER
-            y_machine = self.height  # PLACEHOLDER: Front edge is at maximum Y (height)
+            # Y transformation for FRONT edge: Y_machine = z_dxf + self.height
+            x_machine = self.width - abs(x_dxf)  # NOTE: This formula needs more testing to be verified
+            y_machine = z_dxf + self.height
         else:  # BACK edge
-            # PLACEHOLDER: X and Y transformations for BACK edge
-            x_machine = 0.0  # PLACEHOLDER
-            y_machine = 0.0  # PLACEHOLDER: Back edge is at minimum Y (0)
+            # Y transformation for BACK edge: Y_machine = z_dxf + self.height
+            x_machine = self.width - abs(x_dxf)  # NOTE: This formula needs more testing to be verified
+            y_machine = z_dxf + self.height
         
         # Round coordinates
         x_machine = round(x_machine, self.precision)

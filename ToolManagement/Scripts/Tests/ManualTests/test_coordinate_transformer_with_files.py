@@ -1,8 +1,10 @@
 """
-Test Z transformation for horizontal drilling using real DXF files.
+Simplified test script for coordinate transformations.
 
-This script loads a DXF file, extracts the workpiece dimensions and drilling points,
-and verifies the Z transformation formula: Z_machine = workpiece_thickness + Y_dxf
+This script focuses on clearly showing:
+1. Workpiece dimensions
+2. Original DXF coordinates
+3. Transformed machine coordinates (X, Y, Z)
 """
 
 import sys
@@ -28,14 +30,14 @@ logger = setup_logger(__name__)
 test_data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "TestData")
 dxf_dir = os.path.join(test_data_dir, "DXF")
 
-def test_z_transformation_from_dxf(dxf_file_path=None):
+def test_transformation_simplified(dxf_file_path=None):
     """
-    Test Z transformation for horizontal drilling points extracted from a DXF file.
+    Run a simplified test showing original and transformed coordinates.
     
     Args:
         dxf_file_path: Path to DXF file (if None, will prompt for selection)
     """
-    print(f"\n=== Z Transformation Test Using DXF File ===")
+    print(f"\n=== Simplified Coordinate Transformation Test ===")
     print(f"Running on {platform.system()} platform")
     
     # Let user select a DXF file if not provided
@@ -45,104 +47,83 @@ def test_z_transformation_from_dxf(dxf_file_path=None):
             print("No DXF file selected. Exiting.")
             return
     
-    print(f"Using DXF file: {dxf_file_path}")
+    print(f"Using DXF file: {os.path.basename(dxf_file_path)}")
     
-    # Step 1: Load DXF file
-    print("\n--- Loading DXF File ---")
+    # Load DXF file
     loader = DxfLoader()
     success, doc, message = loader.load_dxf(dxf_file_path)
-    
     if not success:
         print(f"Error loading DXF: {message}")
         return
     
-    print(f"Success: {message}")
-    
-    # Step 2: Extract workpiece info
-    print("\n--- Extracting Workpiece Information ---")
+    # Extract workpiece info
     workpiece_extractor = WorkpieceExtractor()
     success, workpiece_info, message = workpiece_extractor.extract_workpiece_info(doc)
-    
     if not success:
         print(f"Error extracting workpiece info: {message}")
         return
     
     dimensions = workpiece_info['dimensions']
-    print(f"Success: Workpiece dimensions: {dimensions['width']:.2f} x {dimensions['height']:.2f} x {dimensions['depth']:.2f}mm")
+    print(f"\n--- Workpiece Dimensions ---")
+    print(f"Width: {dimensions['width']:.1f}mm")
+    print(f"Height: {dimensions['height']:.1f}mm")
+    print(f"Thickness: {dimensions['depth']:.1f}mm")
     
-    # Step 3: Extract drilling info
-    print("\n--- Extracting Drilling Points ---")
+    # Extract drilling info
     drilling_extractor = DrillingExtractor()
     success, drilling_info, message = drilling_extractor.extract_all_drilling_info(doc)
-    
     if not success:
         print(f"Error extracting drilling info: {message}")
         return
     
-    print(f"Success: Found {drilling_info['count']} drilling points")
-    
-    # Step 4: Analyze drilling data
-    print("\n--- Analyzing Drilling Points ---")
+    # Analyze drilling data
     success, results, details = analyze_drilling_data(drilling_info['points'])
-    
     if not success:
         print(f"Error analyzing drilling data: {details.get('error', 'Unknown error')}")
         return
     
-    horizontal_points = sum(group['count'] for group in results['tool_groups'].values() 
-                           if group['edge'] in ["LEFT", "RIGHT"])
-    
-    print(f"Success: Identified {len(results['tool_groups'])} tool groups")
-    print(f"Found {horizontal_points} horizontal drilling points (LEFT/RIGHT edges)")
-    
-    # Step 5: Create transformer
-    print("\n--- Setting Up Transformer ---")
+    # Create transformer
     transformer = HorizontalDrillTransformer()
     success, message, details = transformer.set_from_workpiece_info(workpiece_info)
-    
     if not success:
         print(f"Error setting workpiece parameters: {message}")
         return
     
-    print(f"Success: {message}")
-    
-    # Step 6: Test Z transformation for horizontal drilling points
-    print("\n--- Z Transformation Results ---")
-    print(f"Workpiece thickness: {transformer.thickness} mm")
-    print(f"Formula: Z_machine = workpiece_thickness + Y_dxf\n")
-    
     # Process each tool group
+    print(f"\n--- Coordinate Transformations by Edge Type ---")
+    
     for key, group in results['tool_groups'].items():
         edge, diameter = key
         
-        # # Only process LEFT and RIGHT edges
-        # if edge not in ["LEFT", "RIGHT"]:
-        #     continue
+        # Skip vertical drilling points
+        if edge == "VERTICAL":
+            continue
         
-        print(f"--- {edge} Edge - {diameter}mm Diameter Group ---")
-        print(f"Points: {group['count']}")
-        print(f"Vector: {group['primary_vector_str']}\n")
+        print(f"\n{edge.upper()} EDGE - {diameter}mm Diameter Group:")
+        print(f"Vector: {group['primary_vector_str']}")
+        print(f"{'#':<3} {'DXF Point (X, Y, Z)':<30} {'Machine Point (X, Y, Z)':<30}")
+        print(f"{'-'*3} {'-'*30} {'-'*30}")
         
         # Process all points in this group
         for i, point in enumerate(group['points']):
             position = point.position
-            y_dxf = position[1]
-            expected_z = transformer.thickness + y_dxf
+            x_dxf, y_dxf, z_dxf = position
             
-            # Calculate Z using the transformer
-            z_machine = transformer.transform_z_coordinate(y_dxf)
+            # Get the vector for this group
+            vector = group['primary_vector']
             
-            # Format the result
-            position_str = f"({position[0]:.1f}, {position[1]:.1f}, {position[2]:.1f})"
-            calculation = f"{transformer.thickness} + ({y_dxf}) = {expected_z:.1f}"
-            result = "✓" if abs(z_machine - expected_z) < 0.01 else "✗"
+            # Calculate actual values using the transformer
+            success, transformed, details = transformer.transform_horizontal_point(position, vector)
             
-            print(f"{result} Point {i+1}: {position_str}")
-            print(f"  Y={y_dxf} → Z={z_machine} [{calculation}]")
-        
-        print()
+            if success:
+                x_machine, y_machine, z_machine = transformed
+                dxf_str = f"({x_dxf:.1f}, {y_dxf:.1f}, {z_dxf:.1f})"
+                machine_str = f"({x_machine:.1f}, {y_machine:.1f}, {z_machine:.1f})"
+                print(f"{i+1:<3} {dxf_str:<30} {machine_str:<30}")
+            else:
+                print(f"{i+1:<3} {str(position):<30} ERROR: {details.get('error', 'Unknown error')}")
     
-    print("=== Test Complete ===")
+    print("\n=== Test Complete ===")
     
 if __name__ == "__main__":
-    test_z_transformation_from_dxf()
+    test_transformation_simplified()
