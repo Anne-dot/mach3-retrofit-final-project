@@ -2,7 +2,8 @@
 Module for transforming horizontal drilling coordinates from DXF to machine coordinates.
 
 This module handles the transformation of coordinates from DXF file format to CNC machine 
-coordinates specifically for horizontal drilling points on LEFT and RIGHT edges.
+coordinates specifically for horizontal drilling points on LEFT, RIGHT, FRONT, and BACK edges.
+It also provides functionality to offset coordinates to match machine origin.
 """
 
 from typing import Tuple, Dict, Any, Optional, List, Union
@@ -231,3 +232,61 @@ class HorizontalDrillTransformer:
             "original_point": point,
             "vector": vector
         }
+
+
+class OriginOffsetTransformer:
+    """
+    Transforms coordinates to machine coordinate system with top-left origin.
+    
+    This class applies an offset to shift coordinates from the edge-specific
+    coordinate system to the machine coordinate system where the origin is
+    at the top-left of the workpiece.
+    """
+    
+    def __init__(self, workpiece_height: float):
+        """
+        Initialize the origin offset transformer.
+        
+        Args:
+            workpiece_height: Height of the workpiece in mm
+        """
+        self.workpiece_height = workpiece_height
+        logger.info(f"OriginOffsetTransformer initialized with workpiece height: {workpiece_height}")
+    
+    def apply_offset(self, point: Tuple[float, float, float]) -> Tuple[float, float, float]:
+        """
+        Apply Y-offset to shift origin from bottom-left to top-left.
+        
+        Formula: Y_offset = Y_machine - workpiece_height
+        
+        Args:
+            point: (x, y, z) coordinates from edge transformer
+            
+        Returns:
+            (x, y, z) coordinates with Y-offset applied
+        """
+        x, y, z = point
+        # Shift Y by workpiece height
+        y_new = y - self.workpiece_height
+        return (x, y_new, z)
+    
+    def transform_point(self, point: Tuple[float, float, float]) -> Tuple[bool, Tuple[float, float, float], Dict]:
+        """
+        Transform a point by applying the origin offset.
+        
+        Args:
+            point: (x, y, z) coordinates from edge transformer
+            
+        Returns:
+            Tuple of (success, transformed_point, details)
+        """
+        try:
+            offset_point = self.apply_offset(point)
+            return True, offset_point, {
+                "original_point": point,
+                "offset_applied": (-self.workpiece_height)
+            }
+        except Exception as e:
+            error_msg = f"Error applying origin offset: {str(e)}"
+            logger.error(error_msg)
+            return False, point, {"error": error_msg}
